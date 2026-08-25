@@ -1,6 +1,7 @@
 ---
 /**
- * Command-palette start: types “New laptop…”, then reveals laptop request matches.
+ * Employee start screen: How can we help + typing search → matches + Your requests.
+ * Mirrors the product command palette behaviour.
  */
 ---
 
@@ -8,69 +9,153 @@
   class="overflow-hidden rounded-2xl border border-zinc-200/80 bg-surface shadow-[var(--shadow-quiet)]"
   data-palette
 >
-  <div class="flex items-center gap-3 border-b border-zinc-100 px-4 py-3.5 sm:px-5">
-    <span class="text-zinc-400" aria-hidden="true">
-      <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-        <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
-        <path
-          d="M10.5 10.5L13.5 13.5"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"></path>
-      </svg>
-    </span>
-    <p class="min-w-0 flex-1 text-[0.9375rem] text-ink" aria-live="polite">
-      <span data-palette-text></span><span
-        data-palette-caret
-        class="ml-0.5 inline-block h-[1.05em] w-px translate-y-[0.1em] bg-ink align-middle opacity-0"
-        aria-hidden="true"></span>
+  <div class="border-b border-zinc-100 bg-surface px-5 py-5 sm:px-6">
+    <p class="text-[0.75rem] font-medium text-accent">OpenRequest</p>
+    <h3 class="mt-2 text-[1.375rem] font-semibold tracking-tight text-ink sm:text-[1.5rem]">
+      How can we help?
+    </h3>
+    <p class="mt-1.5 text-[0.875rem] text-zinc-500">
+      Describe what you need — we’ll guide the rest.
     </p>
-    <span
-      data-palette-clear
-      class="flex size-5 items-center justify-center rounded-full bg-zinc-100 text-zinc-400 opacity-0 transition-opacity"
-      aria-hidden="true"
-    >
-      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-        <path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-        ></path>
-      </svg>
-    </span>
   </div>
 
-  <ul data-palette-results class="space-y-1 px-2 py-2 opacity-0 transition-opacity duration-300 sm:px-2.5">
-    <li
-      class="flex items-start gap-3 rounded-xl bg-zinc-100 px-3 py-2.5"
-      data-palette-row
-      style="opacity:0; transform: translateY(4px);"
+  <div class="bg-canvas px-4 py-5 sm:px-6 sm:py-6">
+    <div
+      class="overflow-hidden rounded-2xl border border-zinc-200/80 bg-surface shadow-[var(--shadow-quiet)]"
     >
-      <span
-        class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-surface text-[0.75rem] font-semibold text-ink shadow-sm ring-1 ring-zinc-200/80"
-        >O</span
+      <div class="flex items-center gap-3 px-4 py-3.5">
+        <span class="text-zinc-400" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+            <path
+              d="M10.5 10.5L13.5 13.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <p class="min-w-0 flex-1 text-[0.9375rem] text-ink" aria-live="polite">
+          <span data-palette-text></span><span
+            data-palette-caret
+            class="ml-0.5 inline-block h-[1.05em] w-px translate-y-[0.1em] bg-ink align-middle opacity-0"
+            aria-hidden="true"></span>
+        </p>
+        <span
+          data-palette-clear
+          class="flex size-5 items-center justify-center rounded-full bg-zinc-100 text-zinc-400 opacity-0 transition-opacity"
+          aria-hidden="true"
+        >
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path
+              d="M2 2l6 6M8 2L2 8"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"></path>
+          </svg>
+        </span>
+      </div>
+
+      <ul
+        data-palette-results
+        class="hidden space-y-0.5 border-t border-zinc-100 px-2 py-2 sm:px-2.5"
       >
-      <span class="min-w-0">
-        <span class="block text-[0.875rem] font-semibold text-ink">Order a new MacBook laptop</span>
-        <span class="mt-0.5 block text-[0.8125rem] text-zinc-500">Order a MacBook Pro</span>
-      </span>
-    </li>
-    <li
-      class="flex items-start gap-3 rounded-xl px-3 py-2.5"
-      data-palette-row
-      style="opacity:0; transform: translateY(4px);"
-    >
-      <span
-        class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-surface text-[0.75rem] font-semibold text-ink shadow-sm ring-1 ring-zinc-200/80"
-        >O</span
-      >
-      <span class="min-w-0">
-        <span class="block text-[0.875rem] font-semibold text-ink">Order a new Windows laptop</span>
-        <span class="mt-0.5 block text-[0.8125rem] text-zinc-500">Order a Windows laptop</span>
-      </span>
-    </li>
-  </ul>
+        <li>
+          <button
+            type="button"
+            tabindex="-1"
+            class="flex w-full items-start gap-3 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-zinc-100 focus-visible:bg-zinc-100"
+            data-palette-row
+            style="opacity:0; transform: translateY(4px);"
+          >
+            <span
+              class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-zinc-50 text-[0.75rem] font-semibold text-ink ring-1 ring-zinc-200/80"
+              >O</span
+            >
+            <span class="min-w-0">
+              <span class="block text-[0.875rem] font-semibold text-ink"
+                >Order a new MacBook laptop</span
+              >
+              <span class="mt-0.5 block text-[0.8125rem] text-zinc-500">Order a MacBook Pro</span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            tabindex="-1"
+            class="flex w-full items-start gap-3 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-zinc-100 focus-visible:bg-zinc-100"
+            data-palette-row
+            style="opacity:0; transform: translateY(4px);"
+          >
+            <span
+              class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-zinc-50 text-[0.75rem] font-semibold text-ink ring-1 ring-zinc-200/80"
+              >O</span
+            >
+            <span class="min-w-0">
+              <span class="block text-[0.875rem] font-semibold text-ink"
+                >Order a new Windows laptop</span
+              >
+              <span class="mt-0.5 block text-[0.8125rem] text-zinc-500">Order a Windows laptop</span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            tabindex="-1"
+            class="flex w-full items-start gap-3 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-zinc-100 focus-visible:bg-zinc-100"
+            data-palette-row
+            style="opacity:0; transform: translateY(4px);"
+          >
+            <span
+              class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-[0.875rem] font-semibold text-accent"
+              >+</span
+            >
+            <span class="min-w-0">
+              <span class="block text-[0.875rem] font-semibold text-ink">Something else</span>
+              <span class="mt-0.5 block text-[0.8125rem] text-zinc-500">Start a free-form request</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-6">
+      <p class="mb-2 text-[0.8125rem] text-zinc-500">Your requests</p>
+      <ul class="overflow-hidden rounded-xl border border-zinc-200/80 bg-surface">
+        <li class="flex items-start justify-between gap-4 border-b border-zinc-100 px-4 py-3">
+          <div class="min-w-0">
+            <p class="truncate text-[0.875rem]">
+              <span class="text-zinc-400">REQ-6</span>
+              <span class="ml-2 font-medium text-ink">New laptop for starting engineer</span>
+            </p>
+            <p class="mt-0.5 flex items-center gap-1.5 text-[0.75rem] text-zinc-500">
+              <span class="size-1.5 rounded-full bg-status-open" aria-hidden="true"></span>
+              Open · IT Help Desk
+            </p>
+          </div>
+          <time class="shrink-0 text-[0.75rem] text-zinc-400">25 Aug</time>
+        </li>
+        <li class="flex items-start justify-between gap-4 px-4 py-3">
+          <div class="min-w-0">
+            <p class="truncate text-[0.875rem]">
+              <span class="text-zinc-400">REQ-4</span>
+              <span class="ml-2 font-medium text-ink">Access to design files</span>
+            </p>
+            <p class="mt-0.5 text-[0.75rem] text-zinc-500">Resolved · Internal tools</p>
+          </div>
+          <time class="shrink-0 text-[0.75rem] text-zinc-400">22 Aug</time>
+        </li>
+      </ul>
+    </div>
+  </div>
 </figure>
 
 <script>
   function runPalette(root: HTMLElement) {
+    if (root.dataset.paletteReady === 'true') return;
+    root.dataset.paletteReady = 'true';
+
     const textEl = root.querySelector<HTMLElement>('[data-palette-text]');
     const caret = root.querySelector<HTMLElement>('[data-palette-caret]');
     const clear = root.querySelector<HTMLElement>('[data-palette-clear]');
@@ -78,7 +163,7 @@
     const rows = root.querySelectorAll<HTMLElement>('[data-palette-row]');
     if (!textEl || !caret || !clear || !results) return;
 
-    const phrase = 'New laptop...';
+    const phrase = 'New laptop';
     let i = 0;
 
     caret.style.opacity = '1';
@@ -90,16 +175,30 @@
       if (i >= phrase.length) {
         window.clearInterval(typeTimer);
         clear.style.opacity = '1';
-        results.style.opacity = '1';
+        results.classList.remove('hidden');
         rows.forEach((row, index) => {
           window.setTimeout(() => {
             row.style.transition = 'opacity 280ms ease, transform 280ms ease';
             row.style.opacity = '1';
             row.style.transform = 'translateY(0)';
-          }, 80 + index * 120);
+            if (index === 0) row.dataset.active = 'true';
+          }, 70 + index * 110);
         });
+
+        const setActive = (target: HTMLElement | null) => {
+          rows.forEach((row) => {
+            if (target && row === target) row.dataset.active = 'true';
+            else delete row.dataset.active;
+          });
+        };
+
+        rows.forEach((row) => {
+          row.addEventListener('mouseenter', () => setActive(row));
+          row.addEventListener('focus', () => setActive(row));
+        });
+        results.addEventListener('mouseleave', () => setActive(rows[0] ?? null));
       }
-    }, 55);
+    }, 48);
   }
 
   function boot() {
@@ -115,5 +214,9 @@
     50% {
       opacity: 0;
     }
+  }
+
+  [data-palette-row][data-active='true'] {
+    background: var(--color-zinc-100);
   }
 </style>

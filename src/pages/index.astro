@@ -13,7 +13,7 @@ import { story } from '../content/copy/story';
 
 <BaseLayout>
   {/* Hero */}
-  <section class="page-shell pt-20 pb-4 sm:pt-24 lg:pt-28">
+  <section class="page-shell pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24">
     <div class="max-w-[44rem]">
       <h1 class="type-display">{story.hero.headline}</h1>
       <p class="type-lede mt-5 max-w-[40rem]">{story.hero.subhead}</p>
@@ -36,47 +36,45 @@ import { story } from '../content/copy/story';
 
   <SectionRule />
 
-  {/* The idea — copy only; visuals live in the views below */}
-  <Chapter id="how-it-works" eyebrow="The idea">
-    <h2 class="type-title">{story.idea.headline}</h2>
-    <p class="type-lede mt-5">{story.idea.body}</p>
-  </Chapter>
+  {/* Continuous loop: idea → employee → team (no hairlines between) */}
+  <div id="how-it-works" class="pb-[var(--spacing-chapter)]">
+    <Chapter eyebrow="The idea" tight class="pt-[var(--spacing-chapter)] pb-6 sm:pb-8">
+      <h2 class="type-title">{story.idea.headline}</h2>
+      <p class="type-lede mt-5">{story.idea.body}</p>
+    </Chapter>
+
+    <Chapter id="employee-view" eyebrow={story.employee.eyebrow} tight>
+      <h2 class="type-title">{story.employee.title}</h2>
+      <p class="type-lede mt-5">{story.employee.body}</p>
+      <ConversationMoment slot="visual" />
+    </Chapter>
+
+    <Chapter id="team-view" eyebrow={story.team.eyebrow} tight class="pb-0">
+      <h2 class="type-title">{story.team.title}</h2>
+      <p class="type-lede mt-5">{story.team.body}</p>
+      <HandlerMoment slot="visual" />
+    </Chapter>
+  </div>
 
   <SectionRule />
 
-  {/* Employee view */}
-  <Chapter id="employee-view" eyebrow={story.employee.eyebrow}>
-    <h2 class="type-title">{story.employee.title}</h2>
-    <p class="type-lede mt-5">{story.employee.body}</p>
-    <ConversationMoment slot="visual" />
-  </Chapter>
-
-  <SectionRule />
-
-  {/* Team view */}
-  <Chapter id="team-view" eyebrow={story.team.eyebrow}>
-    <h2 class="type-title">{story.team.title}</h2>
-    <p class="type-lede mt-5">{story.team.body}</p>
-    <HandlerMoment slot="visual" />
-  </Chapter>
-
-  <SectionRule />
-
-  {/* Who this is for */}
-  <Chapter id="audience" eyebrow={story.audience.eyebrow} measure="wide">
-    <h2 class="type-title max-w-[40rem]">{story.audience.title}</h2>
-    <p class="type-lede mt-5 max-w-[40rem]">{story.audience.body}</p>
-    <ul class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+  {/* Who this is for — full container width */}
+  <Chapter id="audience" eyebrow={story.audience.eyebrow} measure="full">
+    <div class="max-w-[42rem]">
+      <h2 class="type-title">{story.audience.title}</h2>
+      <p class="type-lede mt-5">{story.audience.body}</p>
+    </div>
+    <ul class="mt-12 grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
       {
         story.audience.teams.map((team) => (
-          <li class="flex gap-3">
-            <span class="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-zinc-600">
+          <li class="group rounded-2xl border border-zinc-200/80 bg-surface p-5 transition-shadow duration-300 hover:shadow-[var(--shadow-quiet)]">
+            <span
+              class="flex size-10 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 ring-1 ring-zinc-200/70 transition duration-300 group-hover:scale-[1.04] group-hover:bg-gradient-to-br group-hover:from-zinc-50 group-hover:via-zinc-100 group-hover:to-zinc-200/80 group-hover:text-zinc-800 group-hover:shadow-inner"
+            >
               <TeamIcon name={team.icon} />
             </span>
-            <div>
-              <p class="text-[0.9375rem] font-semibold tracking-tight text-ink">{team.name}</p>
-              <p class="type-body mt-1 text-[0.875rem]">{team.detail}</p>
-            </div>
+            <p class="mt-4 text-[0.9375rem] font-semibold tracking-tight text-ink">{team.name}</p>
+            <p class="type-body mt-1.5 text-[0.875rem]">{team.detail}</p>
           </li>
         ))
       }
@@ -85,17 +83,29 @@ import { story } from '../content/copy/story';
 
   <SectionRule />
 
-  {/* Close */}
-  <Chapter id="early-access" eyebrow="Early access">
-    <h2 class="type-title">{story.close.title}</h2>
-    <p class="type-lede mt-5">{story.close.body}</p>
-    <p class="type-body mt-3">{story.close.detail}</p>
-    <div class="mt-8">
-      <Button href={EARLY_ACCESS_HREF} variant="zinc">
-        {story.close.title}
-      </Button>
+  {/* Early access — dark zinc band between hairlines */}
+  <section
+    id="early-access"
+    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-950 text-white"
+  >
+    <div class="page-shell py-[var(--spacing-chapter)]">
+      <p class="type-caption mb-4 text-zinc-400">Early access</p>
+      <div class="max-w-[40rem]">
+        <h2 class="type-title text-white">{story.close.title}</h2>
+        <p class="mt-5 text-[1.125rem] leading-relaxed text-zinc-300">{story.close.body}</p>
+        <p class="mt-3 text-[1.0625rem] leading-relaxed text-zinc-400">{story.close.detail}</p>
+        <div class="mt-8">
+          <a
+            href={EARLY_ACCESS_HREF}
+            class="inline-flex items-center rounded-[var(--radius-md)] bg-white px-4 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+          >
+            {story.close.title}
+            <span class="ml-1.5" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
     </div>
-  </Chapter>
+  </section>
 
   <div id="sign-in" class="scroll-mt-24" hidden></div>
 </BaseLayout>

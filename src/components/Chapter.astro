@@ -6,21 +6,28 @@ interface Props {
   id?: string;
   eyebrow?: string;
   class?: string;
-  measure?: 'narrow' | 'readable' | 'wide';
+  measure?: 'narrow' | 'readable' | 'wide' | 'full';
+  /** Tighter vertical padding for chapters inside a continuous band. */
+  tight?: boolean;
 }
 
-const { id, eyebrow, class: className, measure = 'readable' } = Astro.props;
+const { id, eyebrow, class: className, measure = 'readable', tight = false } = Astro.props;
 
 const measureClass = {
   narrow: 'max-w-[32rem]',
   readable: 'max-w-[42rem]',
   wide: 'max-w-[52rem]',
+  full: 'max-w-none',
 }[measure];
 ---
 
 <section
   id={id}
-  class:list={['page-shell py-[var(--spacing-chapter)]', className]}
+  class:list={[
+    'page-shell',
+    tight ? 'py-10 sm:py-12 lg:py-14' : 'py-[var(--spacing-chapter)]',
+    className,
+  ]}
 >
   {
     eyebrow && (
