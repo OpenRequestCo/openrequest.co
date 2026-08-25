@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SectionRule from '../components/SectionRule.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 const pageTitle =
   title === SITE_TITLE
-    ? `${SITE_TITLE} — Internal requests should feel like starting a conversation`
+    ? `${SITE_TITLE} — Internal requests should feel like a conversation`
     : `${title} · ${SITE_TITLE}`;
 ---
 
@@ -40,6 +41,7 @@ const pageTitle =
     <main id="top" class="flex-1">
       <slot />
     </main>
+    <SectionRule />
     <Footer />
   </body>
 </html>

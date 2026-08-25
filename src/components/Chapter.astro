@@ -1,12 +1,11 @@
 ---
 /**
- * Story section in Linear’s rhythm: title + copy, then one visual.
+ * Story section: title + copy, then an optional full-width visual.
  */
 interface Props {
   id?: string;
   eyebrow?: string;
   class?: string;
-  /** Content measure before the visual. */
   measure?: 'narrow' | 'readable' | 'wide';
 }
 
@@ -14,7 +13,7 @@ const { id, eyebrow, class: className, measure = 'readable' } = Astro.props;
 
 const measureClass = {
   narrow: 'max-w-[32rem]',
-  readable: 'max-w-[40rem]',
+  readable: 'max-w-[42rem]',
   wide: 'max-w-[52rem]',
 }[measure];
 ---
@@ -33,7 +32,7 @@ const measureClass = {
   </div>
   {
     Astro.slots.has('visual') && (
-      <div class="product-stage mt-10 lg:mt-12">
+      <div class="mt-10 w-full lg:mt-12">
         <slot name="visual" />
       </div>
     )

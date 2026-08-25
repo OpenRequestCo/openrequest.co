@@ -153,9 +153,4 @@
     background: var(--color-border);
     border: 0;
   }
-
-  .product-stage {
-    width: min(100%, var(--max-width-visual));
-    margin-inline: auto;
-  }
 }

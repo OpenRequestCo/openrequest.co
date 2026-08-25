@@ -1,0 +1,101 @@
+---
+/**
+ * Simple line icons for audience teams.
+ */
+interface Props {
+  name: 'it' | 'operations' | 'people' | 'facilities' | 'finance' | 'tools';
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+---
+
+<svg
+  class={className}
+  width="20"
+  height="20"
+  viewBox="0 0 20 20"
+  fill="none"
+  aria-hidden="true"
+>
+  {
+    name === 'it' && (
+      <>
+        <rect x="3" y="4" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4" />
+        <path d="M7 16h6M10 13v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+      </>
+    )
+  }
+  {
+    name === 'operations' && (
+      <>
+        <circle cx="10" cy="10" r="6.5" stroke="currentColor" stroke-width="1.4" />
+        <path
+          d="M10 6.5V10l2.5 1.5"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </>
+    )
+  }
+  {
+    name === 'people' && (
+      <>
+        <circle cx="10" cy="7" r="2.5" stroke="currentColor" stroke-width="1.4" />
+        <path
+          d="M4.5 15.5c1.2-2.2 3-3.3 5.5-3.3s4.3 1.1 5.5 3.3"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        />
+      </>
+    )
+  }
+  {
+    name === 'facilities' && (
+      <>
+        <path
+          d="M3.5 16V8.5L10 4l6.5 4.5V16"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path d="M8 16v-4h4v4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+      </>
+    )
+  }
+  {
+    name === 'finance' && (
+      <>
+        <rect x="4" y="3.5" width="12" height="13" rx="1.5" stroke="currentColor" stroke-width="1.4" />
+        <path
+          d="M7 8h6M7 11h4"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        />
+      </>
+    )
+  }
+  {
+    name === 'tools' && (
+      <>
+        <path
+          d="M12.5 3.5l4 4-2 1-1 2-4-4 1-2 2-1z"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3.5 16.5l5-5"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        />
+      </>
+    )
+  }
+</svg>
