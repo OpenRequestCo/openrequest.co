@@ -22,7 +22,7 @@ export const story = {
   team: {
     eyebrow: 'Team view',
     title: 'Context already attached',
-    body: 'Handlers get requests with the details filled in. Clear ownership, a simple view, and no chasing missing information.',
+    body: 'When a request lands, the ask is clear and the details are already filled in — who raised it, which team, and who should own it next.',
   },
   audience: {
     eyebrow: 'Who this is for',
