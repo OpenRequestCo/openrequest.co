@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <!-- Story page content will live here. -->
+  <section
+    class="mx-auto w-full max-w-[80rem] px-[clamp(1.25rem,4vw,4.5rem)] py-[clamp(4rem,12vw,8rem)]"
+    aria-labelledby="story-heading"
+  >
+    <p class="mb-3 text-sm font-medium tracking-wide text-blue uppercase">Story</p>
+    <h1 id="story-heading" class="max-w-3xl font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+      Internal support starts with a conversation.
+    </h1>
+    <p class="mt-5 max-w-2xl text-lg text-navy/70">
+      Page structure ready. Content sections land next.
+    </p>
+  </section>
+
+  <!-- Anchors reserved for nav CTAs until product flows exist. -->
+  <div id="early-access" class="scroll-mt-24" hidden></div>
+  <div id="sign-in" class="scroll-mt-24" hidden></div>
+</BaseLayout>

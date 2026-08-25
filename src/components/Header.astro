@@ -1,0 +1,48 @@
+---
+import { NAV_ITEMS, SITE_TITLE } from '../consts';
+---
+
+<header class="border-b border-line">
+  <div
+    class="mx-auto flex w-full max-w-[80rem] items-center justify-between gap-6 px-[clamp(1.25rem,4vw,4.5rem)] py-4"
+  >
+    <a class="shrink-0" href="/" aria-label={`${SITE_TITLE}, home`}>
+      <img
+        src="/images/symbol-wordmark-horizontal.svg"
+        alt={SITE_TITLE}
+        width="160"
+        height="32"
+        class="h-8 w-auto"
+      />
+    </a>
+
+    <nav aria-label="Primary" class="flex items-center gap-1 sm:gap-2">
+      {
+        NAV_ITEMS.map((item) => {
+          if (item.emphasis === 'primary') {
+            return (
+              <a
+                href={item.href}
+                class="rounded-md bg-blue px-3 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:px-4"
+              >
+                {item.label}
+              </a>
+            );
+          }
+
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                'px-2 py-2 text-sm font-medium text-navy/80 transition hover:text-navy sm:px-3',
+                item.emphasis === 'secondary' && 'hidden sm:inline',
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
+</header>
