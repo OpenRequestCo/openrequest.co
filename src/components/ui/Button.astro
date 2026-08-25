@@ -1,7 +1,7 @@
 ---
 interface Props {
   href?: string;
-  variant?: 'primary' | 'secondary' | 'text';
+  variant?: 'primary' | 'secondary' | 'zinc' | 'text';
   class?: string;
 }
 
@@ -11,6 +11,8 @@ const classes = [
   'inline-flex items-center justify-center gap-1.5 text-sm font-medium transition-colors duration-150',
   variant === 'primary' &&
     'rounded-[var(--radius-md)] bg-accent px-3.5 py-2 text-white hover:bg-accent-hover',
+  variant === 'zinc' &&
+    'rounded-[var(--radius-md)] bg-zinc-900 px-3.5 py-2 text-white hover:bg-zinc-800',
   variant === 'secondary' &&
     'rounded-[var(--radius-md)] border border-border-strong bg-surface px-3.5 py-2 text-ink hover:bg-surface-muted',
   variant === 'text' && 'text-ink-muted hover:text-ink',

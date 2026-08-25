@@ -1,57 +1,47 @@
 ---
 /**
- * Header with product continuity: blue hairline, centred quiet nav,
- * underline CTA — not the default logo / links / solid-button cluster.
+ * Header: logo left, quiet links + dark zinc CTA on the right.
  */
 import { EARLY_ACCESS_HREF, NAV_ITEMS, SIGN_IN_HREF, SITE_TITLE } from '../consts';
 
 const pricing = NAV_ITEMS.find((item) => item.label === 'Pricing');
 ---
 
-<header class="sticky top-0 z-40 bg-canvas/85 backdrop-blur-md">
-  <div class="page-shell">
-    <div class="grid grid-cols-2 items-center gap-3 py-4 sm:grid-cols-[1fr_auto_1fr]">
-      <a href="/" class="justify-self-start" aria-label={`${SITE_TITLE}, home`}>
-        <img
-          src="/images/symbol-wordmark-horizontal.svg"
-          alt={SITE_TITLE}
-          width="138"
-          height="28"
-          class="h-[1.375rem] w-auto"
-        />
-      </a>
+<header class="sticky top-0 z-40 border-b border-border bg-canvas/90 backdrop-blur-md">
+  <div class="page-shell flex items-center justify-between gap-6 py-3.5">
+    <a href="/" class="shrink-0" aria-label={`${SITE_TITLE}, home`}>
+      <img
+        src="/images/symbol-wordmark-horizontal.svg"
+        alt={SITE_TITLE}
+        width="138"
+        height="28"
+        class="h-[1.375rem] w-auto"
+      />
+    </a>
 
-      <nav
-        aria-label="Primary"
-        class="hidden items-center gap-2.5 justify-self-center text-[0.8125rem] tracking-tight text-ink-muted sm:flex"
-      >
-        {
-          pricing && (
-            <a href={pricing.href} class="transition-colors hover:text-ink">
-              {pricing.label}
-            </a>
-          )
-        }
-        <span class="select-none text-zinc-300" aria-hidden="true">/</span>
-        <a href={SIGN_IN_HREF} class="transition-colors hover:text-ink">Sign in</a>
-      </nav>
-
-      <div class="justify-self-end">
-        <a
-          href={EARLY_ACCESS_HREF}
-          class="group inline-flex items-center gap-1.5 border-b border-accent pb-0.5 text-[0.8125rem] font-medium tracking-tight text-ink transition-colors hover:text-accent"
-        >
-          Get early access
-          <span
-            class="transition-transform duration-150 group-hover:translate-x-0.5"
-            aria-hidden="true"
+    <nav aria-label="Primary" class="flex items-center gap-1 sm:gap-2">
+      {
+        pricing && (
+          <a
+            href={pricing.href}
+            class="px-2.5 py-1.5 text-[0.8125rem] font-medium text-ink-muted transition-colors hover:text-ink"
           >
-            →
-          </span>
-        </a>
-      </div>
-    </div>
+            {pricing.label}
+          </a>
+        )
+      }
+      <a
+        href={SIGN_IN_HREF}
+        class="hidden px-2.5 py-1.5 text-[0.8125rem] font-medium text-ink-muted transition-colors hover:text-ink sm:inline"
+      >
+        Sign in
+      </a>
+      <a
+        href={EARLY_ACCESS_HREF}
+        class="ml-1 inline-flex items-center rounded-[var(--radius-md)] bg-zinc-900 px-3 py-1.5 text-[0.8125rem] font-medium text-white transition-colors hover:bg-zinc-800"
+      >
+        Get early access
+      </a>
+    </nav>
   </div>
-  {/* Product portal cue: precise blue rule */}
-  <div class="h-px bg-accent" aria-hidden="true"></div>
 </header>

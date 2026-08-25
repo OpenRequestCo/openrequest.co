@@ -1,34 +1,34 @@
 ---
 /**
- * Sequential story chapter.
- * Prose leads; optional visual slot follows in the reading flow (never a card grid).
+ * Story section in Linear’s rhythm: title + copy, then one visual.
  */
 interface Props {
   id?: string;
   eyebrow?: string;
   class?: string;
-  compact?: boolean;
-  /** Stretch content to page width (for composed product stages). */
-  wide?: boolean;
+  /** Content measure before the visual. */
+  measure?: 'narrow' | 'readable' | 'wide';
 }
 
-const { id, eyebrow, class: className, compact = false, wide = false } = Astro.props;
+const { id, eyebrow, class: className, measure = 'readable' } = Astro.props;
+
+const measureClass = {
+  narrow: 'max-w-[32rem]',
+  readable: 'max-w-[40rem]',
+  wide: 'max-w-[52rem]',
+}[measure];
 ---
 
 <section
   id={id}
-  class:list={[
-    'page-shell',
-    compact ? 'py-[var(--spacing-chapter-sm)]' : 'py-[var(--spacing-chapter)]',
-    className,
-  ]}
+  class:list={['page-shell py-[var(--spacing-chapter)]', className]}
 >
   {
     eyebrow && (
-      <p class="type-caption mb-5">{eyebrow}</p>
+      <p class="type-caption mb-4">{eyebrow}</p>
     )
   }
-  <div class:list={[wide ? 'max-w-none' : 'max-w-[var(--max-width-prose)]']}>
+  <div class={measureClass}>
     <slot />
   </div>
   {
