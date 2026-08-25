@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import FeatureBlock from '../components/FeatureBlock.astro'
 import Chapter from '../components/Chapter.astro'
 import SectionRule from '../components/SectionRule.astro'
+import GridPlus from '../components/GridPlus.astro'
 import Button from '../components/ui/Button.astro'
 import TeamIcon from '../components/icons/TeamIcon.astro'
 import SearchMoment from '../components/product/SearchMoment.astro'
@@ -57,12 +58,13 @@ import { story } from '../content/copy/story'
 
   <SectionRule />
 
-  {/* Team — copy left, properties sidebar right */}
+  {/* Team — copy left, thread + properties right */}
   <FeatureBlock
     id="team-view"
     eyebrow={story.team.eyebrow}
     title={story.team.title}
     body={story.team.body}
+    visualPriority
   >
     <HandlerMoment slot="visual" />
   </FeatureBlock>
@@ -92,27 +94,29 @@ import { story } from '../content/copy/story'
 
   <SectionRule />
 
-  {/* Early access — open band, left-led, more room */}
-  <section id="early-access" class="relative scroll-mt-24 overflow-hidden">
-    <div class="absolute inset-0 bg-zinc-50 dark:bg-zinc-950" aria-hidden="true"></div>
-    <div
-      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_0%_0%,rgba(20,96,255,0.1),transparent_55%)]"
-      aria-hidden="true"
-    >
-    </div>
-    <div class="page-shell relative py-24 sm:py-28 lg:py-32">
-      <div class="max-w-2xl">
-        <p class="type-caption mb-4">Early access</p>
-        <h2 class="type-display text-4xl tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
-          {story.close.title}
-        </h2>
-        <p class="type-lede mt-6 max-w-xl">{story.close.body}</p>
-        <p class="type-body mt-3 max-w-xl">{story.close.detail}</p>
-        <div class="mt-10">
-          <Button href={EARLY_ACCESS_HREF} variant="zinc">
-            {story.close.title}
-            <span aria-hidden="true">→</span>
-          </Button>
+  {/* Early access — centred inside a hairline grid cell */}
+  <section id="early-access" class="scroll-mt-24">
+    <div class="page-shell py-16 sm:py-20 lg:py-24">
+      <div class="relative border border-zinc-200 dark:border-zinc-800">
+        <GridPlus class="top-[0.5px] left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
+        <GridPlus class="top-[0.5px] right-[0.5px] translate-x-1/2 -translate-y-1/2" />
+        <GridPlus class="bottom-[0.5px] left-[0.5px] -translate-x-1/2 translate-y-1/2" />
+        <GridPlus class="bottom-[0.5px] right-[0.5px] translate-x-1/2 translate-y-1/2" />
+
+        <div class="mx-auto max-w-md px-6 py-16 text-center sm:px-10 sm:py-20">
+          <p class="type-caption mb-4">Early access</p>
+          <h2 class="type-title text-pretty">{story.close.title}</h2>
+          <p class="type-lede mt-5 text-pretty">
+            {story.close.body}
+            {' '}
+            {story.close.detail}
+          </p>
+          <div class="mt-8 flex justify-center">
+            <Button href={EARLY_ACCESS_HREF} variant="zinc">
+              {story.close.title}
+              <span aria-hidden="true">→</span>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

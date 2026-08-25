@@ -1,38 +1,72 @@
 ---
 /**
- * Team view — PROPERTIES panel only, fields from the product screenshot:
- * Status, Raised by, Assignee, Team.
+ * Team view — same request as the employee thread, from the handler seat:
+ * conversation + PROPERTIES. No invented fields; attribution is Nic (raiser).
+ * Reveal: 1 request → 2 reply → 3 properties.
  */
 ---
 
-<aside
-  class="w-full max-w-[17.5rem] border-l border-zinc-200 bg-white pl-5 dark:border-zinc-800 dark:bg-zinc-950 lg:ml-auto"
-  aria-label="Request properties"
+<div
+  class="grid w-full items-start gap-8 sm:grid-cols-[minmax(0,1fr)_11.5rem] sm:gap-0"
   data-reveal
 >
-  <p class="text-[11px] font-semibold tracking-[0.14em] text-zinc-400 uppercase">Properties</p>
+  <div class="min-w-0 space-y-3 sm:pr-6">
+    <div
+      class="mr-auto max-w-[min(100%,22rem)] rounded-2xl bg-zinc-100 px-4 py-3 text-ink opacity-0 translate-y-2 dark:bg-zinc-800"
+      data-reveal-item
+    >
+      <p class="text-[0.6875rem] font-medium text-zinc-500 dark:text-zinc-400">
+        Nic · 24 Aug, 13:33
+      </p>
+      <p class="mt-1.5 text-[0.875rem] leading-relaxed text-zinc-700 dark:text-zinc-300">
+        Need to create a new mailbox called qa@openrequest.co and make me and Tommy and Alfie as
+        members.
+      </p>
+    </div>
 
-  <dl class="mt-5 space-y-5 text-sm">
-    <div class="opacity-0 translate-y-2" data-reveal-item>
-      <dt class="text-zinc-500">Status</dt>
-      <dd class="mt-1.5 flex items-center gap-2 font-medium text-ink">
-        <span class="size-2.5 rounded-full bg-status-open" aria-hidden="true"></span>
-        Open
-      </dd>
+    <div
+      class="mr-auto max-w-[min(100%,22rem)] rounded-2xl bg-zinc-100 px-4 py-3 text-ink opacity-0 translate-y-2 dark:bg-zinc-800"
+      data-reveal-item
+    >
+      <p class="text-[0.6875rem] font-medium text-zinc-500 dark:text-zinc-400">
+        Rolo Rex · 24 Aug, 13:37
+      </p>
+      <p class="mt-1.5 text-[0.875rem] leading-relaxed text-zinc-700 dark:text-zinc-300">
+        Hi Nic - thanks for raising this. We are currently creating the mailbox and will delegate to
+        the members as requested.
+      </p>
     </div>
-    <div class="opacity-0 translate-y-2" data-reveal-item>
-      <dt class="text-zinc-500">Raised by</dt>
-      <dd class="mt-1.5 font-medium text-ink">Nic</dd>
-    </div>
-    <div class="opacity-0 translate-y-2" data-reveal-item>
-      <dt class="text-zinc-500">Assignee</dt>
-      <dd class="mt-1.5">
-        <button type="button" class="font-medium text-accent hover:underline">Assign to me</button>
-      </dd>
-    </div>
-    <div class="opacity-0 translate-y-2" data-reveal-item>
-      <dt class="text-zinc-500">Team</dt>
-      <dd class="mt-1.5 font-medium text-ink">IT Help Desk</dd>
-    </div>
-  </dl>
-</aside>
+  </div>
+
+  <aside
+    class="border-t border-zinc-200 pt-5 opacity-0 translate-y-2 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-5 dark:border-zinc-800"
+    aria-label="Request properties"
+    data-reveal-item
+  >
+    <p class="text-[11px] font-semibold tracking-[0.14em] text-zinc-400 uppercase">Properties</p>
+
+    <dl class="mt-5 space-y-5 text-sm">
+      <div>
+        <dt class="text-zinc-500">Status</dt>
+        <dd class="mt-1.5 flex items-center gap-2 font-medium text-ink">
+          <span class="size-2.5 rounded-full bg-status-open" aria-hidden="true"></span>
+          Open
+        </dd>
+      </div>
+      <div>
+        <dt class="text-zinc-500">Raised by</dt>
+        <dd class="mt-1.5 font-medium text-ink">Nic</dd>
+      </div>
+      <div>
+        <dt class="text-zinc-500">Assignee</dt>
+        <dd class="mt-1.5">
+          <button type="button" class="font-medium text-accent hover:underline">Assign to me</button>
+        </dd>
+      </div>
+      <div>
+        <dt class="text-zinc-500">Team</dt>
+        <dd class="mt-1.5 font-medium text-ink">IT Help Desk</dd>
+      </div>
+    </dl>
+  </aside>
+</div>

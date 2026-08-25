@@ -1,6 +1,7 @@
 ---
 /**
  * Two-column feature: copy left, stripped visual right.
+ * visualPriority gives the visual column more width (team thread + properties).
  */
 interface Props {
   id?: string
@@ -8,9 +9,10 @@ interface Props {
   title: string
   body: string
   class?: string
+  visualPriority?: boolean
 }
 
-const { id, eyebrow, title, body, class: className } = Astro.props
+const { id, eyebrow, title, body, class: className, visualPriority = false } = Astro.props
 ---
 
 <section id={id} class:list={['page-shell scroll-mt-24 py-14 sm:py-16 lg:py-20', className]}>
@@ -19,7 +21,14 @@ const { id, eyebrow, title, body, class: className } = Astro.props
       <p class="type-caption mb-5">{eyebrow}</p>
     )
   }
-  <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+  <div
+    class:list={[
+      'grid items-start gap-10 lg:gap-12 xl:gap-16',
+      visualPriority
+        ? 'lg:grid-cols-[minmax(0,18.5rem)_minmax(0,1fr)]'
+        : 'lg:grid-cols-2',
+    ]}
+  >
     <div class="max-w-md">
       <h2 class="type-title">{title}</h2>
       <p class="type-lede mt-5">{body}</p>
