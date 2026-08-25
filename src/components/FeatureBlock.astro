@@ -1,33 +1,31 @@
 ---
 /**
- * Linear-style feature block: title left, body right, optional visual below.
+ * Two-column feature: copy left, stripped visual right.
  */
 interface Props {
-  id?: string;
-  eyebrow?: string;
-  title: string;
-  body: string;
-  class?: string;
+  id?: string
+  eyebrow?: string
+  title: string
+  body: string
+  class?: string
 }
 
-const { id, eyebrow, title, body, class: className } = Astro.props;
+const { id, eyebrow, title, body, class: className } = Astro.props
 ---
 
-<section id={id} class:list={['page-shell py-12 sm:py-14 lg:py-16', className]}>
+<section id={id} class:list={['page-shell scroll-mt-24 py-14 sm:py-16 lg:py-20', className]}>
   {
     eyebrow && (
       <p class="type-caption mb-5">{eyebrow}</p>
     )
   }
-  <div class="grid gap-6 lg:grid-cols-12 lg:gap-10 lg:items-start">
-    <h2 class="type-title lg:col-span-5">{title}</h2>
-    <p class="type-lede lg:col-span-7 lg:pt-1">{body}</p>
+  <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+    <div class="max-w-md">
+      <h2 class="type-title">{title}</h2>
+      <p class="type-lede mt-5">{body}</p>
+    </div>
+    <div class="min-w-0 lg:pt-1">
+      <slot name="visual" />
+    </div>
   </div>
-  {
-    Astro.slots.has('visual') && (
-      <div class="mt-10 w-full lg:mt-12">
-        <slot name="visual" />
-      </div>
-    )
-  }
 </section>

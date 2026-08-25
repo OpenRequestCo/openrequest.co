@@ -1,14 +1,19 @@
 ---
 /**
- * Full-bleed hairline; SVG pluses sized larger but stroked at 1px to match the line.
+ * Full-bleed hairline with SVG pluses.
+ * Line and pluses share the same centre line (both -translate-y-1/2 from top:0)
+ * so the plus stroke sits flush on the border — not a half-pixel above it.
  */
 ---
 
 <div class="relative w-full" aria-hidden="true">
-  <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-zinc-200"></div>
+  <div
+    class="pointer-events-none absolute inset-x-0 top-0 h-px -translate-y-1/2 bg-zinc-200 dark:bg-zinc-800"
+  >
+  </div>
   <div class="page-shell relative h-0">
     <svg
-      class="absolute top-0 left-0 z-10 -translate-x-1/2 -translate-y-1/2 text-zinc-300"
+      class="absolute top-0 left-0 z-10 -translate-x-1/2 -translate-y-1/2 text-zinc-300 dark:text-zinc-600"
       width="18"
       height="18"
       viewBox="0 0 18 18"
@@ -17,7 +22,7 @@
       <path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path>
     </svg>
     <svg
-      class="absolute top-0 right-0 z-10 translate-x-1/2 -translate-y-1/2 text-zinc-300"
+      class="absolute top-0 right-0 z-10 translate-x-1/2 -translate-y-1/2 text-zinc-300 dark:text-zinc-600"
       width="18"
       height="18"
       viewBox="0 0 18 18"

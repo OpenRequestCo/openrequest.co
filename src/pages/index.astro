@@ -1,30 +1,29 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import FeatureBlock from '../components/FeatureBlock.astro';
-import Chapter from '../components/Chapter.astro';
-import SectionRule from '../components/SectionRule.astro';
-import Button from '../components/ui/Button.astro';
-import TeamIcon from '../components/icons/TeamIcon.astro';
-import SearchMoment from '../components/product/SearchMoment.astro';
-import IdeaMoment from '../components/product/IdeaMoment.astro';
-import ConversationMoment from '../components/product/ConversationMoment.astro';
-import HandlerMoment from '../components/product/HandlerMoment.astro';
-import { EARLY_ACCESS_HREF } from '../consts';
-import { story } from '../content/copy/story';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import FeatureBlock from '../components/FeatureBlock.astro'
+import Chapter from '../components/Chapter.astro'
+import SectionRule from '../components/SectionRule.astro'
+import Button from '../components/ui/Button.astro'
+import TeamIcon from '../components/icons/TeamIcon.astro'
+import SearchMoment from '../components/product/SearchMoment.astro'
+import ConversationMoment from '../components/product/ConversationMoment.astro'
+import HandlerMoment from '../components/product/HandlerMoment.astro'
+import { EARLY_ACCESS_HREF } from '../consts'
+import { story } from '../content/copy/story'
 ---
 
 <BaseLayout>
   {/* Hero */}
   <section class="page-shell pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pt-32 lg:pb-24">
     <div class="max-w-176">
-      <h1 class="type-display text-6xl/16 text-zinc-950 ">{story.hero.headline}</h1>
+      <h1 class="type-display text-6xl/16 text-zinc-950">{story.hero.headline}</h1>
       <p class="type-lede mt-5 max-w-prose">{story.hero.subhead}</p>
       <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
         <Button href={EARLY_ACCESS_HREF} variant="zinc">
           {story.hero.primaryCta}
         </Button>
         <a
-          href="#how-it-works"
+          href="/#how-it-works"
           class="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
         >
           {story.hero.secondaryCta}
@@ -38,36 +37,35 @@ import { story } from '../content/copy/story';
 
   <SectionRule />
 
-  {/* Continuous loop — Linear title/body + stripped visuals */}
-  <div class="pb-[var(--spacing-chapter)] pt-4 sm:pt-6">
-    <FeatureBlock
-      id="how-it-works"
-      eyebrow="The idea"
-      title={story.idea.headline}
-      body={story.idea.body}
-    >
-      <IdeaMoment slot="visual" />
-    </FeatureBlock>
+  {/* The idea — copy only */}
+  <Chapter id="how-it-works" eyebrow="The idea">
+    <h2 class="type-title">{story.idea.headline}</h2>
+    <p class="type-lede mt-5">{story.idea.body}</p>
+  </Chapter>
 
-    <FeatureBlock
-      id="employee-view"
-      eyebrow={story.employee.eyebrow}
-      title={story.employee.title}
-      body={story.employee.body}
-    >
-      <ConversationMoment slot="visual" />
-    </FeatureBlock>
+  <SectionRule />
 
-    <FeatureBlock
-      id="team-view"
-      eyebrow={story.team.eyebrow}
-      title={story.team.title}
-      body={story.team.body}
-      class="pb-0"
-    >
-      <HandlerMoment slot="visual" />
-    </FeatureBlock>
-  </div>
+  {/* Employee — copy left, bubbles right */}
+  <FeatureBlock
+    id="employee-view"
+    eyebrow={story.employee.eyebrow}
+    title={story.employee.title}
+    body={story.employee.body}
+  >
+    <ConversationMoment slot="visual" />
+  </FeatureBlock>
+
+  <SectionRule />
+
+  {/* Team — copy left, properties sidebar right */}
+  <FeatureBlock
+    id="team-view"
+    eyebrow={story.team.eyebrow}
+    title={story.team.title}
+    body={story.team.body}
+  >
+    <HandlerMoment slot="visual" />
+  </FeatureBlock>
 
   <SectionRule />
 
@@ -81,9 +79,7 @@ import { story } from '../content/copy/story';
       {
         story.audience.teams.map((team) => (
           <li class="group rounded-2xl border border-zinc-200/80 bg-surface p-5 transition-shadow duration-300 hover:shadow-[var(--shadow-quiet)]">
-            <span
-              class="flex size-10 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 ring-1 ring-zinc-200/70 transition duration-300 group-hover:scale-[1.04] group-hover:bg-gradient-to-br group-hover:from-zinc-50 group-hover:via-zinc-100 group-hover:to-zinc-200/80 group-hover:text-zinc-800 group-hover:shadow-inner"
-            >
+            <span class="flex size-10 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 ring-1 ring-zinc-200/70 transition duration-300 group-hover:scale-[1.04] group-hover:bg-gradient-to-br group-hover:from-zinc-50 group-hover:via-zinc-100 group-hover:to-zinc-200/80 group-hover:text-zinc-800 group-hover:shadow-inner">
               <TeamIcon name={team.icon} />
             </span>
             <p class="mt-4 text-[0.9375rem] font-semibold tracking-tight text-ink">{team.name}</p>
@@ -96,15 +92,23 @@ import { story } from '../content/copy/story';
 
   <SectionRule />
 
-  {/* Early access — quiet, tight, light */}
-  <section id="early-access" class="bg-zinc-100/80">
-    <div class="page-shell py-14 sm:py-16 lg:py-20">
-      <div class="mx-auto max-w-xl text-center">
-        <p class="type-caption mb-3">Early access</p>
-        <h2 class="type-title">{story.close.title}</h2>
-        <p class="type-lede mt-4">{story.close.body}</p>
-        <p class="type-body mt-2">{story.close.detail}</p>
-        <div class="mt-7">
+  {/* Early access — open band, left-led, more room */}
+  <section id="early-access" class="relative scroll-mt-24 overflow-hidden">
+    <div class="absolute inset-0 bg-zinc-50 dark:bg-zinc-950" aria-hidden="true"></div>
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_0%_0%,rgba(20,96,255,0.1),transparent_55%)]"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="page-shell relative py-24 sm:py-28 lg:py-32">
+      <div class="max-w-2xl">
+        <p class="type-caption mb-4">Early access</p>
+        <h2 class="type-display text-4xl tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
+          {story.close.title}
+        </h2>
+        <p class="type-lede mt-6 max-w-xl">{story.close.body}</p>
+        <p class="type-body mt-3 max-w-xl">{story.close.detail}</p>
+        <div class="mt-10">
           <Button href={EARLY_ACCESS_HREF} variant="zinc">
             {story.close.title}
             <span aria-hidden="true">→</span>

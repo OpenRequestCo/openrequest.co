@@ -1,31 +1,51 @@
 ---
 /**
- * Stripped employee conversation — bubbles only, animates in on view.
+ * Employee conversation — bubbles + composer only (no card chrome).
+ * Copy and timestamps match the product screenshot.
+ * Reveal order: 1 You → 2 Rolo Rex → 3 composer
  */
 ---
 
-<figure
-  class="overflow-hidden rounded-2xl border border-zinc-200/80 bg-canvas p-5 shadow-[var(--shadow-quiet)] sm:p-6"
-  data-reveal
->
-  <div class="mx-auto max-w-lg space-y-3">
-    <div
-      class="ml-auto max-w-[85%] rounded-2xl bg-accent px-4 py-3 text-white opacity-0 translate-y-2"
-      data-reveal-item
-    >
-      <p class="text-[0.6875rem] font-medium text-white/75">You</p>
-      <p class="mt-1 text-[0.875rem] leading-relaxed">
-        Need a shared mailbox for qa@openrequest.co with me, Tommy, and Alfie as members.
-      </p>
-    </div>
-    <div
-      class="mr-auto max-w-[85%] rounded-2xl bg-zinc-100 px-4 py-3 text-ink opacity-0 translate-y-2"
-      data-reveal-item
-    >
-      <p class="text-[0.6875rem] font-medium text-zinc-500">Rolo Rex · IT Help Desk</p>
-      <p class="mt-1 text-[0.875rem] leading-relaxed text-zinc-700">
-        On it — creating the mailbox now and will delegate access once it’s ready.
-      </p>
-    </div>
+<div class="w-full max-w-md space-y-3 lg:ml-auto" data-reveal>
+  <div
+    class="ml-auto max-w-[min(100%,22rem)] rounded-2xl bg-accent px-4 py-3 text-white opacity-0 translate-y-2"
+    data-reveal-item
+  >
+    <p class="text-[0.6875rem] font-medium text-white/75">You · 24 Aug, 13:33</p>
+    <p class="mt-1.5 text-[0.875rem] leading-relaxed">
+      Need to create a new mailbox called qa@openrequest.co and make me and Tommy and Alfie as
+      members.
+    </p>
   </div>
-</figure>
+
+  <div
+    class="mr-auto max-w-[min(100%,22rem)] rounded-2xl bg-zinc-100 px-4 py-3 text-ink opacity-0 translate-y-2 dark:bg-zinc-800"
+    data-reveal-item
+  >
+    <p class="text-[0.6875rem] font-medium text-zinc-500 dark:text-zinc-400">Rolo Rex · 24 Aug, 13:37</p>
+    <p class="mt-1.5 text-[0.875rem] leading-relaxed text-zinc-700 dark:text-zinc-300">
+      Hi Nic - thanks for raising this. We are currently creating the mailbox and will delegate to
+      the members as requested.
+    </p>
+  </div>
+
+  <div
+    class="flex items-center gap-2 rounded-xl bg-zinc-100 px-3 py-2.5 opacity-0 translate-y-2 dark:bg-zinc-800"
+    data-reveal-item
+  >
+    <p class="min-w-0 flex-1 text-[0.875rem] text-zinc-400">Write a message...</p>
+    <span
+      class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-accent text-white"
+      aria-hidden="true"
+    >
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path
+          d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+</div>
