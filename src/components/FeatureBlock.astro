@@ -1,0 +1,33 @@
+---
+/**
+ * Linear-style feature block: title left, body right, optional visual below.
+ */
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title: string;
+  body: string;
+  class?: string;
+}
+
+const { id, eyebrow, title, body, class: className } = Astro.props;
+---
+
+<section id={id} class:list={['page-shell py-12 sm:py-14 lg:py-16', className]}>
+  {
+    eyebrow && (
+      <p class="type-caption mb-5">{eyebrow}</p>
+    )
+  }
+  <div class="grid gap-6 lg:grid-cols-12 lg:gap-10 lg:items-start">
+    <h2 class="type-title lg:col-span-5">{title}</h2>
+    <p class="type-lede lg:col-span-7 lg:pt-1">{body}</p>
+  </div>
+  {
+    Astro.slots.has('visual') && (
+      <div class="mt-10 w-full lg:mt-12">
+        <slot name="visual" />
+      </div>
+    )
+  }
+</section>

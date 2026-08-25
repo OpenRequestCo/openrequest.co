@@ -1,13 +1,14 @@
 ---
 /**
  * Employee start screen: How can we help + typing search → matches + Your requests.
- * Mirrors the product command palette behaviour.
+ * Typing animation starts only when scrolled into view.
  */
 ---
 
 <figure
   class="overflow-hidden rounded-2xl border border-zinc-200/80 bg-surface shadow-[var(--shadow-quiet)]"
   data-palette
+  data-palette-await-view
 >
   <div class="border-b border-zinc-100 bg-surface px-5 py-5 sm:px-6">
     <p class="text-[0.75rem] font-medium text-accent">OpenRequest</p>
@@ -151,6 +152,7 @@
   </div>
 </figure>
 
+<<<<<<< HEAD
 <script>
   function runPalette(root: HTMLElement) {
     if (root.dataset.paletteReady === 'true') return;
@@ -209,6 +211,8 @@
   document.addEventListener('astro:page-load', boot);
 </script>
 
+=======
+>>>>>>> 8f4326e (Polish motion, Linear feature layout, and quiet CTA)
 <style>
   @keyframes palette-blink {
     50% {

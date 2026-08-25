@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
 import Chapter from '../components/Chapter.astro';
 import SectionRule from '../components/SectionRule.astro';
 import Button from '../components/ui/Button.astro';
 import TeamIcon from '../components/icons/TeamIcon.astro';
 import SearchMoment from '../components/product/SearchMoment.astro';
+import IdeaMoment from '../components/product/IdeaMoment.astro';
 import ConversationMoment from '../components/product/ConversationMoment.astro';
 import HandlerMoment from '../components/product/HandlerMoment.astro';
 import { EARLY_ACCESS_HREF } from '../consts';
@@ -36,29 +38,40 @@ import { story } from '../content/copy/story';
 
   <SectionRule />
 
-  {/* Continuous loop: idea → employee → team (no hairlines between) */}
-  <div id="how-it-works" class="pb-[var(--spacing-chapter)]">
-    <Chapter eyebrow="The idea" tight class="pt-[var(--spacing-chapter)] pb-6 sm:pb-8">
-      <h2 class="type-title">{story.idea.headline}</h2>
-      <p class="type-lede mt-5">{story.idea.body}</p>
-    </Chapter>
+  {/* Continuous loop — Linear title/body + stripped visuals */}
+  <div class="pb-[var(--spacing-chapter)] pt-4 sm:pt-6">
+    <FeatureBlock
+      id="how-it-works"
+      eyebrow="The idea"
+      title={story.idea.headline}
+      body={story.idea.body}
+    >
+      <IdeaMoment slot="visual" />
+    </FeatureBlock>
 
-    <Chapter id="employee-view" eyebrow={story.employee.eyebrow} tight>
-      <h2 class="type-title">{story.employee.title}</h2>
-      <p class="type-lede mt-5">{story.employee.body}</p>
+    <FeatureBlock
+      id="employee-view"
+      eyebrow={story.employee.eyebrow}
+      title={story.employee.title}
+      body={story.employee.body}
+    >
       <ConversationMoment slot="visual" />
-    </Chapter>
+    </FeatureBlock>
 
-    <Chapter id="team-view" eyebrow={story.team.eyebrow} tight class="pb-0">
-      <h2 class="type-title">{story.team.title}</h2>
-      <p class="type-lede mt-5">{story.team.body}</p>
+    <FeatureBlock
+      id="team-view"
+      eyebrow={story.team.eyebrow}
+      title={story.team.title}
+      body={story.team.body}
+      class="pb-0"
+    >
       <HandlerMoment slot="visual" />
-    </Chapter>
+    </FeatureBlock>
   </div>
 
   <SectionRule />
 
-  {/* Who this is for — full container width */}
+  {/* Who this is for */}
   <Chapter id="audience" eyebrow={story.audience.eyebrow} measure="full">
     <div class="max-w-[42rem]">
       <h2 class="type-title">{story.audience.title}</h2>
@@ -83,25 +96,19 @@ import { story } from '../content/copy/story';
 
   <SectionRule />
 
-  {/* Early access — dark zinc band between hairlines */}
-  <section
-    id="early-access"
-    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-950 text-white"
-  >
-    <div class="page-shell py-[var(--spacing-chapter)]">
-      <p class="type-caption mb-4 text-zinc-400">Early access</p>
-      <div class="max-w-[40rem]">
-        <h2 class="type-title text-white">{story.close.title}</h2>
-        <p class="mt-5 text-[1.125rem] leading-relaxed text-zinc-300">{story.close.body}</p>
-        <p class="mt-3 text-[1.0625rem] leading-relaxed text-zinc-400">{story.close.detail}</p>
-        <div class="mt-8">
-          <a
-            href={EARLY_ACCESS_HREF}
-            class="inline-flex items-center rounded-[var(--radius-md)] bg-white px-4 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
-          >
+  {/* Early access — quiet, tight, light */}
+  <section id="early-access" class="bg-zinc-100/80">
+    <div class="page-shell py-14 sm:py-16 lg:py-20">
+      <div class="mx-auto max-w-xl text-center">
+        <p class="type-caption mb-3">Early access</p>
+        <h2 class="type-title">{story.close.title}</h2>
+        <p class="type-lede mt-4">{story.close.body}</p>
+        <p class="type-body mt-2">{story.close.detail}</p>
+        <div class="mt-7">
+          <Button href={EARLY_ACCESS_HREF} variant="zinc">
             {story.close.title}
-            <span class="ml-1.5" aria-hidden="true">→</span>
-          </a>
+            <span aria-hidden="true">→</span>
+          </Button>
         </div>
       </div>
     </div>

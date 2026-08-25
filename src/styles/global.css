@@ -154,3 +154,13 @@
     border: 0;
   }
 }
+
+@keyframes palette-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+[data-palette-row][data-active='true'] {
+  background: var(--color-zinc-100);
+}
