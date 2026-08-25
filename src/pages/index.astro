@@ -13,10 +13,10 @@ import { story } from '../content/copy/story';
 
 <BaseLayout>
   {/* Hero */}
-  <section class="page-shell pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24">
-    <div class="max-w-[44rem]">
-      <h1 class="type-display">{story.hero.headline}</h1>
-      <p class="type-lede mt-5 max-w-[40rem]">{story.hero.subhead}</p>
+  <section class="page-shell pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pt-32 lg:pb-24">
+    <div class="max-w-176">
+      <h1 class="type-display text-6xl/16 text-zinc-950 ">{story.hero.headline}</h1>
+      <p class="type-lede mt-5 max-w-prose">{story.hero.subhead}</p>
       <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
         <Button href={EARLY_ACCESS_HREF} variant="zinc">
           {story.hero.primaryCta}

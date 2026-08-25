@@ -7,7 +7,7 @@ import { EARLY_ACCESS_HREF, NAV_ITEMS, SIGN_IN_HREF, SITE_TITLE } from '../const
 const pricing = NAV_ITEMS.find((item) => item.label === 'Pricing');
 ---
 
-<header class="sticky top-0 z-40 border-b border-border bg-canvas/90 backdrop-blur-md">
+<header class="sticky top-0 z-40 border-b border-border bg-white backdrop-blur-md">
   <div class="page-shell flex items-center justify-between gap-6 py-3.5">
     <a href="/" class="shrink-0" aria-label={`${SITE_TITLE}, home`}>
       <img
@@ -15,7 +15,7 @@ const pricing = NAV_ITEMS.find((item) => item.label === 'Pricing');
         alt={SITE_TITLE}
         width="138"
         height="28"
-        class="h-[1.375rem] w-auto"
+        class="h-7 w-auto"
       />
     </a>
 
@@ -24,7 +24,7 @@ const pricing = NAV_ITEMS.find((item) => item.label === 'Pricing');
         pricing && (
           <a
             href={pricing.href}
-            class="px-2.5 py-1.5 text-[0.8125rem] font-medium text-ink-muted transition-colors hover:text-ink"
+            class="px-2.5 py-1.5 text-[0.8125rem] font-medium text-ink-muted transition-colors hover:text-zinc-600 hover:bg-zinc-100 rounded-3xl"
           >
             {pricing.label}
           </a>
@@ -32,13 +32,13 @@ const pricing = NAV_ITEMS.find((item) => item.label === 'Pricing');
       }
       <a
         href={SIGN_IN_HREF}
-        class="hidden px-2.5 py-1.5 text-[0.8125rem] font-medium text-ink-muted transition-colors hover:text-ink sm:inline"
+        class="hidden px-2.5 py-1.5 text-[0.8125rem] font-medium text-ink-muted transition-colors hover:text-zinc-600 hover:bg-zinc-100 rounded-3xl sm:inline"
       >
         Sign in
       </a>
       <a
         href={EARLY_ACCESS_HREF}
-        class="ml-1 inline-flex items-center rounded-[var(--radius-md)] bg-zinc-900 px-3 py-1.5 text-[0.8125rem] font-medium text-white transition-colors hover:bg-zinc-800"
+        class="ml-1 inline-flex items-center rounded-3xl bg-zinc-900 px-3 py-1.5 text-[0.8125rem] font-medium text-white transition-colors hover:bg-zinc-800"
       >
         Get early access
       </a>
