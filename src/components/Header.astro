@@ -1,18 +1,17 @@
 ---
+import Button from './ui/Button.astro';
 import { NAV_ITEMS, SITE_TITLE } from '../consts';
 ---
 
-<header class="border-b border-line">
-  <div
-    class="mx-auto flex w-full max-w-[80rem] items-center justify-between gap-6 px-[clamp(1.25rem,4vw,4.5rem)] py-4"
-  >
+<header class="sticky top-0 z-40 border-b border-border bg-canvas/90 backdrop-blur-md">
+  <div class="page-shell flex items-center justify-between gap-6 py-3.5">
     <a class="shrink-0" href="/" aria-label={`${SITE_TITLE}, home`}>
       <img
         src="/images/symbol-wordmark-horizontal.svg"
         alt={SITE_TITLE}
-        width="160"
-        height="32"
-        class="h-8 w-auto"
+        width="148"
+        height="30"
+        class="h-7 w-auto"
       />
     </a>
 
@@ -21,25 +20,23 @@ import { NAV_ITEMS, SITE_TITLE } from '../consts';
         NAV_ITEMS.map((item) => {
           if (item.emphasis === 'primary') {
             return (
-              <a
-                href={item.href}
-                class="rounded-md bg-blue px-3 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:px-4"
-              >
+              <Button href={item.href} variant="primary" class="text-[0.8125rem] sm:text-sm">
                 {item.label}
-              </a>
+              </Button>
             );
           }
 
+          const ghostClass = [
+              'text-[0.8125rem] sm:text-sm',
+              item.emphasis === 'secondary' ? 'hidden sm:inline-flex' : '',
+            ]
+              .filter(Boolean)
+              .join(' ');
+
           return (
-            <a
-              href={item.href}
-              class:list={[
-                'px-2 py-2 text-sm font-medium text-navy/80 transition hover:text-navy sm:px-3',
-                item.emphasis === 'secondary' && 'hidden sm:inline',
-              ]}
-            >
+            <Button href={item.href} variant="ghost" class={ghostClass}>
               {item.label}
-            </a>
+            </Button>
           );
         })
       }

@@ -1,0 +1,72 @@
+---
+/**
+ * Conversation thread — HTML/CSS product moment.
+ */
+import ProductFrame from './ProductFrame.astro';
+
+interface Message {
+  author: string;
+  role: 'requester' | 'system' | 'handler';
+  body: string;
+}
+
+interface Props {
+  label?: string;
+  messages?: Message[];
+}
+
+const {
+  label = 'Conversation',
+  messages = [
+    {
+      author: 'Jordan',
+      role: 'requester',
+      body: 'I need a laptop set up for our new engineer starting Monday.',
+    },
+    {
+      author: 'OpenRequest',
+      role: 'system',
+      body: 'Got it — IT hardware request. What’s their start date and preferred laptop type?',
+    },
+    {
+      author: 'Jordan',
+      role: 'requester',
+      body: 'Monday 7 April. Standard MacBook Pro is fine.',
+    },
+    {
+      author: 'Alex',
+      role: 'handler',
+      body: 'I’ll order this today and confirm delivery once it’s booked.',
+    },
+  ],
+} = Astro.props;
+
+const bubble = {
+  requester: 'bg-surface-muted text-ink',
+  system: 'bg-accent-soft text-ink',
+  handler: 'bg-surface border border-border text-ink',
+} as const;
+---
+
+<ProductFrame label={label}>
+  <div class="space-y-3 rounded-[var(--radius-lg)] border border-border bg-canvas p-3 sm:p-4">
+    {
+      messages.map((message) => (
+        <div class="flex flex-col gap-1">
+          <p class="text-[0.6875rem] font-medium tracking-wide text-ink-subtle uppercase">
+            {message.author}
+          </p>
+          <div
+            class:list={[
+              'max-w-[92%] rounded-[var(--radius-md)] px-3 py-2 text-[0.875rem] leading-relaxed',
+              bubble[message.role],
+              message.role === 'handler' ? 'self-end' : 'self-start',
+            ]}
+          >
+            {message.body}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</ProductFrame>

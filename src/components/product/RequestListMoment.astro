@@ -1,0 +1,66 @@
+---
+/**
+ * Handler request list — HTML/CSS product moment.
+ */
+import ProductFrame from './ProductFrame.astro';
+
+interface RequestRow {
+  title: string;
+  meta: string;
+  status: 'open' | 'done';
+  statusLabel: string;
+}
+
+interface Props {
+  label?: string;
+  rows?: RequestRow[];
+}
+
+const {
+  label = 'Requests',
+  rows = [
+    {
+      title: 'New laptop for starting engineer',
+      meta: 'IT · Unassigned',
+      status: 'open',
+      statusLabel: 'Open',
+    },
+    {
+      title: 'Access to design files',
+      meta: 'Internal tools · Alex',
+      status: 'open',
+      statusLabel: 'Open',
+    },
+    {
+      title: 'Desk move — Floor 3',
+      meta: 'Facilities · Sam',
+      status: 'done',
+      statusLabel: 'Done',
+    },
+  ],
+} = Astro.props;
+---
+
+<ProductFrame label={label}>
+  <ul class="divide-y divide-border overflow-hidden rounded-[var(--radius-lg)] border border-border bg-canvas">
+    {
+      rows.map((row) => (
+        <li class="flex items-center gap-3 bg-surface px-3.5 py-3 first:rounded-t-[var(--radius-lg)] last:rounded-b-[var(--radius-lg)]">
+          <div class="min-w-0 flex-1">
+            <p class="truncate text-[0.875rem] font-medium text-ink">{row.title}</p>
+            <p class="mt-0.5 truncate text-[0.75rem] text-ink-subtle">{row.meta}</p>
+          </div>
+          <span
+            class:list={[
+              'shrink-0 rounded-full px-2 py-0.5 text-[0.6875rem] font-medium',
+              row.status === 'open' && 'bg-status-open-bg text-status-open',
+              row.status === 'done' && 'bg-status-done-bg text-status-done',
+            ]}
+          >
+            {row.statusLabel}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</ProductFrame>

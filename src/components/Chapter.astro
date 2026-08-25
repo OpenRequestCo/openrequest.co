@@ -1,0 +1,39 @@
+---
+/**
+ * Sequential story chapter — one purpose, breathing room, no card chrome.
+ */
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  class?: string;
+  /** Tighter vertical rhythm for nested or secondary chapters. */
+  compact?: boolean;
+}
+
+const { id, eyebrow, class: className, compact = false } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={[
+    'page-shell',
+    compact ? 'py-[var(--spacing-chapter-sm)]' : 'py-[var(--spacing-chapter)]',
+    className,
+  ]}
+>
+  {
+    eyebrow && (
+      <p class="type-caption mb-4">{eyebrow}</p>
+    )
+  }
+  <div class="max-w-[var(--max-width-prose)]">
+    <slot />
+  </div>
+  {
+    Astro.slots.has('aside') && (
+      <div class="mt-10 max-w-4xl lg:mt-14">
+        <slot name="aside" />
+      </div>
+    )
+  }
+</section>

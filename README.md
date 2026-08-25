@@ -28,11 +28,21 @@ Static assets land in `dist/`. Deploy that folder to Vercel, Netlify, Cloudflare
 
 ```
 src/
-  components/   Header, Footer
-  layouts/      BaseLayout shell
-  pages/        Routes (index = story shell, pricing placeholder)
-  content/      Content collections (Markdown today; CMS later)
-  styles/       Global Tailwind + brand tokens
-  consts.ts     Site metadata + nav
-public/         Favicons, logos, static images
+  components/
+    Header.astro / Footer.astro
+    Chapter.astro              Story chapter container
+    ui/Button.astro            Primary / secondary / ghost
+    product/                   HTML/CSS product moments
+  layouts/BaseLayout.astro
+  pages/                       Routes
+  content/
+    copy/story.ts              First-pass story copy (OR-19)
+    pages/                     Content collections (CMS-ready)
+  styles/global.css            Design tokens + type scale
+  consts.ts                    Site metadata + nav
+public/images/                 Brand assets
 ```
+
+## Visual foundation
+
+Soft canvas (`#f5f6f8`), surface white, accent `#1460ff` (logo/product blue), Inter, generous chapter rhythm. Prefer HTML/CSS product moments over screenshots.

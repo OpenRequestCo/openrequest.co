@@ -1,23 +1,59 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Chapter from '../components/Chapter.astro';
+import Button from '../components/ui/Button.astro';
+import SearchMoment from '../components/product/SearchMoment.astro';
+import RequestListMoment from '../components/product/RequestListMoment.astro';
+import ConversationMoment from '../components/product/ConversationMoment.astro';
+import PropertiesMoment from '../components/product/PropertiesMoment.astro';
+import { EARLY_ACCESS_HREF } from '../consts';
+import { story } from '../content/copy/story';
 ---
 
 <BaseLayout>
-  <!-- Story page content will live here. -->
-  <section
-    class="mx-auto w-full max-w-[80rem] px-[clamp(1.25rem,4vw,4.5rem)] py-[clamp(4rem,12vw,8rem)]"
-    aria-labelledby="story-heading"
-  >
-    <p class="mb-3 text-sm font-medium tracking-wide text-blue uppercase">Story</p>
-    <h1 id="story-heading" class="max-w-3xl font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-      Internal support starts with a conversation.
-    </h1>
-    <p class="mt-5 max-w-2xl text-lg text-navy/70">
-      Page structure ready. Content sections land next.
-    </p>
-  </section>
+  {/*
+    Visual foundation: hero tone, CTA system, and HTML/CSS product moments.
+    Full sequential story chapters assemble in OR-19.
+  */}
+  <Chapter>
+    <h1 class="type-display">{story.hero.headline}</h1>
+    <p class="type-lede mt-6">{story.hero.subhead}</p>
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <Button href={EARLY_ACCESS_HREF} variant="primary">
+        {story.hero.primaryCta}
+        <span aria-hidden="true">→</span>
+      </Button>
+      <Button href="#product-moments" variant="ghost">
+        {story.hero.secondaryCta}
+      </Button>
+    </div>
+  </Chapter>
 
-  <!-- Anchors reserved for nav CTAs until product flows exist. -->
-  <div id="early-access" class="scroll-mt-24" hidden></div>
+  <Chapter id="product-moments" eyebrow="Product language" compact>
+    <h2 class="type-title">Quiet surfaces. Clear hierarchy. Conversation first.</h2>
+    <p class="type-body mt-4">
+      The same visual language as the product — rebuilt in HTML and CSS so the site stays light
+      and on-brand.
+    </p>
+    <div slot="aside" class="grid gap-5 sm:grid-cols-2">
+      <SearchMoment />
+      <ConversationMoment />
+      <RequestListMoment />
+      <PropertiesMoment />
+    </div>
+  </Chapter>
+
+  <Chapter id="early-access" eyebrow="Early access">
+    <h2 class="type-title">{story.close.title}</h2>
+    <p class="type-body mt-4">{story.close.body}</p>
+    <p class="type-body mt-3">{story.close.detail}</p>
+    <div class="mt-8">
+      <Button href={EARLY_ACCESS_HREF} variant="primary">
+        {story.close.title}
+        <span aria-hidden="true">→</span>
+      </Button>
+    </div>
+  </Chapter>
+
   <div id="sign-in" class="scroll-mt-24" hidden></div>
 </BaseLayout>

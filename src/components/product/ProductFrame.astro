@@ -1,0 +1,24 @@
+---
+/**
+ * Quiet white frame for HTML/CSS product moments.
+ */
+interface Props {
+  label?: string;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+---
+
+<figure class:list={['surface-panel overflow-hidden', className]}>
+  {
+    label && (
+      <figcaption class="border-b border-border px-4 py-2.5 type-small text-ink-subtle">
+        {label}
+      </figcaption>
+    )
+  }
+  <div class="p-3 sm:p-4">
+    <slot />
+  </div>
+</figure>

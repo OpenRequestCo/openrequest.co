@@ -1,11 +1,74 @@
 @import "tailwindcss";
 
+/*
+  OpenRequest marketing visual foundation
+  ---------------------------------------
+  Elevated, editorial expression of the product UI DNA:
+  soft canvas, restrained blue, generous whitespace, quiet chrome.
+*/
+
 @theme {
-  --color-navy: #0a1830;
-  --color-blue: #1460ff;
-  --color-line: rgb(10 24 48 / 0.14);
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  /* —— Colour —— */
+  --color-canvas: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef0f3;
+
+  --color-ink: #0a1830;
+  --color-ink-muted: #5c6675;
+  --color-ink-subtle: #8a93a0;
+
+  --color-accent: #1460ff;
+  --color-accent-hover: #0f52e0;
+  --color-accent-soft: #e8f0ff;
+
+  --color-border: rgb(10 24 48 / 0.08);
+  --color-border-strong: rgb(10 24 48 / 0.14);
+
+  --color-status-open: #c9920a;
+  --color-status-open-bg: #fff6df;
+  --color-status-done: #1a8f66;
+  --color-status-done-bg: #e6f6ef;
+
+  /* —— Typography (product continuity: Inter) —— */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --text-display: clamp(2.5rem, 5vw, 3.75rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+
+  --text-title: clamp(1.75rem, 3vw, 2.25rem);
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -0.025em;
+  --text-title--font-weight: 600;
+
+  --text-lede: 1.25rem;
+  --text-lede--line-height: 1.65;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.7;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.04em;
+
+  /* —— Layout —— */
+  --max-width-page: 72rem;
+  --max-width-prose: 40rem;
+  --max-width-measure: 34rem;
+  --spacing-gutter: clamp(1.25rem, 4vw, 3rem);
+  --spacing-chapter: clamp(5.5rem, 12vw, 9rem);
+  --spacing-chapter-sm: clamp(3.5rem, 8vw, 5.5rem);
+
+  /* —— Surfaces —— */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --shadow-quiet: 0 1px 2px rgb(10 24 48 / 0.04), 0 8px 24px rgb(10 24 48 / 0.04);
 }
 
 @layer base {
@@ -14,13 +77,86 @@
   }
 
   body {
-    @apply min-h-dvh bg-white text-navy antialiased;
+    @apply min-h-dvh bg-canvas text-ink antialiased;
     font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
-  a:focus-visible {
-    outline: 3px solid var(--color-blue);
-    outline-offset: 4px;
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .page-shell {
+    width: min(100%, var(--max-width-page));
+    margin-inline: auto;
+    padding-inline: var(--spacing-gutter);
+  }
+
+  .prose-measure {
+    max-width: var(--max-width-prose);
+  }
+
+  .type-display {
+    font-size: var(--text-display);
+    line-height: var(--text-display--line-height);
+    letter-spacing: var(--text-display--letter-spacing);
+    font-weight: var(--text-display--font-weight);
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  .type-title {
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    letter-spacing: var(--text-title--letter-spacing);
+    font-weight: var(--text-title--font-weight);
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  .type-lede {
+    font-size: var(--text-lede);
+    line-height: var(--text-lede--line-height);
+    color: var(--color-ink-muted);
+  }
+
+  .type-body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    color: var(--color-ink-muted);
+  }
+
+  .type-small {
+    font-size: var(--text-small);
+    line-height: var(--text-small--line-height);
+    color: var(--color-ink-muted);
+  }
+
+  .type-caption {
+    font-size: var(--text-caption);
+    line-height: var(--text-caption--line-height);
+    letter-spacing: var(--text-caption--letter-spacing);
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-ink-subtle);
+  }
+
+  .surface-panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-quiet);
   }
 }
