@@ -1,7 +1,7 @@
 ---
 /**
  * Employee start screen: How can we help + typing search → matches + Your requests.
- * Typing animation starts only when scrolled into view.
+ * Typing animation starts only when scrolled into view (see interactions.ts).
  */
 ---
 
@@ -9,6 +9,7 @@
   class="overflow-hidden rounded-2xl border border-zinc-200/80 bg-surface shadow-[var(--shadow-quiet)]"
   data-palette
   data-palette-await-view
+  data-palette-phrase="New laptop for starting engineer"
 >
   <div class="border-b border-zinc-100 bg-surface px-5 py-5 sm:px-6">
     <p class="text-[0.75rem] font-medium text-accent">OpenRequest</p>
@@ -151,76 +152,3 @@
     </div>
   </div>
 </figure>
-
-<<<<<<< HEAD
-<script>
-  function runPalette(root: HTMLElement) {
-    if (root.dataset.paletteReady === 'true') return;
-    root.dataset.paletteReady = 'true';
-
-    const textEl = root.querySelector<HTMLElement>('[data-palette-text]');
-    const caret = root.querySelector<HTMLElement>('[data-palette-caret]');
-    const clear = root.querySelector<HTMLElement>('[data-palette-clear]');
-    const results = root.querySelector<HTMLElement>('[data-palette-results]');
-    const rows = root.querySelectorAll<HTMLElement>('[data-palette-row]');
-    if (!textEl || !caret || !clear || !results) return;
-
-    const phrase = 'New laptop for starting engineer';
-    let i = 0;
-
-    caret.style.opacity = '1';
-    caret.style.animation = 'palette-blink 1s step-end infinite';
-
-    const typeTimer = window.setInterval(() => {
-      i += 1;
-      textEl.textContent = phrase.slice(0, i);
-      if (i >= phrase.length) {
-        window.clearInterval(typeTimer);
-        clear.style.opacity = '1';
-        results.classList.remove('hidden');
-        rows.forEach((row, index) => {
-          window.setTimeout(() => {
-            row.style.transition = 'opacity 280ms ease, transform 280ms ease';
-            row.style.opacity = '1';
-            row.style.transform = 'translateY(0)';
-            if (index === 0) row.dataset.active = 'true';
-          }, 70 + index * 110);
-        });
-
-        const setActive = (target: HTMLElement | null) => {
-          rows.forEach((row) => {
-            if (target && row === target) row.dataset.active = 'true';
-            else delete row.dataset.active;
-          });
-        };
-
-        rows.forEach((row) => {
-          row.addEventListener('mouseenter', () => setActive(row));
-          row.addEventListener('focus', () => setActive(row));
-        });
-        results.addEventListener('mouseleave', () => setActive(rows[0] ?? null));
-      }
-    }, 48);
-  }
-
-  function boot() {
-    document.querySelectorAll<HTMLElement>('[data-palette]').forEach(runPalette);
-  }
-
-  boot();
-  document.addEventListener('astro:page-load', boot);
-</script>
-
-=======
->>>>>>> 8f4326e (Polish motion, Linear feature layout, and quiet CTA)
-<style>
-  @keyframes palette-blink {
-    50% {
-      opacity: 0;
-    }
-  }
-
-  [data-palette-row][data-active='true'] {
-    background: var(--color-zinc-100);
-  }
-</style>
