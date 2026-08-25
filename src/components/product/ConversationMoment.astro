@@ -1,72 +1,65 @@
 ---
 /**
- * Conversation thread — HTML/CSS product moment.
+ * Conversation thread — structure serving the conversation.
  */
 import ProductFrame from './ProductFrame.astro';
-
-interface Message {
-  author: string;
-  role: 'requester' | 'system' | 'handler';
-  body: string;
-}
-
-interface Props {
-  label?: string;
-  messages?: Message[];
-}
-
-const {
-  label = 'Conversation',
-  messages = [
-    {
-      author: 'Jordan',
-      role: 'requester',
-      body: 'I need a laptop set up for our new engineer starting Monday.',
-    },
-    {
-      author: 'OpenRequest',
-      role: 'system',
-      body: 'Got it — IT hardware request. What’s their start date and preferred laptop type?',
-    },
-    {
-      author: 'Jordan',
-      role: 'requester',
-      body: 'Monday 7 April. Standard MacBook Pro is fine.',
-    },
-    {
-      author: 'Alex',
-      role: 'handler',
-      body: 'I’ll order this today and confirm delivery once it’s booked.',
-    },
-  ],
-} = Astro.props;
-
-const bubble = {
-  requester: 'bg-surface-muted text-ink',
-  system: 'bg-accent-soft text-ink',
-  handler: 'bg-surface border border-border text-ink',
-} as const;
 ---
 
-<ProductFrame label={label}>
-  <div class="space-y-3 rounded-[var(--radius-lg)] border border-border bg-canvas p-3 sm:p-4">
-    {
-      messages.map((message) => (
-        <div class="flex flex-col gap-1">
-          <p class="text-[0.6875rem] font-medium tracking-wide text-ink-subtle uppercase">
-            {message.author}
-          </p>
-          <div
-            class:list={[
-              'max-w-[92%] rounded-[var(--radius-md)] px-3 py-2 text-[0.875rem] leading-relaxed',
-              bubble[message.role],
-              message.role === 'handler' ? 'self-end' : 'self-start',
-            ]}
-          >
-            {message.body}
-          </div>
-        </div>
-      ))
-    }
+<ProductFrame>
+  <div class="border-b border-border px-5 py-4 sm:px-6">
+    <p class="type-caption">Activity</p>
+    <h3 class="mt-2 text-[1.0625rem] font-semibold tracking-tight text-ink">
+      New laptop for starting engineer
+    </h3>
+  </div>
+
+  <div class="space-y-4 bg-canvas px-4 py-5 sm:px-6">
+    <article class="rounded-[var(--radius-lg)] border border-border bg-surface px-4 py-3.5">
+      <div class="flex items-center gap-2">
+        <span
+          class="flex size-6 items-center justify-center rounded-full bg-zinc-200 text-[0.625rem] font-semibold text-ink-secondary"
+          aria-hidden="true"
+        >
+          J
+        </span>
+        <p class="text-[0.8125rem] font-medium text-ink">Jordan</p>
+        <p class="text-[0.75rem] text-ink-subtle">just now</p>
+      </div>
+      <p class="mt-2.5 text-[0.875rem] leading-relaxed text-ink-secondary">
+        I need a laptop set up for our new engineer starting Monday.
+      </p>
+    </article>
+
+    <article class="rounded-[var(--radius-lg)] border border-border bg-surface px-4 py-3.5">
+      <div class="flex items-center gap-2">
+        <span
+          class="flex size-6 items-center justify-center rounded-full bg-accent-soft text-[0.625rem] font-semibold text-accent"
+          aria-hidden="true"
+        >
+          OR
+        </span>
+        <p class="text-[0.8125rem] font-medium text-ink">OpenRequest</p>
+        <p class="text-[0.75rem] text-ink-subtle">guided</p>
+      </div>
+      <p class="mt-2.5 text-[0.875rem] leading-relaxed text-ink-secondary">
+        Got it — IT hardware request. What’s their start date and preferred laptop type?
+      </p>
+    </article>
+
+    <article class="rounded-[var(--radius-lg)] border border-border bg-surface px-4 py-3.5">
+      <div class="flex items-center gap-2">
+        <span
+          class="flex size-6 items-center justify-center rounded-full bg-zinc-200 text-[0.625rem] font-semibold text-ink-secondary"
+          aria-hidden="true"
+        >
+          J
+        </span>
+        <p class="text-[0.8125rem] font-medium text-ink">Jordan</p>
+        <p class="text-[0.75rem] text-ink-subtle">just now</p>
+      </div>
+      <p class="mt-2.5 text-[0.875rem] leading-relaxed text-ink-secondary">
+        Monday 7 April. Standard MacBook Pro is fine.
+      </p>
+    </article>
   </div>
 </ProductFrame>

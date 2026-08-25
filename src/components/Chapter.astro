@@ -1,16 +1,18 @@
 ---
 /**
- * Sequential story chapter — one purpose, breathing room, no card chrome.
+ * Sequential story chapter.
+ * Prose leads; optional visual slot follows in the reading flow (never a card grid).
  */
 interface Props {
   id?: string;
   eyebrow?: string;
   class?: string;
-  /** Tighter vertical rhythm for nested or secondary chapters. */
   compact?: boolean;
+  /** Stretch content to page width (for composed product stages). */
+  wide?: boolean;
 }
 
-const { id, eyebrow, class: className, compact = false } = Astro.props;
+const { id, eyebrow, class: className, compact = false, wide = false } = Astro.props;
 ---
 
 <section
@@ -23,16 +25,16 @@ const { id, eyebrow, class: className, compact = false } = Astro.props;
 >
   {
     eyebrow && (
-      <p class="type-caption mb-4">{eyebrow}</p>
+      <p class="type-caption mb-5">{eyebrow}</p>
     )
   }
-  <div class="max-w-[var(--max-width-prose)]">
+  <div class:list={[wide ? 'max-w-none' : 'max-w-[var(--max-width-prose)]']}>
     <slot />
   </div>
   {
-    Astro.slots.has('aside') && (
-      <div class="mt-10 max-w-4xl lg:mt-14">
-        <slot name="aside" />
+    Astro.slots.has('visual') && (
+      <div class="product-stage mt-10 lg:mt-12">
+        <slot name="visual" />
       </div>
     )
   }

@@ -1,24 +1,19 @@
 ---
 /**
- * Quiet white frame for HTML/CSS product moments.
+ * Quiet white stage for a single product moment in the narrative.
  */
 interface Props {
-  label?: string;
   class?: string;
 }
 
-const { label, class: className } = Astro.props;
+const { class: className } = Astro.props;
 ---
 
-<figure class:list={['surface-panel overflow-hidden', className]}>
-  {
-    label && (
-      <figcaption class="border-b border-border px-4 py-2.5 type-small text-ink-subtle">
-        {label}
-      </figcaption>
-    )
-  }
-  <div class="p-3 sm:p-4">
-    <slot />
-  </div>
+<figure
+  class:list={[
+    'overflow-hidden rounded-[var(--radius-xl)] border border-border bg-surface shadow-[var(--shadow-quiet)]',
+    className,
+  ]}
+>
+  <slot />
 </figure>

@@ -45,4 +45,4 @@ public/images/                 Brand assets
 
 ## Visual foundation
 
-Soft canvas (`#f5f6f8`), surface white, accent `#1460ff` (logo/product blue), Inter, generous chapter rhythm. Prefer HTML/CSS product moments over screenshots.
+Zinc canvas and text (`zinc-50` / `zinc-950` / muted zinc), product accent `#1460ff`, Inter, sequential story chapters. Product UI moments are HTML/CSS and read in narrative order — not bento grids.

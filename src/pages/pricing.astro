@@ -1,14 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Chapter from '../components/Chapter.astro';
+import Button from '../components/ui/Button.astro';
+import { EARLY_ACCESS_HREF } from '../consts';
 ---
 
 <BaseLayout title="Pricing" description="OpenRequest pricing — coming soon.">
   <Chapter>
-    <p class="type-caption mb-4">Pricing</p>
-    <h1 class="type-title">Pricing</h1>
-    <p class="type-body mt-4">
-      Placeholder page. Plans and details will be added here.
+    <h1 class="type-display text-[clamp(2.25rem,5vw,3.25rem)]">Pricing</h1>
+    <p class="type-lede mt-5">
+      Plans aren’t published yet. If the problem sounds familiar, get early access and we’ll talk
+      through whether it fits.
     </p>
+    <div class="mt-8">
+      <Button href={EARLY_ACCESS_HREF} variant="primary">
+        Get early access
+        <span aria-hidden="true">→</span>
+      </Button>
+    </div>
   </Chapter>
 </BaseLayout>

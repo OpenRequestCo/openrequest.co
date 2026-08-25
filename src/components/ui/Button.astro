@@ -1,29 +1,25 @@
 ---
 interface Props {
   href?: string;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'text';
   class?: string;
 }
 
 const { href, variant = 'primary', class: className } = Astro.props;
 
 const classes = [
-  'inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] text-sm font-medium transition-colors duration-150',
+  'inline-flex items-center justify-center gap-1.5 text-sm font-medium transition-colors duration-150',
   variant === 'primary' &&
-    'bg-accent px-4 py-2.5 text-white hover:bg-accent-hover',
+    'rounded-[var(--radius-md)] bg-accent px-3.5 py-2 text-white hover:bg-accent-hover',
   variant === 'secondary' &&
-    'border border-border-strong bg-surface px-4 py-2.5 text-ink hover:bg-surface-muted',
-  variant === 'ghost' && 'px-2 py-2 text-ink-muted hover:text-ink',
+    'rounded-[var(--radius-md)] border border-border-strong bg-surface px-3.5 py-2 text-ink hover:bg-surface-muted',
+  variant === 'text' && 'text-ink-muted hover:text-ink',
   className,
 ];
 
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag
-  href={href}
-  type={href ? undefined : 'button'}
-  class:list={classes}
->
+<Tag href={href} type={href ? undefined : 'button'} class:list={classes}>
   <slot />
 </Tag>

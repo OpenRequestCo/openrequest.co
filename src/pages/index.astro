@@ -3,49 +3,131 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Chapter from '../components/Chapter.astro';
 import Button from '../components/ui/Button.astro';
 import SearchMoment from '../components/product/SearchMoment.astro';
-import RequestListMoment from '../components/product/RequestListMoment.astro';
 import ConversationMoment from '../components/product/ConversationMoment.astro';
-import PropertiesMoment from '../components/product/PropertiesMoment.astro';
+import HandlerMoment from '../components/product/HandlerMoment.astro';
 import { EARLY_ACCESS_HREF } from '../consts';
 import { story } from '../content/copy/story';
 ---
 
 <BaseLayout>
-  {/*
-    Visual foundation: hero tone, CTA system, and HTML/CSS product moments.
-    Full sequential story chapters assemble in OR-19.
-  */}
-  <Chapter>
-    <h1 class="type-display">{story.hero.headline}</h1>
-    <p class="type-lede mt-6">{story.hero.subhead}</p>
-    <div class="mt-8 flex flex-wrap items-center gap-3">
-      <Button href={EARLY_ACCESS_HREF} variant="primary">
-        {story.hero.primaryCta}
-        <span aria-hidden="true">→</span>
-      </Button>
-      <Button href="#product-moments" variant="ghost">
-        {story.hero.secondaryCta}
-      </Button>
+  {/* 1. Hero — decisive type, tight supporting rhythm */}
+  <section class="page-shell pt-14 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
+    <div class="max-w-[42rem]">
+      <h1 class="type-display">{story.hero.headline}</h1>
+      <p class="type-lede mt-6 max-w-[36rem]">{story.hero.subhead}</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+        <Button href={EARLY_ACCESS_HREF} variant="primary">
+          {story.hero.primaryCta}
+          <span aria-hidden="true">→</span>
+        </Button>
+        <a
+          href="#how-it-works"
+          class="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+        >
+          {story.hero.secondaryCta}
+        </a>
+      </div>
     </div>
-  </Chapter>
+  </section>
 
-  <Chapter id="product-moments" eyebrow="Product language" compact>
-    <h2 class="type-title">Quiet surfaces. Clear hierarchy. Conversation first.</h2>
-    <p class="type-body mt-4">
-      The same visual language as the product — rebuilt in HTML and CSS so the site stays light
-      and on-brand.
+  <hr class="rule page-shell" />
+
+  {/* 2. The problem */}
+  <Chapter id="problem" eyebrow="The problem">
+    <p class="type-title text-[clamp(1.375rem,2.5vw,1.75rem)]">{story.problem.lead}</p>
+    <ul class="mt-8 space-y-5">
+      {
+        story.problem.extremes.map((item) => (
+          <li class="border-l-2 border-zinc-300 pl-4">
+            <p class="text-[0.9375rem] font-semibold text-ink">{item.label}</p>
+            <p class="type-body mt-1 text-[0.9375rem]">{item.detail}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="type-body mt-8">{story.problem.body}</p>
+    <p class="mt-6 text-[1.0625rem] font-medium tracking-tight text-ink">
+      {story.problem.turn}
     </p>
-    <div slot="aside" class="grid gap-5 sm:grid-cols-2">
-      <SearchMoment />
-      <ConversationMoment />
-      <RequestListMoment />
-      <PropertiesMoment />
-    </div>
   </Chapter>
 
+  <hr class="rule page-shell" />
+
+  {/* 3. The idea + start-a-request moment */}
+  <Chapter id="how-it-works" eyebrow="The idea">
+    <h2 class="type-title">{story.idea.headline}</h2>
+    <ol class="mt-8 space-y-3">
+      {
+        story.idea.steps.map((step, index) => (
+          <li class="flex gap-3 type-body">
+            <span class="w-5 shrink-0 tabular-nums text-ink-subtle">{index + 1}.</span>
+            <span>{step}</span>
+          </li>
+        ))
+      }
+    </ol>
+    <div class="mt-8 space-y-1">
+      {
+        story.idea.closing.map((line) => (
+          <p class="text-[1.0625rem] font-medium tracking-tight text-ink">{line}</p>
+        ))
+      }
+    </div>
+    <SearchMoment slot="visual" />
+  </Chapter>
+
+  <hr class="rule page-shell" />
+
+  {/* 4a. Asking side + conversation */}
+  <Chapter id="asking" eyebrow="Two sides of the same loop">
+    <h2 class="type-title">{story.loop.asking.title}</h2>
+    <p class="type-body mt-5">{story.loop.asking.body}</p>
+    <ConversationMoment slot="visual" />
+  </Chapter>
+
+  {/* 4b. Handling side + composed handler view */}
+  <Chapter id="handling" compact>
+    <h2 class="type-title">{story.loop.handling.title}</h2>
+    <p class="type-body mt-5">{story.loop.handling.body}</p>
+    <p class="mt-6 text-[1.0625rem] font-medium tracking-tight text-ink">
+      {story.loop.philosophy}
+    </p>
+    <HandlerMoment slot="visual" />
+  </Chapter>
+
+  <hr class="rule page-shell" />
+
+  {/* 5. What it is not */}
+  <Chapter id="not" eyebrow="What it is not">
+    <ul class="space-y-4">
+      {
+        story.not.items.map((item) => (
+          <li class="text-[1.125rem] font-semibold tracking-tight text-ink sm:text-[1.25rem]">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="type-body mt-8">{story.not.body}</p>
+  </Chapter>
+
+  <hr class="rule page-shell" />
+
+  {/* 6. Who this is for */}
+  <Chapter id="audience" eyebrow="Who this is for">
+    <p class="type-title text-[clamp(1.375rem,2.5vw,1.75rem)]">{story.audience.body}</p>
+    <p class="type-caption mt-10 mb-3">Common starting points</p>
+    <p class="text-[0.9375rem] leading-relaxed text-ink-secondary">
+      {story.audience.startingPoints.join(' · ')}
+    </p>
+  </Chapter>
+
+  <hr class="rule page-shell" />
+
+  {/* 7. Closing / invitation */}
   <Chapter id="early-access" eyebrow="Early access">
     <h2 class="type-title">{story.close.title}</h2>
-    <p class="type-body mt-4">{story.close.body}</p>
+    <p class="type-body mt-5">{story.close.body}</p>
     <p class="type-body mt-3">{story.close.detail}</p>
     <div class="mt-8">
       <Button href={EARLY_ACCESS_HREF} variant="primary">

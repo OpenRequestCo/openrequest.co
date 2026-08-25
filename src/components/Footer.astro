@@ -1,12 +1,66 @@
 ---
-import { SITE_COPYRIGHT } from '../consts';
+import { EARLY_ACCESS_HREF, SIGN_IN_HREF, SITE_COPYRIGHT, SITE_TITLE } from '../consts';
 ---
 
-<footer class="mt-auto border-t border-border">
-  <div class="page-shell flex flex-col gap-3 py-8 sm:flex-row sm:items-center sm:justify-between">
-    <p class="type-small text-ink-subtle">{SITE_COPYRIGHT}</p>
-    <a class="type-small text-ink-muted transition-colors hover:text-ink" href="#top">
-      Back to top <span aria-hidden="true">↑</span>
-    </a>
+<footer class="mt-auto border-t border-border bg-zinc-100/70">
+  <div class="page-shell py-14 sm:py-16">
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <div class="max-w-sm">
+        <a href="/" class="inline-flex items-center gap-2.5" aria-label={`${SITE_TITLE}, home`}>
+          <img
+            src="/images/logo-32.webp"
+            alt=""
+            width="28"
+            height="28"
+            class="size-7 rounded-[0.35rem]"
+          />
+          <span class="text-[0.9375rem] font-semibold tracking-tight text-ink">{SITE_TITLE}</span>
+        </a>
+        <p class="type-body mt-4 text-[0.9375rem]">
+          Internal requests, without the weight of a traditional service desk.
+        </p>
+        <a
+          href={EARLY_ACCESS_HREF}
+          class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
+        >
+          Get early access
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10 sm:gap-16">
+        <div>
+          <p class="type-caption mb-3">Product</p>
+          <ul class="space-y-2.5 text-sm text-ink-secondary">
+            <li>
+              <a class="hover:text-ink" href="/#how-it-works">How it works</a>
+            </li>
+            <li>
+              <a class="hover:text-ink" href="/pricing">Pricing</a>
+            </li>
+            <li>
+              <a class="hover:text-ink" href={EARLY_ACCESS_HREF}>Early access</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="type-caption mb-3">Account</p>
+          <ul class="space-y-2.5 text-sm text-ink-secondary">
+            <li>
+              <a class="hover:text-ink" href={SIGN_IN_HREF}>Sign in</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule mt-12" />
+
+    <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-[0.8125rem] text-ink-subtle">{SITE_COPYRIGHT}</p>
+      <a class="text-[0.8125rem] text-ink-subtle hover:text-ink" href="#top">
+        Back to top ↑
+      </a>
+    </div>
   </div>
 </footer>
