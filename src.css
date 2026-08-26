@@ -47,13 +47,11 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-.site-frame {
+.page-shell {
   position: relative;
   width: var(--frame-width);
-  min-height: 100dvh;
   margin-inline: auto;
-  border-left: 1px solid var(--hairline);
-  border-right: 1px solid var(--hairline);
+  padding-inline: clamp(1.15rem, 3vw, 2rem);
 }
 
 .site-header {
@@ -70,13 +68,33 @@ button:focus-visible {
   -webkit-backdrop-filter: blur(12px);
 }
 
+.rule,
+.header-rule {
+  position: relative;
+  height: 0;
+  pointer-events: none;
+}
+
+.rule::before,
+.header-rule::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--hairline);
+}
+
+.rule::before {
+  top: 0;
+  transform: translateY(-50%);
+}
+
 .header-rule {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  height: 0;
-  pointer-events: none;
   opacity: 0;
   transition: opacity 180ms ease;
 }
@@ -86,31 +104,14 @@ button:focus-visible {
 }
 
 .header-rule::before {
-  content: "";
-  position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
-  height: 1px;
-  background: var(--hairline);
   transform: translateY(50%);
 }
 
-.rule {
-  position: relative;
+.rule .page-shell,
+.header-rule .page-shell {
   height: 0;
-  pointer-events: none;
-}
-
-.rule::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  height: 1px;
-  background: var(--hairline);
-  transform: translateY(-50%);
+  padding: 0;
 }
 
 .plus {
@@ -133,8 +134,17 @@ button:focus-visible {
   transform: translate(50%, -50%);
 }
 
-.plus path {
-  stroke: currentColor;
+.header-rule .plus {
+  top: auto;
+  bottom: 0;
+}
+
+.header-rule .plus-l {
+  transform: translate(-50%, 50%);
+}
+
+.header-rule .plus-r {
+  transform: translate(50%, 50%);
 }
 
 .shadow-hero {
