@@ -26,7 +26,7 @@
         <nav aria-label="Primary" class="flex shrink-0 items-center gap-0.5 sm:gap-1">
           <a href="#pricing" class="rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 sm:px-3">Pricing</a>
           <a href="https://app.openrequest.co" class="rounded-full bg-zinc-100 px-2.5 py-1.5 text-[0.8125rem] font-medium text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 sm:px-3.5">Sign in</a>
-          <a data-early-access href="https://cal.com/openrequest/early-access" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="ml-0.5 inline-flex items-center rounded-full bg-zinc-950 px-3 py-1.5 text-[0.8125rem] font-medium text-white hover:bg-zinc-800 sm:ml-1 sm:px-3.5">Get early access</a>
+          <button type="button" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="ml-0.5 inline-flex items-center rounded-full bg-zinc-950 px-3 py-1.5 text-[0.8125rem] font-medium text-white hover:bg-zinc-800 sm:ml-1 sm:px-3.5">Get early access</button>
         </nav>
       </div>
       <div class="header-rule" aria-hidden="true">
@@ -48,7 +48,7 @@
             Employees search a branded portal, pick a request type, and talk it through. Teams work an inbox. Knowledge and SLAs sit on the request. AI on all of it.
           </p>
           <div class="mt-8">
-            <a data-early-access href="https://cal.com/openrequest/early-access" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
+            <button type="button" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</button>
           </div>
         </div>
       </section>
@@ -412,7 +412,7 @@
             </li>
           </ul>
           <div class="mt-8">
-            <a data-early-access href="https://cal.com/openrequest/early-access" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
+            <button type="button" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</button>
           </div>
         </div>
       </section>
@@ -430,7 +430,8 @@
           We’re early. Portal, inbox, knowledge, SLAs — if that is the service desk you want, let’s talk.
         </p>
         <div class="mt-8">
-          <a data-early-access href="https://cal.com/openrequest/early-access" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
+          <button type="button" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</button>
+          <noscript><a href="https://cal.com/openrequest/early-access">Get early access</a></noscript>
         </div>
       </section>
     </main>
@@ -459,7 +460,7 @@
         <nav aria-label="Footer" class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-zinc-600">
           <a href="#pricing" class="hover:text-zinc-950">Pricing</a>
           <a href="https://app.openrequest.co" class="hover:text-zinc-950">Sign in</a>
-          <a data-early-access href="https://cal.com/openrequest/early-access" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="hover:text-zinc-950">Get early access</a>
+          <button type="button" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="hover:text-zinc-950">Get early access</button>
         </nav>
       </div>
       <p class="mt-14 text-[0.8125rem] text-zinc-400">© 2026 Drill Software Limited. All rights reserved.</p>
@@ -467,6 +468,11 @@
 
     <script>
       (function () {
+        document.addEventListener('click', function (event) {
+          if (!event.target.closest('[data-cal-link]')) return;
+          event.preventDefault();
+        }, true);
+
         function syncHeader() {
           document.documentElement.classList.toggle('is-scrolled', window.scrollY > 8);
         }
