@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Slack loses the ask. A service desk turns it into a project. Search for what you need, raise it, handle it in one thread.">
+    <meta name="description" content="A service desk, built around the request. Employees search a branded portal, pick a request type, and talk it through. Teams work an inbox. Knowledge and SLAs sit on the request. AI on all of it.">
     <meta name="theme-color" content="#fafafa">
-    <title>OpenRequest — Internal requests, without the bloat.</title>
+    <title>OpenRequest — A service desk, built around the request.</title>
     <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/icon-96.png">
@@ -41,11 +41,11 @@
       <section id="top" class="page-shell pt-20 pb-8 sm:pt-28 lg:pt-32">
         <div class="mx-auto max-w-[40rem] text-center">
           <h1 class="text-[2.85rem] leading-[0.98] font-semibold tracking-[-0.055em] text-[#07162D] sm:text-6xl lg:text-[4.75rem]">
-            Internal requests,<br>
-            without the bloat.
+            A service desk,<br>
+            built around the request.
           </h1>
-          <p class="mx-auto mt-6 max-w-[34rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-            Slack loses the ask. A service desk turns it into a project. Search for what you need, raise it, handle it in one thread.
+          <p class="mx-auto mt-6 max-w-[36rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
+            Employees search a branded portal, pick a request type, and talk it through. Teams work an inbox. Knowledge and SLAs sit on the request. AI on all of it.
           </p>
           <div class="mt-8">
             <a data-early-access href="#early-access" class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
@@ -57,15 +57,15 @@
         <div class="product-stage stage-width" data-stage data-palette data-palette-phrase="New laptop for engineer">
           <div class="stage-bar">
             <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-              <button type="button" class="view-tab is-active" data-view="employees" aria-pressed="true">Employees</button>
-              <button type="button" class="view-tab" data-view="teams" aria-pressed="false">Teams</button>
+              <button type="button" class="view-tab is-active" data-view="portal" aria-pressed="true">Portal</button>
+              <button type="button" class="view-tab" data-view="inbox" aria-pressed="false">Inbox</button>
             </div>
-            <p class="stage-copy" data-copy="employees">Search, pick the matching request, raise it.</p>
-            <p class="stage-copy" data-copy="teams" hidden>The same request, in a focused inbox. Thread, owner, status. Not a service desk.</p>
+            <p class="stage-copy" data-copy="portal">Type what you need. Matching requests appear. Pick one, then talk.</p>
+            <p class="stage-copy" data-copy="inbox" hidden>The same request for the team. Thread, owner, status.</p>
           </div>
 
           <div class="stage-window">
-            <div data-panel="employees">
+            <div data-panel="portal">
               <div class="stage-help">
                 <p class="text-[0.6875rem] font-medium tracking-wide text-accent">OpenRequest</p>
                 <h2 class="mt-2 text-[1.65rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.85rem]">How can we help?</h2>
@@ -160,7 +160,7 @@
               </div>
             </div>
 
-            <div data-panel="teams" hidden>
+            <div data-panel="inbox" hidden>
               <div class="handler">
                 <aside class="handler-inbox" aria-label="Inbox">
                   <p class="px-3.5 pt-3.5 pb-2 text-[0.6875rem] font-medium tracking-wide text-zinc-400">Inbox</p>
@@ -175,6 +175,7 @@
                           <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
                           Nic Coates
                         </p>
+                        <span class="sla-chip mono mt-1.5">First response · 2h left</span>
                       </div>
                     </li>
                     <li class="inbox-row">
@@ -205,10 +206,13 @@
                 </aside>
 
                 <div class="handler-thread">
-                  <p class="truncate text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">
-                    <span class="mono text-[0.75rem] font-medium text-zinc-400">REQ-7</span>
-                    <span class="ml-1.5">Order a new MacBook laptop</span>
-                  </p>
+                  <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                    <p class="min-w-0 truncate text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">
+                      <span class="mono text-[0.75rem] font-medium text-zinc-400">REQ-7</span>
+                      <span class="ml-1.5">Order a new MacBook laptop</span>
+                    </p>
+                    <span class="sla-chip mono">Respond by 16:00</span>
+                  </div>
                   <div class="mt-6 space-y-5">
                     <div>
                       <div class="flex items-baseline justify-between gap-3">
@@ -257,6 +261,12 @@
                       <dt class="text-zinc-500">Type</dt>
                       <dd class="mt-1 font-medium text-zinc-950">Order a new MacBook laptop</dd>
                     </div>
+                    <div>
+                      <dt class="text-zinc-500">SLA</dt>
+                      <dd class="mt-1">
+                        <span class="sla-chip mono">First response · 2h left</span>
+                      </dd>
+                    </div>
                   </dl>
                 </aside>
               </div>
@@ -272,10 +282,86 @@
         </div>
       </div>
 
-      <section class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <h2 id="how-it-works" class="max-w-[22rem] text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">The bit between Slack and a service desk.</h2>
-        <p class="mt-4 max-w-[34rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-          Employees get a branded SSO portal and a list of what they can actually request. Teams get a quiet inbox. No modules. No project for every ask.
+      <section id="how-it-works" class="page-shell scroll-mt-24 py-20 sm:py-24">
+        <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">The service desk.</h2>
+
+        <div class="offer-grid mt-10 sm:mt-12">
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <div class="mini-search">
+                <svg class="shrink-0 text-zinc-400" width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+                  <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+                <span class="text-[0.75rem] text-zinc-950">New laptop<span class="mini-caret"></span></span>
+              </div>
+              <div class="mini-type">
+                <span class="mini-mark">O</span>
+                <span class="truncate text-[0.75rem] font-medium text-zinc-800">Order a MacBook</span>
+              </div>
+              <div class="mini-type">
+                <span class="mini-mark">S</span>
+                <span class="truncate text-[0.75rem] font-medium text-zinc-800">Set up a mailbox</span>
+              </div>
+            </div>
+            <p class="text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">Portal</p>
+            <h3 class="mt-2 text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">A branded place to ask.</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">SSO, your brand. Search “How can we help?”, see the request types you offer, raise one. It stays a conversation.</p>
+          </article>
+
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <div class="mini-row is-on">
+                <span class="mini-dot"></span>
+                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-900">Order a MacBook</span>
+                <span class="shrink-0 text-[0.6875rem] text-zinc-500">Nic</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-dot"></span>
+                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">Set up a mailbox</span>
+                <span class="shrink-0 text-[0.6875rem] text-zinc-500">Open</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-dot"></span>
+                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">Order a MacBook</span>
+                <span class="shrink-0 text-[0.6875rem] text-zinc-500">Rolo</span>
+              </div>
+            </div>
+            <p class="text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">Inbox</p>
+            <h3 class="mt-2 text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The teams view.</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">IT, HR, Facilities — each team’s requests in one place. The thread, the owner, the status.</p>
+          </article>
+
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <div class="know-card">
+                <p class="text-[0.75rem] font-semibold text-zinc-900">Order a MacBook</p>
+                <p class="mt-0.5 text-[0.6875rem] leading-snug text-zinc-500">14-inch, 24GB — standard spec.</p>
+              </div>
+              <div class="know-card">
+                <p class="text-[0.75rem] font-semibold text-zinc-900">Set up a mailbox</p>
+                <p class="mt-0.5 text-[0.6875rem] leading-snug text-zinc-500">Routed to IT Help Desk.</p>
+              </div>
+            </div>
+            <p class="text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">Knowledge</p>
+            <h3 class="mt-2 text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The requests you offer.</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">And the answers behind them. Employees find the right thing. Teams aren’t starting from a blank.</p>
+          </article>
+
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <span class="sla-chip mono self-start">First response · 2h left</span>
+              <div class="sla-track"><span></span></div>
+              <p class="mono mt-2 text-[0.6875rem] text-zinc-500">Respond by 16:00</p>
+            </div>
+            <p class="text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">SLAs</p>
+            <h3 class="mt-2 text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">On the request.</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">Who owns it, how fast it should move, when it’s late. Not in a report nobody opens.</p>
+          </article>
+        </div>
+
+        <p class="mt-10 max-w-[36rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
+          <span class="font-semibold text-[#07162D]">AI throughout.</span> Matching the request, drafting the reply, watching the SLA.
         </p>
       </section>
 
@@ -334,9 +420,9 @@
       </div>
 
       <section id="early-access" class="page-shell scroll-mt-24 py-24 sm:py-28">
-        <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">See if it fits.</h2>
+        <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Get it live for your company.</h2>
         <p class="mt-4 max-w-[32rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-          We’re early. If you want a lighter portal for employees and a quieter inbox for teams, book a short call.
+          We’re early. Portal, inbox, knowledge, SLAs — if that is the service desk you want, let’s talk.
         </p>
         <div class="mt-8">
           <a data-early-access href="#early-access" class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
@@ -362,7 +448,7 @@
             <span class="text-[0.9375rem] font-semibold tracking-tight">OpenRequest</span>
           </a>
           <p class="mt-4 text-[0.9375rem] leading-relaxed text-zinc-500">
-            A lighter way for people to ask, and for teams to handle the work.
+            A service desk for internal requests. Portal, inbox, knowledge, SLAs.
           </p>
         </div>
         <nav aria-label="Footer" class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-zinc-600">
@@ -483,7 +569,7 @@
           var rows = stage.querySelectorAll('[data-search-row]');
           var newRow = stage.querySelector('[data-new-request]');
           var phrase = stage.getAttribute('data-palette-phrase') || 'New laptop for engineer';
-          var view = 'employees';
+          var view = 'portal';
           var runId = 0;
           var raised = false;
           var autoSwitched = false;
@@ -549,15 +635,15 @@
             raised = true;
           }
 
-          function maybeAutoTeams(id) {
+          function maybeAutoInbox(id) {
             if (id !== runId || userMoved || autoSwitched) return;
             autoSwitched = true;
-            setView('teams', false);
+            setView('inbox', false);
           }
 
           function scheduleReplay(id) {
             window.setTimeout(function () {
-              if (id !== runId || view !== 'employees') return;
+              if (id !== runId || view !== 'portal') return;
               play(id);
             }, 9000);
           }
@@ -569,8 +655,8 @@
               idle();
               await sleep(900);
               if (id !== runId) return;
-              maybeAutoTeams(id);
-              if (view === 'employees') scheduleReplay(id);
+              maybeAutoInbox(id);
+              if (view === 'portal') scheduleReplay(id);
               return;
             }
 
@@ -597,8 +683,8 @@
             raised = true;
             await sleep(4200);
             if (id !== runId) return;
-            maybeAutoTeams(id);
-            if (view === 'employees') scheduleReplay(id);
+            maybeAutoInbox(id);
+            if (view === 'portal') scheduleReplay(id);
           }
 
           function startPlay() {
@@ -612,7 +698,7 @@
               if (name === view) return;
               runId += 1;
               setView(name, true);
-              if (name === 'employees') {
+              if (name === 'portal') {
                 idle();
                 scheduleReplay(runId);
               } else {
@@ -625,7 +711,7 @@
             if (reduceMotion) {
               idle();
               window.setTimeout(function () {
-                maybeAutoTeams(runId);
+                maybeAutoInbox(runId);
               }, 900);
               return;
             }
