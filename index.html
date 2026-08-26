@@ -560,11 +560,8 @@
           var view = 'portal';
           var runId = 0;
           var raised = false;
-          var autoSwitched = false;
-          var userMoved = false;
 
-          function setView(name, fromUser) {
-            if (fromUser) userMoved = true;
+          function setView(name) {
             view = name;
             tabs.forEach(function (tab) {
               var on = tab.getAttribute('data-view') === name;
@@ -623,12 +620,6 @@
             raised = true;
           }
 
-          function maybeAutoInbox(id) {
-            if (id !== runId || userMoved || autoSwitched) return;
-            autoSwitched = true;
-            setView('inbox', false);
-          }
-
           function scheduleReplay(id) {
             window.setTimeout(function () {
               if (id !== runId || view !== 'portal') return;
@@ -641,9 +632,6 @@
 
             if (reduceMotion) {
               idle();
-              await sleep(900);
-              if (id !== runId) return;
-              maybeAutoInbox(id);
               if (view === 'portal') scheduleReplay(id);
               return;
             }
@@ -671,7 +659,6 @@
             raised = true;
             await sleep(4200);
             if (id !== runId) return;
-            maybeAutoInbox(id);
             if (view === 'portal') scheduleReplay(id);
           }
 
@@ -685,7 +672,7 @@
               var name = tab.getAttribute('data-view');
               if (name === view) return;
               runId += 1;
-              setView(name, true);
+              setView(name);
               if (name === 'portal') {
                 idle();
                 scheduleReplay(runId);
@@ -698,9 +685,6 @@
           function begin() {
             if (reduceMotion) {
               idle();
-              window.setTimeout(function () {
-                maybeAutoInbox(runId);
-              }, 900);
               return;
             }
             startPlay();
