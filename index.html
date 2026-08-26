@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A branded portal for employees. A focused inbox for the teams who handle the work. Internal requests, without the bloat.">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#ffffff">
     <title>OpenRequest — Internal requests, without the bloat.</title>
     <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32.png">
@@ -454,6 +454,44 @@
         window.addEventListener('scroll', syncHeader, { passive: true });
 
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function urlWithoutHash() {
+          return window.location.pathname + window.location.search;
+        }
+
+        function hideHash() {
+          if (!window.location.hash || !history.replaceState) return;
+          history.replaceState(null, '', urlWithoutHash());
+        }
+
+        function scrollToId(id, behavior) {
+          var target = document.getElementById(id);
+          if (!target) return false;
+          target.scrollIntoView({
+            behavior: behavior || (reduceMotion ? 'auto' : 'smooth')
+          });
+          return true;
+        }
+
+        document.addEventListener('click', function (event) {
+          if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          var link = event.target.closest('a[href^="#"]');
+          if (!link) return;
+          var href = link.getAttribute('href');
+          if (!href || href === '#') return;
+          var id = decodeURIComponent(href.slice(1));
+          if (!scrollToId(id)) return;
+          event.preventDefault();
+          hideHash();
+        });
+
+        if (window.location.hash) {
+          var initialId = decodeURIComponent(window.location.hash.slice(1));
+          window.requestAnimationFrame(function () {
+            scrollToId(initialId, 'auto');
+            hideHash();
+          });
+        }
 
         function sleep(ms) {
           return new Promise(function (resolve) {
