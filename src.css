@@ -63,6 +63,25 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+button,
+[data-cal-link],
+.seg-btn {
+  cursor: pointer;
+}
+
+footer [data-cal-link] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
 .page-shell {
   position: relative;
   width: var(--frame-width);
