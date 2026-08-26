@@ -274,32 +274,61 @@ button:focus-visible {
   }
 }
 
-.view-tab {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  font: inherit;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: #a1a1aa;
-  cursor: pointer;
+.seg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.2rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: #fff;
+  gap: 0.15rem;
 }
 
-.view-tab.is-active {
+.seg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.42rem 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #71717a;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.seg-btn.is-active {
+  background: #09090b;
+  color: #fff;
+}
+
+.seg-hint {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  opacity: 0.55;
+}
+
+.seg-save {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.price-block .seg-btn.is-active {
+  background: #f4f4f5;
   color: #09090b;
 }
 
-.bill-switch {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 1.15rem;
-}
-
 .price-block {
-  padding: 1.75rem 1.6rem 1.6rem;
+  padding: 1.75rem 1.5rem 1.6rem;
   border: 1px solid var(--hairline);
   border-radius: 1.25rem;
   background: #fff;
@@ -530,15 +559,42 @@ button:focus-visible {
   background: var(--status-open);
 }
 
-.know-card + .know-card {
-  margin-top: 0.45rem;
-}
-
-.know-card {
-  padding: 0.45rem 0.6rem;
+.know-doc {
+  padding: 0.85rem 0.95rem 0.95rem;
+  border: 1px solid var(--hairline);
   border-radius: 0.55rem;
   background: #fff;
-  border: 1px solid var(--hairline);
+  box-shadow: 0 1px 1px rgb(24 24 27 / 0.04), 0 10px 24px rgb(24 24 27 / 0.05);
+}
+
+.know-doc-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: #18181b;
+}
+
+.know-doc-h {
+  margin: 0.65rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 650;
+  color: #18181b;
+}
+
+.know-doc-line {
+  margin: 0.28rem 0 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.625rem;
+  line-height: 1.45;
+  color: #3f3f46;
+}
+
+.know-doc-muted {
+  margin: 0.45rem 0 0;
+  font-size: 0.625rem;
+  line-height: 1.45;
+  color: #a1a1aa;
 }
 
 .sla-track {
