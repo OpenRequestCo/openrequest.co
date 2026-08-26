@@ -308,13 +308,6 @@ button:focus-visible {
   color: #fff;
 }
 
-.seg-hint {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  opacity: 0.55;
-}
-
 .seg-save {
   font-size: 0.6875rem;
   font-weight: 600;
@@ -462,11 +455,13 @@ button:focus-visible {
 .offer-grid {
   display: grid;
   gap: 1.15rem;
+  align-items: stretch;
 }
 
 @media (min-width: 720px) {
   .offer-grid {
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
     gap: 1.25rem;
   }
 }
@@ -474,6 +469,7 @@ button:focus-visible {
 .offer-cell {
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 1.25rem 1.2rem 1.45rem;
   border: 1px solid var(--hairline);
   border-radius: 1.25rem;
@@ -482,13 +478,29 @@ button:focus-visible {
 
 .offer-visual {
   display: flex;
+  flex: 0 0 11rem;
   flex-direction: column;
   justify-content: center;
-  min-height: 8.75rem;
-  margin-bottom: 1.25rem;
-  padding: 0.85rem 0.9rem;
+  height: 11rem;
+  min-height: 11rem;
+  max-height: 11rem;
+  margin-bottom: 1.15rem;
+  padding: 0.75rem 0.85rem;
+  overflow: hidden;
   border-radius: 0.9rem;
   background: #fafafa;
+}
+
+.offer-name {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #07162d;
+}
+
+.offer-cell h3 {
+  min-height: 2.6rem;
 }
 
 .mini-search {
@@ -560,7 +572,7 @@ button:focus-visible {
 }
 
 .know-doc {
-  padding: 0.85rem 0.95rem 0.95rem;
+  padding: 0.7rem 0.85rem 0.8rem;
   border: 1px solid var(--hairline);
   border-radius: 0.55rem;
   background: #fff;
