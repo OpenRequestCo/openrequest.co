@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@source not "./node_modules";
+@source not "./tools";
+
 @theme {
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -623,6 +626,127 @@ button:focus-visible {
   height: 100%;
   border-radius: 999px;
   background: var(--accent);
+}
+
+.legal {
+  max-width: 40rem;
+  padding-top: clamp(4.5rem, 10vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 10vw, 7.5rem);
+}
+
+.legal h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.85rem, 3.4vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.legal .legal-updated {
+  margin: 0.85rem 0 0;
+  color: #a1a1aa;
+  font-size: 0.8125rem;
+  letter-spacing: -0.01em;
+}
+
+.legal-rule {
+  height: 1px;
+  margin: 2.25rem 0 0;
+  border: 0;
+  background: var(--hairline);
+}
+
+.legal h2 {
+  margin: 3.25rem 0 0;
+  color: var(--ink);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .legal h2 {
+    margin-top: 3.75rem;
+    font-size: 1.2rem;
+  }
+}
+
+.legal p {
+  margin: 1.15rem 0 0;
+  color: #52525b;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.legal a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+.legal a:hover {
+  color: #0f52e0;
+}
+
+.legal strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.legal-label {
+  margin: 1.85rem 0 0;
+  color: var(--ink);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.legal-label + p {
+  margin-top: 0.4rem;
+}
+
+.legal ul {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal li {
+  position: relative;
+  margin: 0.75rem 0 0;
+  padding-left: 1.05rem;
+  color: #52525b;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.legal li:first-child {
+  margin-top: 0;
+}
+
+.legal li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: #d4d4d8;
+}
+
+.legal .legal-close {
+  margin-top: 3.25rem;
+  font-size: 0.9375rem;
+}
+
+.legal .legal-entity {
+  margin-top: 3.5rem;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  letter-spacing: -0.01em;
 }
 
 @media (prefers-reduced-motion: reduce) {
