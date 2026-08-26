@@ -59,10 +59,8 @@
         </div>
       </section>
 
-      <section class="pb-20 sm:pb-24" aria-label="Employee portal">
-        <div class="stage-wrap">
+      <section class="page-shell pb-20 sm:pb-24" aria-label="Employee portal">
           <div class="product-stage" data-palette data-palette-phrase="New laptop for engineer">
-            <div class="stage-grid">
               <div class="stage-help">
                 <p class="text-[0.6875rem] font-medium tracking-wide text-accent">OpenRequest</p>
                 <h2 class="mt-2 text-[1.65rem] font-semibold tracking-tight text-zinc-950 sm:text-[1.85rem]">How can we help?</h2>
@@ -155,9 +153,7 @@
                   </li>
                 </ul>
               </div>
-            </div>
           </div>
-        </div>
       </section>
 
       <div class="rule" aria-hidden="true">
@@ -188,7 +184,6 @@
 
             <div class="split-frame">
               <div data-panel="employees">
-                <div class="stage-grid" style="min-height: 26rem;">
                   <div class="stage-help">
                     <p class="text-[0.6875rem] font-medium tracking-wide text-accent">OpenRequest</p>
                     <h3 class="mt-2 text-xl font-semibold tracking-tight text-zinc-950">How can we help?</h3>
@@ -244,7 +239,6 @@
                       </li>
                     </ul>
                   </div>
-                </div>
               </div>
 
               <div data-panel="teams" hidden>
@@ -332,15 +326,69 @@
       </div>
 
       <section id="pricing" class="page-shell scroll-mt-24 py-24 sm:py-28">
-        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-zinc-950 sm:text-[2rem]">Priced by team, not by seat.</h2>
-        <div class="mt-6 max-w-[36rem] space-y-4 text-[1.0625rem] leading-relaxed text-zinc-600 sm:text-lg">
-          <p>$79 a month for 3 teams. Branded portal, SSO, the core product.</p>
-          <p>Extra teams are $29.</p>
-          <p>Or $804 a year ($67/month). Extra team $240/year.</p>
-          <p class="text-zinc-500">A team is a group that receives and handles requests.</p>
+        <div class="mx-auto max-w-[40rem] text-center">
+          <h2 class="text-[1.75rem] font-semibold tracking-[-0.035em] text-zinc-950 sm:text-[2.25rem]">Priced by team, not by seat.</h2>
+          <p class="mt-4 text-[1.0625rem] leading-relaxed text-zinc-500">
+            Simple, team-based. No per-agent seats. A team is a group that receives and handles requests.
+          </p>
         </div>
-        <div class="mt-8">
-          <a data-early-access href="#early-access" class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
+
+        <div class="price-grid mx-auto mt-12 max-w-[46rem]">
+          <article class="price-card is-featured">
+            <p class="mono text-[0.6875rem] font-medium tracking-[0.08em] text-zinc-500">Monthly</p>
+            <p class="mt-4 flex items-end gap-2">
+              <span class="text-5xl font-semibold tracking-tight text-zinc-950">$79</span>
+              <span class="mb-1 text-sm text-zinc-500">/ month</span>
+            </p>
+            <p class="mt-3 text-[0.9375rem] text-zinc-500">For 3 teams. Extra teams $29 / month.</p>
+            <ul class="mt-6 space-y-2.5 text-[0.9375rem]">
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                3 teams included
+              </li>
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Branded portal
+              </li>
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                SSO
+              </li>
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Core product
+              </li>
+            </ul>
+            <a data-early-access href="#early-access" class="mt-auto inline-flex w-full items-center justify-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get early access</a>
+          </article>
+
+          <article class="price-card">
+            <p class="mono text-[0.6875rem] font-medium tracking-[0.08em] text-zinc-500">Annual</p>
+            <p class="mt-4 flex items-end gap-2">
+              <span class="text-5xl font-semibold tracking-tight text-zinc-950">$804</span>
+              <span class="mb-1 text-sm text-zinc-500">/ year</span>
+            </p>
+            <p class="mt-3 text-[0.9375rem] text-zinc-500">$67 / month. Extra teams $240 / year.</p>
+            <ul class="mt-6 space-y-2.5 text-[0.9375rem]">
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                3 teams included
+              </li>
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Branded portal
+              </li>
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                SSO
+              </li>
+              <li class="check">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Core product
+              </li>
+            </ul>
+            <a data-early-access href="#early-access" class="mt-auto inline-flex w-full items-center justify-center rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 hover:bg-zinc-50">Get early access</a>
+          </article>
         </div>
       </section>
 
