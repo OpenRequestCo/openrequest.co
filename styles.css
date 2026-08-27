@@ -867,7 +867,6 @@ footer [data-cal-link] {
 }
 .stage-window {
   overflow: hidden;
-  min-height: 42rem;
   border: 1px solid var(--hairline);
   border-radius: 1rem;
   background: #fff;
@@ -1039,7 +1038,6 @@ footer [data-cal-link] {
 }
 .request-view {
   display: grid;
-  min-height: 44rem;
 }
 @media (min-width: 900px) {
   .request-view {
@@ -1108,7 +1106,6 @@ footer [data-cal-link] {
 .request-thread {
   display: flex;
   flex-direction: column;
-  min-height: 26rem;
 }
 .request-crumb {
   display: flex;
