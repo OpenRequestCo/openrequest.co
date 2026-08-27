@@ -605,14 +605,8 @@
     .sm\:mt-12 {
       margin-top: calc(var(--spacing) * 12);
     }
-    .sm\:ml-1 {
-      margin-left: var(--spacing);
-    }
     .sm\:gap-1 {
       gap: var(--spacing);
-    }
-    .sm\:px-3 {
-      padding-inline: calc(var(--spacing) * 3);
     }
     .sm\:px-3\.5 {
       padding-inline: calc(var(--spacing) * 3.5);
@@ -644,6 +638,23 @@
     }
     .sm\:text-\[3\.35rem\] {
       font-size: 3.35rem;
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:ml-1 {
+      margin-left: var(--spacing);
+    }
+    .md\:inline {
+      display: inline;
+    }
+    .md\:inline-flex {
+      display: inline-flex;
+    }
+    .md\:px-3 {
+      padding-inline: calc(var(--spacing) * 3);
+    }
+    .md\:px-3\.5 {
+      padding-inline: calc(var(--spacing) * 3.5);
     }
   }
   @media (width >= 64rem) {
