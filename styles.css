@@ -267,6 +267,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-\[34px\] {
+    height: 34px;
+  }
   .min-h-\[1\.25rem\] {
     min-height: 1.25rem;
   }
