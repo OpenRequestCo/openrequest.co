@@ -549,6 +549,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .mix-blend-multiply {
+    mix-blend-mode: multiply;
+  }
   @media (hover: hover) {
     .hover\:bg-zinc-100:hover {
       background-color: var(--color-zinc-100);
