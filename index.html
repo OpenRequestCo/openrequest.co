@@ -158,114 +158,99 @@
             </div>
 
             <div data-panel="inbox" hidden>
-              <div class="handler">
-                <aside class="handler-inbox" aria-label="Inbox">
-                  <p class="px-3.5 pt-3.5 pb-2 text-[0.6875rem] font-medium tracking-wide text-zinc-400">Inbox</p>
-                  <ul>
-                    <li class="inbox-row is-current">
-                      <div class="min-w-0">
-                        <p class="truncate text-[0.8125rem]">
-                          <span class="mono text-[0.6875rem] text-zinc-400">REQ-7</span>
-                          <span class="ml-1 font-medium text-zinc-950">Order a new MacBook laptop</span>
-                        </p>
-                        <p class="mt-0.5 flex items-center gap-1.5 text-[0.6875rem] text-zinc-500">
-                          <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
-                          Nic Coates
-                        </p>
-                        <span class="sla-chip mono mt-1.5">First response · 2h left</span>
-                      </div>
-                    </li>
-                    <li class="inbox-row">
-                      <div class="min-w-0">
-                        <p class="truncate text-[0.8125rem]">
-                          <span class="mono text-[0.6875rem] text-zinc-400">REQ-6</span>
-                          <span class="ml-1 font-medium text-zinc-950">Request time off</span>
-                        </p>
-                        <p class="mt-0.5 flex items-center gap-1.5 text-[0.6875rem] text-zinc-500">
-                          <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
-                          HR
-                        </p>
-                      </div>
-                    </li>
-                    <li class="inbox-row">
-                      <div class="min-w-0">
-                        <p class="truncate text-[0.8125rem]">
-                          <span class="mono text-[0.6875rem] text-zinc-400">REQ-4</span>
-                          <span class="ml-1 font-medium text-zinc-950">Broken AC</span>
-                        </p>
-                        <p class="mt-0.5 flex items-center gap-1.5 text-[0.6875rem] text-zinc-500">
-                          <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
-                          Facilities
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
+              <div class="request-view">
+                <aside class="request-context" aria-label="Request details">
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.4"></circle></svg>
+                    <span class="ctx-label">Status</span>
+                    <span class="ctx-value">
+                      <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
+                      Open
+                      <svg class="ctx-chev" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5.5" r="2.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.5 13c.4-2.2 2-3.5 4.5-3.5s4.1 1.3 4.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <span class="ctx-label">Assignee</span>
+                    <span class="ctx-value">
+                      <span class="ctx-av" aria-hidden="true">R</span>
+                      Rolo Rex
+                      <svg class="ctx-chev" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.4"></circle><circle cx="11" cy="6.5" r="1.6" stroke="currentColor" stroke-width="1.4"></circle><path d="M2.5 13c.35-1.9 1.7-3 3.5-3s3.15 1.1 3.5 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M9.5 13c.2-1.2.9-2 2-2.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <span class="ctx-label">Team</span>
+                    <span class="ctx-value">
+                      IT Help Desk
+                      <svg class="ctx-chev" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5.5" r="2.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.5 13c.4-2.2 2-3.5 4.5-3.5s4.1 1.3 4.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <span class="ctx-label">Requester</span>
+                    <span class="ctx-value">
+                      <span class="ctx-av" aria-hidden="true">N</span>
+                      Nic Coates
+                    </span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 5v3.2l2 1.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span class="ctx-label">Opened</span>
+                    <span class="ctx-value">27 Aug, 13:21</span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 13V3.25l7.25 3.5-7.25 3.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+                    <span class="ctx-label">SLA</span>
+                    <span class="ctx-value">First response · 2h left</span>
+                  </div>
                 </aside>
 
-                <div class="handler-thread">
-                  <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                    <p class="min-w-0 truncate text-[0.9375rem] font-semibold tracking-tight text-[#07162D]">
-                      <span class="mono text-[0.75rem] font-medium text-zinc-400">REQ-7</span>
-                      <span class="ml-1.5">Order a new MacBook laptop</span>
-                    </p>
-                    <span class="sla-chip mono">Respond by 16:00</span>
+                <div class="request-thread">
+                  <div class="request-crumb">
+                    <span>IT Help Desk</span>
+                    <span class="request-crumb-sep" aria-hidden="true">›</span>
+                    <span class="mono">REQ-7</span>
+                    <span>Order a new MacBook laptop</span>
                   </div>
-                  <div class="mt-6 space-y-5">
-                    <div>
-                      <div class="flex items-baseline justify-between gap-3">
-                        <p class="text-[0.8125rem] font-semibold text-zinc-950">Nic Coates</p>
-                        <time class="mono text-[0.6875rem] text-zinc-400">just now</time>
+
+                  <div class="thread-log">
+                    <div class="msg msg-in">
+                      <span class="msg-av" aria-hidden="true">N</span>
+                      <div class="msg-col">
+                        <p class="msg-meta">
+                          <span class="msg-name">Nic Coates</span>
+                          <time>27 Aug, 13:21</time>
+                        </p>
+                        <p class="msg-bubble">MacBook Pro for the engineer starting Monday. Same spec as last time — 14-inch, 24GB.</p>
                       </div>
-                      <p class="mt-2 text-[0.875rem] leading-relaxed text-zinc-600">
-                        MacBook Pro for the engineer starting Monday. Same spec as last time — 14-inch, 24GB.
-                      </p>
                     </div>
-                    <div>
-                      <div class="flex items-baseline justify-between gap-3">
-                        <p class="text-[0.8125rem] font-semibold text-zinc-950">Rolo Rex</p>
-                        <time class="mono text-[0.6875rem] text-zinc-400">just now</time>
+
+                    <div class="msg msg-team">
+                      <span class="msg-av" aria-hidden="true">R</span>
+                      <div class="msg-col">
+                        <p class="msg-meta">
+                          <span class="msg-name">Rolo Rex</span>
+                          <time>27 Aug, 13:24</time>
+                        </p>
+                        <p class="msg-bubble">Got it — 14-inch, 24GB. I’ll place the Apple order this afternoon.</p>
                       </div>
-                      <p class="mt-2 text-[0.875rem] leading-relaxed text-zinc-600">
-                        Got it — 14-inch, 24GB. I’ll place the Apple order this afternoon.
-                      </p>
+                    </div>
+                  </div>
+
+                  <div class="compose" aria-hidden="true">
+                    <p class="compose-ph">Leave an internal note...</p>
+                    <div class="compose-bar">
+                      <span class="compose-tools">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L5.2 3h1.6L9 11M3.8 8.6h4.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3h5M7.5 3v8M5.5 11h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M3 7h8M3 10h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
+                      </span>
+                      <span class="compose-mode"><span class="is-on">Internal</span><span>Reply</span></span>
+                      <span class="compose-send">Send</span>
                     </div>
                   </div>
                 </div>
-
-                <aside class="handler-rail" aria-label="Request properties">
-                  <p class="text-[0.625rem] font-medium tracking-[0.12em] text-zinc-400 uppercase">Properties</p>
-                  <dl class="mt-4 space-y-4 text-[0.8125rem]">
-                    <div>
-                      <dt class="text-zinc-500">Status</dt>
-                      <dd class="mt-1 flex items-center gap-2 font-medium text-zinc-950">
-                        <span class="size-2 rounded-full status-open" aria-hidden="true"></span>
-                        Open
-                      </dd>
-                    </div>
-                    <div>
-                      <dt class="text-zinc-500">Raised by</dt>
-                      <dd class="mt-1 font-medium text-zinc-950">Nic Coates</dd>
-                    </div>
-                    <div>
-                      <dt class="text-zinc-500">Assignee</dt>
-                      <dd class="mt-1 font-medium text-zinc-950">Rolo Rex</dd>
-                    </div>
-                    <div>
-                      <dt class="text-zinc-500">Team</dt>
-                      <dd class="mt-1 font-medium text-zinc-950">IT Help Desk</dd>
-                    </div>
-                    <div>
-                      <dt class="text-zinc-500">Type</dt>
-                      <dd class="mt-1 font-medium text-zinc-950">Order a new MacBook laptop</dd>
-                    </div>
-                    <div>
-                      <dt class="text-zinc-500">SLA</dt>
-                      <dd class="mt-1">
-                        <span class="sla-chip mono">First response · 2h left</span>
-                      </dd>
-                    </div>
-                  </dl>
-                </aside>
               </div>
             </div>
           </div>
@@ -369,45 +354,39 @@
       </div>
 
       <section id="pricing" class="page-shell scroll-mt-24 py-24 sm:py-28">
-        <div class="mx-auto max-w-[36rem] text-center">
-          <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Priced by team, not by seat.</h2>
-          <p class="mt-4 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-            A team is a group that receives and handles requests. No per-agent seats.
-          </p>
-        </div>
+        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Priced by team, not by seat.</h2>
+        <p class="mt-4 max-w-[38rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
+          A team is IT, HR, Facilities. Not a person. Everyone in the org can raise a request. Everyone on a team can handle them.
+        </p>
 
-        <div class="price-block mx-auto mt-12 w-full max-w-[28rem] text-center" data-billing>
-          <div class="seg mx-auto">
-            <button type="button" class="seg-btn is-active" data-interval="monthly" aria-pressed="true">Monthly</button>
-            <button type="button" class="seg-btn" data-interval="annual" aria-pressed="false">
-              Annual
-              <span class="seg-save">Save $144 a year</span>
-            </button>
+        <div class="price-block mt-12 w-full" data-billing>
+          <div class="price-plan">
+            <div class="seg">
+              <button type="button" class="seg-btn is-active" data-interval="monthly" aria-pressed="true">Monthly</button>
+              <button type="button" class="seg-btn" data-interval="annual" aria-pressed="false">
+                Annual
+                <span class="seg-save">Save $144 a year</span>
+              </button>
+            </div>
+            <p class="mt-8 flex items-end gap-2.5">
+              <span data-price-amount class="text-[3.25rem] leading-none font-semibold tracking-tight text-[#07162D]">$79</span>
+              <span data-price-period class="mb-1.5 text-[1.0625rem] text-zinc-500">/ month</span>
+            </p>
+            <p class="mt-5 text-[0.9375rem] text-zinc-600">3 teams included</p>
+            <p data-price-extra class="mt-1.5 text-[0.9375rem] text-zinc-500">extra teams $29</p>
           </div>
-          <p class="mt-6 flex items-end justify-center gap-2">
-            <span data-price-amount class="text-5xl font-semibold tracking-tight text-[#07162D]">$79</span>
-            <span data-price-period class="mb-1 text-sm text-zinc-500">/ month</span>
-          </p>
-          <p data-price-extra class="mt-3 text-[0.9375rem] text-zinc-500">For 3 teams. Extra teams $29 / month.</p>
-          <p data-save class="mt-2 text-sm font-medium text-accent" hidden>Save $144 a year</p>
-          <ul class="mx-auto mt-6 inline-block space-y-2.5 text-left text-[0.9375rem]">
-            <li class="check">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              3 teams included
-            </li>
-            <li class="check">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Branded portal
-            </li>
-            <li class="check">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              SSO
-            </li>
-            <li class="check">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Knowledge, SLAs, and AI.
-            </li>
-          </ul>
+          <div class="price-features">
+            <ul class="price-punch">
+              <li>Unlimited employees</li>
+              <li>Unlimited team members</li>
+              <li>Unlimited requests</li>
+              <li>Your own domain</li>
+            </ul>
+            <ul class="price-quiet">
+              <li>Branded portal and SSO</li>
+              <li>Knowledge, SLAs, and AI</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -516,12 +495,12 @@
             monthly: {
               amount: '$79',
               period: '/ month',
-              extra: 'For 3 teams. Extra teams $29 / month.'
+              extra: 'extra teams $29'
             },
             annual: {
               amount: '$804',
               period: '/ year',
-              extra: '$67 / month. Extra teams $240 / year.'
+              extra: 'extra teams $240 / year'
             }
           };
 
