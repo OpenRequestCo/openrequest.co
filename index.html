@@ -134,7 +134,7 @@
                         </svg>
                       </span>
                       <p class="min-h-5 min-w-0 flex-1 text-[0.9375rem] text-zinc-950" aria-live="polite">
-                        <span data-palette-text>new laptop</span><span data-palette-caret class="caret is-off" aria-hidden="true"></span>
+                        <span data-palette-text></span><span data-palette-caret class="caret is-off" aria-hidden="true"></span>
                       </p>
                     </div>
                     <ul data-palette-results class="results-panel space-y-0.5 border-t border-zinc-100 px-1.5 py-1.5" aria-label="Matching request types">
@@ -553,17 +553,13 @@
 
             hideNewRow();
             hideResults();
-            var alreadyTyped = textEl.textContent.trim() !== '';
-            if (!alreadyTyped) {
-              textEl.textContent = '';
-              caret.classList.remove('is-off');
-              for (var i = 1; i <= phrase.length; i += 1) {
-                if (id !== runId) return;
-                textEl.textContent = phrase.slice(0, i);
-                await sleep(82);
-              }
-            } else {
-              caret.classList.add('is-off');
+            textEl.textContent = '';
+            caret.classList.remove('is-off');
+
+            for (var i = 1; i <= phrase.length; i += 1) {
+              if (id !== runId) return;
+              textEl.textContent = phrase.slice(0, i);
+              await sleep(82);
             }
 
             if (id !== runId) return;
