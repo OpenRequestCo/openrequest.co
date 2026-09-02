@@ -6,7 +6,7 @@
     <title>OpenRequest — Service desk without the per-agent maze.</title>
     <meta name="description" content="Search, pick a request type, raise it. Teams get a focused inbox. Priced by team, not by seat.">
     <link rel="canonical" href="https://openrequest.co/">
-    <meta name="theme-color" content="#F3F6FD">
+    <meta name="theme-color" content="#F6F5F2">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="OpenRequest">
     <meta property="og:title" content="OpenRequest — Service desk without the per-agent maze.">
@@ -51,10 +51,10 @@
 
     <main id="main">
       <section id="top" class="hero">
-        <div class="page-shell hero-grid">
+        <div class="page-shell">
           <div class="hero-copy">
             <h1 class="hero-title">
-              Your service desk shouldn’t punish you for <span class="grow-accent">growing</span>.
+              Your service desk shouldn’t punish you for growing.
             </h1>
             <p class="hero-sub">Search, pick a type, raise it. Teams get a clean inbox. No per-agent bill.</p>
             <p class="hero-kicker">Not another AI chat box.</p>
@@ -64,9 +64,20 @@
           </div>
 
           <div class="hero-stage-wrap">
-            <span class="float-chip chip-a" aria-hidden="true">Report a phishing email</span>
-            <span class="float-chip chip-b" aria-hidden="true">Resolve · 7d left</span>
-            <span class="float-chip chip-c" aria-hidden="true">$39 / team</span>
+            <article class="float-card card-a" aria-hidden="true">
+              <p class="float-card-title">Report a phishing email</p>
+              <p class="float-card-sub">IT · Employees</p>
+            </article>
+            <article class="float-card card-b" aria-hidden="true">
+              <p class="float-card-title">Resolve</p>
+              <span class="sla-chip mono">7d left</span>
+            </article>
+            <article class="float-card card-c" aria-hidden="true">
+              <p class="float-card-title">$39 / team</p>
+            </article>
+            <article class="float-card card-d" aria-hidden="true">
+              <p class="float-card-title">Something else</p>
+            </article>
 
             <div class="product-stage" data-stage data-palette data-palette-phrase="How can we help?">
               <div class="stage-window">
@@ -177,155 +188,6 @@
         </div>
       </div>
 
-      <section id="teams" class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">An inbox per team.</h2>
-        <p class="mt-4 max-w-[38rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">IT, HR, Facilities — each team’s requests in one place. The thread, the owner, the status. Not a junk queue.</p>
-
-        <div class="product-stage stage-width mt-10 sm:mt-12">
-          <p class="stage-copy stage-caption">Same request. Thread, owner, status, SLA.</p>
-          <div class="stage-window">
-            <div class="request-view">
-              <aside class="request-context" aria-label="Request details">
-                <div class="ctx-row">
-                  <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.4"></circle></svg>
-                  <span class="ctx-label">Status</span>
-                  <span class="ctx-value">
-                    <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
-                    Open
-                    <svg class="ctx-chev" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                  </span>
-                </div>
-                <div class="ctx-row">
-                  <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5.5" r="2.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.5 13c.4-2.2 2-3.5 4.5-3.5s4.1 1.3 4.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
-                  <span class="ctx-label">Assignee</span>
-                  <span class="ctx-value">
-                    <img class="ctx-av" src="images/female-1.jpg" alt="" width="18" height="18">
-                    Amira Shah
-                    <svg class="ctx-chev" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                  </span>
-                </div>
-                <div class="ctx-row">
-                  <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.4"></circle><circle cx="11" cy="6.5" r="1.6" stroke="currentColor" stroke-width="1.4"></circle><path d="M2.5 13c.35-1.9 1.7-3 3.5-3s3.15 1.1 3.5 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M9.5 13c.2-1.2.9-2 2-2.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
-                  <span class="ctx-label">Team</span>
-                  <span class="ctx-value">
-                    IT Help Desk
-                    <svg class="ctx-chev" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                  </span>
-                </div>
-                <div class="ctx-row">
-                  <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5.5" r="2.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.5 13c.4-2.2 2-3.5 4.5-3.5s4.1 1.3 4.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
-                  <span class="ctx-label">Requester</span>
-                  <span class="ctx-value">
-                    <img class="ctx-av" src="images/male-1.jpg" alt="" width="18" height="18">
-                    Daniel Cole
-                  </span>
-                </div>
-                <div class="ctx-row">
-                  <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 5v3.2l2 1.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                  <span class="ctx-label">Opened</span>
-                  <span class="ctx-value">27 Aug, 12:18</span>
-                </div>
-                <div class="ctx-row">
-                  <svg class="ctx-ico" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 13V3.25l7.25 3.5-7.25 3.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
-                  <span class="ctx-label">SLA</span>
-                  <span class="ctx-value"><span class="sla-chip mono">First response · 2h left</span></span>
-                </div>
-              </aside>
-
-              <div class="request-thread">
-                <div class="request-crumb">
-                  <span>IT Help Desk</span>
-                  <span class="request-crumb-sep" aria-hidden="true">›</span>
-                  <span class="mono">REQ-7</span>
-                  <span>Order a new MacBook laptop</span>
-                </div>
-
-                <div class="thread-log">
-                  <div class="msg">
-                    <img class="msg-av" src="images/male-1.jpg" alt="" width="28" height="28">
-                    <div class="msg-col">
-                      <p class="msg-meta">
-                        <span class="msg-name">Daniel Cole</span>
-                        <time datetime="2026-08-27T12:18">27 Aug, 12:18</time>
-                      </p>
-                      <p class="msg-bubble msg-reply">Need a MacBook Pro for Monday. Same spec as last time — 14-inch, 24GB.</p>
-                    </div>
-                  </div>
-
-                  <div class="msg">
-                    <img class="msg-av" src="images/male-2.jpg" alt="" width="28" height="28">
-                    <div class="msg-col">
-                      <p class="msg-meta">
-                        <span class="msg-name">Marcus Quinn</span>
-                        <span class="msg-internal">Internal</span>
-                        <time datetime="2026-08-27T12:21">27 Aug, 12:21</time>
-                      </p>
-                      <p class="msg-bubble msg-note"><span class="mention">@Amira Shah</span> I approve, please order the standard 14-inch MacBook Pro. Thanks!</p>
-                    </div>
-                  </div>
-
-                  <div class="msg">
-                    <img class="msg-av" src="images/female-1.jpg" alt="" width="28" height="28">
-                    <div class="msg-col">
-                      <p class="msg-meta">
-                        <span class="msg-name">Amira Shah</span>
-                        <span class="msg-replied">replied</span>
-                        <time datetime="2026-08-27T12:23">27 Aug, 12:23</time>
-                      </p>
-                      <p class="msg-bubble msg-reply">Hi Daniel,<br><br>This has been approved by Marcus. I will place the order, and have it shipped directly to your address. Lead times are about 3 days at the moment.<br><br>Thanks,<br>Amira</p>
-                    </div>
-                  </div>
-
-                  <div class="msg">
-                    <img class="msg-av" src="images/female-1.jpg" alt="" width="28" height="28">
-                    <div class="msg-col">
-                      <p class="msg-meta">
-                        <span class="msg-name">Amira Shah</span>
-                        <span class="msg-internal">Internal</span>
-                        <time datetime="2026-08-27T13:23">27 Aug, 13:23</time>
-                      </p>
-                      <p class="msg-bubble msg-note">Order GB127918 placed with Apple. Estimated to dispatch tomorrow (28th Aug).</p>
-                    </div>
-                  </div>
-
-                  <div class="msg">
-                    <img class="msg-av" src="images/female-1.jpg" alt="" width="28" height="28">
-                    <div class="msg-col">
-                      <p class="msg-meta">
-                        <span class="msg-name">Amira Shah</span>
-                        <span class="msg-internal">Internal</span>
-                        <time datetime="2026-08-27T14:16">27 Aug, 14:16</time>
-                      </p>
-                      <p class="msg-bubble msg-note"><span class="mention">@Marcus Quinn</span> Do we want to use DPD or FedEx? I would recommend DPD.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="compose" aria-hidden="true">
-                  <p class="compose-ph">Leave an internal note...</p>
-                  <div class="compose-bar">
-                    <span class="compose-tools">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L5.2 3h1.6L9 11M3.8 8.6h4.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3h5M7.5 3v8M5.5 11h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M3 7h8M3 10h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
-                    </span>
-                    <span class="compose-mode"><span class="is-on">Internal</span><span>Reply</span></span>
-                    <span class="compose-send">Send</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="rule" aria-hidden="true">
-        <div class="page-shell">
-          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
-          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
-        </div>
-      </div>
-
       <section id="how-it-works" class="page-shell scroll-mt-24 py-20 sm:py-24">
         <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">A clear request beats a clever chatbot.</h2>
 
@@ -416,25 +278,21 @@
       </div>
 
       <section id="leave-this-behind" class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Leave this behind.</h2>
+        <h2 class="text-[1.65rem] leading-tight font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Still doing it the hard way?</h2>
 
-        <div class="leave-block mt-10 sm:mt-12">
-          <div class="leave-head">
-            <span>You leave</span>
-            <span>You get</span>
-          </div>
-          <div class="leave-row">
-            <p class="leave-from">A maze of forms and queues</p>
-            <p class="leave-to">Search, pick a type, raise it</p>
-          </div>
-          <div class="leave-row">
-            <p class="leave-from">A blank AI box that guesses</p>
-            <p class="leave-to">A clear request from the first message</p>
-          </div>
-          <div class="leave-row">
-            <p class="leave-from">Pay per agent, pay for modules</p>
-            <p class="leave-to">Priced by team, not by seat</p>
-          </div>
+        <div class="hard-way mt-10 sm:mt-12">
+          <article class="hard-way-moment">
+            <p class="hard-way-was">A maze of forms and queues</p>
+            <p class="hard-way-now">Search, pick a type, raise it</p>
+          </article>
+          <article class="hard-way-moment">
+            <p class="hard-way-was">A blank AI box that guesses</p>
+            <p class="hard-way-now">A clear request from the first message</p>
+          </article>
+          <article class="hard-way-moment">
+            <p class="hard-way-was">Pay per agent, pay for modules</p>
+            <p class="hard-way-now">Priced by team, not by seat</p>
+          </article>
         </div>
 
         <p class="mt-8 max-w-[36rem] text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">Structure first. Conversation once it’s live. Fair when you grow.</p>
