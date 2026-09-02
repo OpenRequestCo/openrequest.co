@@ -842,11 +842,16 @@ footer [data-cal-link] {
 .hero-stage-wrap .product-stage {
   position: relative;
   z-index: 1;
+  transition: opacity 700ms ease, filter 700ms ease;
+}
+.hero-stage-wrap.is-settled .product-stage {
+  opacity: 0.78;
+  filter: saturate(0.92);
 }
 .float-card {
   position: absolute;
   z-index: 3;
-  width: min(18rem, 42%);
+  width: min(16.5rem, 36%);
   padding: 0.85rem 0.9rem;
   border: 1px solid var(--hairline);
   border-radius: 1rem;
@@ -862,25 +867,26 @@ footer [data-cal-link] {
   transform: translateY(0);
 }
 .float-card.card-inbox {
-  top: 8.75rem;
-  left: -3.5rem;
+  top: 1.25rem;
+  left: -5.75rem;
 }
 .float-card.card-thread {
-  top: 10.5rem;
-  right: -3.5rem;
-  width: min(20rem, 46%);
+  top: auto;
+  right: -5.75rem;
+  bottom: 2.75rem;
+  width: min(18.5rem, 40%);
   max-height: 13.5rem;
   overflow: hidden;
 }
 @media (min-width: 640px) {
   .float-card.card-thread {
-    right: calc(-3.5rem - clamp(1.5rem, 4vw, 3.25rem));
+    right: calc(-5.75rem - clamp(1.5rem, 4vw, 3.25rem));
   }
 }
 .float-card.card-sla {
-  left: -2.25rem;
-  bottom: -1.35rem;
-  width: min(14.5rem, 42%);
+  left: 26%;
+  bottom: -1.7rem;
+  width: min(13.5rem, 34%);
 }
 @media (max-width: 767px) {
   .float-card {
@@ -889,6 +895,9 @@ footer [data-cal-link] {
 }
 @media (prefers-reduced-motion: reduce) {
   .float-card {
+    transition: none;
+  }
+  .hero-stage-wrap .product-stage {
     transition: none;
   }
 }

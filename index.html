@@ -538,6 +538,10 @@
             newRow.classList.remove('is-in');
           }
 
+          function settleStage() {
+            if (stageWrap) stageWrap.classList.add('is-settled');
+          }
+
           function idle() {
             if (!textEl || !caret || !results) return;
             textEl.textContent = phrase;
@@ -546,13 +550,7 @@
             setActive(0);
             showNewRow();
             showFloatCards();
-          }
-
-          function scheduleReplay(id) {
-            window.setTimeout(function () {
-              if (id !== runId) return;
-              play(id);
-            }, 9000);
+            settleStage();
           }
 
           async function play(id) {
@@ -560,7 +558,6 @@
 
             if (reduceMotion) {
               idle();
-              scheduleReplay(id);
               return;
             }
 
@@ -585,9 +582,7 @@
             if (id !== runId) return;
             showNewRow();
             caret.classList.add('is-off');
-            await sleep(4200);
-            if (id !== runId) return;
-            scheduleReplay(id);
+            settleStage();
           }
 
           function startPlay() {
