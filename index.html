@@ -21,7 +21,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/icon-96.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/geist-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css" fetchpriority="high">
   </head>
   <body class="text-zinc-950 antialiased">
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-6 focus:rounded-full focus:bg-zinc-950 focus:px-4 focus:py-2 focus:text-sm focus:text-white">Skip to content</a>
@@ -131,7 +134,7 @@
                         </svg>
                       </span>
                       <p class="min-h-5 min-w-0 flex-1 text-[0.9375rem] text-zinc-950" aria-live="polite">
-                        <span data-palette-text></span><span data-palette-caret class="caret is-off" aria-hidden="true"></span>
+                        <span data-palette-text>new laptop</span><span data-palette-caret class="caret is-off" aria-hidden="true"></span>
                       </p>
                     </div>
                     <ul data-palette-results class="results-panel space-y-0.5 border-t border-zinc-100 px-1.5 py-1.5" aria-label="Matching request types">
@@ -376,7 +379,7 @@
           <a href="/terms" class="hover:text-zinc-950">Terms</a>
           <button type="button" data-cal-link="openrequest/early-access" data-cal-namespace="early-access" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="hover:text-zinc-950">Start with one team</button>
           <a href="https://openrequest.openstatus.dev" class="inline-flex">
-            <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-8.5 w-auto mix-blend-multiply">
+            <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-[34px] w-[202px] mix-blend-multiply">
           </a>
         </nav>
         <p class="text-[0.8125rem] text-zinc-600">© 2026 Drill Software Limited. All rights reserved.</p>
@@ -550,13 +553,17 @@
 
             hideNewRow();
             hideResults();
-            textEl.textContent = '';
-            caret.classList.remove('is-off');
-
-            for (var i = 1; i <= phrase.length; i += 1) {
-              if (id !== runId) return;
-              textEl.textContent = phrase.slice(0, i);
-              await sleep(82);
+            var alreadyTyped = textEl.textContent.trim() !== '';
+            if (!alreadyTyped) {
+              textEl.textContent = '';
+              caret.classList.remove('is-off');
+              for (var i = 1; i <= phrase.length; i += 1) {
+                if (id !== runId) return;
+                textEl.textContent = phrase.slice(0, i);
+                await sleep(82);
+              }
+            } else {
+              caret.classList.add('is-off');
             }
 
             if (id !== runId) return;
