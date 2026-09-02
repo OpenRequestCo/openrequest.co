@@ -481,6 +481,11 @@
 
         var stage = document.querySelector('[data-stage]');
         if (stage) {
+          var stageWrap = stage.closest('.hero-stage-wrap');
+          var floatCards = stageWrap
+            ? stageWrap.querySelectorAll(':scope > .float-card')
+            : [];
+          var floatShown = false;
           var textEl = stage.querySelector('[data-palette-text]');
           var caret = stage.querySelector('[data-palette-caret]');
           var results = stage.querySelector('[data-palette-results]');
@@ -488,6 +493,16 @@
           var newRow = stage.querySelector('[data-new-request]');
           var phrase = stage.getAttribute('data-palette-phrase') || 'request a new laptop';
           var runId = 0;
+
+          function showFloatCards() {
+            if (floatShown || !floatCards.length) return;
+            floatShown = true;
+            floatCards.forEach(function (card, index) {
+              window.setTimeout(function () {
+                card.classList.add('is-in');
+              }, reduceMotion ? 0 : index * 120);
+            });
+          }
 
           function setActive(index) {
             rows.forEach(function (row, i) {
@@ -530,6 +545,7 @@
             showResults();
             setActive(0);
             showNewRow();
+            showFloatCards();
           }
 
           function scheduleReplay(id) {
@@ -560,6 +576,7 @@
             }
 
             if (id !== runId) return;
+            showFloatCards();
             showResults();
             await sleep(640);
             if (id !== runId) return;
