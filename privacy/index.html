@@ -91,7 +91,7 @@
           <p>We send transactional email (invites, verification, product mail) through Resend.</p>
           <p class="legal-label">AI</p>
           <p>Where AI is turned on, we use workspace content (requests, threads, knowledge, SLAs) to match a request, draft a reply, or watch an SLA. That is to provide the feature, not to sell your data.</p>
-          <p>We do not sell personal data. We do not use analytics on the site or in the product.</p>
+          <p>We do not sell personal data. On this marketing site we use cookieless analytics via <a href="https://kobbe.io">Kobbe</a> after you interact with the page. We do not use analytics in the OpenRequest product.</p>
 
           <h2 id="why-we-use-it">Why we use it</h2>
           <ul>
@@ -106,6 +106,7 @@
           <p>Only what they need to do their job for us:</p>
           <ul>
             <li><a href="https://cal.com">Cal.com</a> — early-access booking</li>
+            <li><a href="https://kobbe.io">Kobbe</a> — cookieless marketing-site analytics</li>
             <li>Resend — transactional email</li>
             <li>Turso — product database</li>
             <li>Render — hosting</li>
@@ -130,7 +131,7 @@
           <p>We are based in the UK. Some processors are outside the UK. Where that happens we use a lawful transfer tool, such as the UK’s standard contractual clauses or an adequacy decision.</p>
 
           <h2 id="cookies">Cookies</h2>
-          <p>We use cookies the site needs to work, and <a href="https://cal.com">Cal.com</a>’s embed if you open early access. We do not use analytics cookies.</p>
+          <p>We use cookies the site needs to work, and <a href="https://cal.com">Cal.com</a>’s embed if you open early access. Marketing-site analytics via <a href="https://kobbe.io">Kobbe</a> are cookieless and only load after you interact with the page.</p>
 
           <h2 id="children">Children</h2>
           <p>OpenRequest is for organisations at work. It is not aimed at children.</p>
@@ -230,12 +231,6 @@
     </script>
     <script src="../cal.js"></script>
 
-    <!-- Kobbe embed code starts -->
-    <script
-      src="https://app.kobbe.io/tracker.js"
-      data-token="019664d0.Iu9utmSQ3T2ojvwATQ--s3WrzIJH-Rpb"
-      defer
-    ></script>
-    <!-- Kobbe embed code ends -->
+    <script src="../kobbe.js"></script>
   </body>
 </html>
