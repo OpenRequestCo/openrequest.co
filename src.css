@@ -248,12 +248,6 @@ footer [data-cal-link] {
 .hero-stage-wrap .product-stage {
   position: relative;
   z-index: 1;
-  transition: opacity 700ms ease, filter 700ms ease;
-}
-
-.hero-stage-wrap.is-settled .product-stage {
-  opacity: 0.6;
-  filter: saturate(0.88);
 }
 
 .float-card {
@@ -313,10 +307,6 @@ footer [data-cal-link] {
 
 @media (prefers-reduced-motion: reduce) {
   .float-card {
-    transition: none;
-  }
-
-  .hero-stage-wrap .product-stage {
     transition: none;
   }
 }
