@@ -21,7 +21,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../images/icon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../images/icon-96.png">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="preload" href="../fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/geist-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css" fetchpriority="high">
   </head>
   <body class="text-zinc-950 antialiased">
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-60 focus:rounded-full focus:bg-zinc-950 focus:px-4 focus:py-2 focus:text-sm focus:text-white">Skip to content</a>
@@ -158,7 +161,7 @@
           <a href="/privacy" class="text-zinc-600" aria-current="page">Privacy</a>
           <a href="/terms" class="hover:text-zinc-950">Terms</a>
           <a href="https://openrequest.openstatus.dev" class="inline-flex">
-            <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-8.5 w-auto mix-blend-multiply">
+            <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-[34px] w-[202px] mix-blend-multiply">
           </a>
         </nav>
         <p class="text-[0.8125rem] text-zinc-600">© 2026 Drill Software Limited. All rights reserved.</p>
