@@ -149,22 +149,17 @@
       <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
         <nav aria-label="Footer" class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-zinc-600">
           <a href="/privacy" class="hover:text-zinc-950">Privacy</a>
-          <a href="/terms" class="text-zinc-400" aria-current="page">Terms</a>
+          <a href="/terms" class="text-zinc-600" aria-current="page">Terms</a>
           <a href="https://openrequest.openstatus.dev" class="inline-flex">
             <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-[34px] w-auto mix-blend-multiply">
           </a>
         </nav>
-        <p class="text-[0.8125rem] text-zinc-400">© 2026 Drill Software Limited. All rights reserved.</p>
+        <p class="text-[0.8125rem] text-zinc-600">© 2026 Drill Software Limited. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
       (function () {
-        document.addEventListener('click', function (event) {
-          if (!event.target.closest('[data-cal-link]')) return;
-          event.preventDefault();
-        }, true);
-
         function syncHeader() {
           document.documentElement.classList.toggle('is-scrolled', window.scrollY > 8);
         }
@@ -227,14 +222,6 @@
         }
       })();
     </script>
-    <!-- Cal element-click embed code begins -->
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "early-access", {origin:"https://app.cal.com"});
-    Cal.config = Cal.config || {};
-    Cal.config.forwardQueryParams = true;
-      Cal.ns["early-access"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
-    <!-- Cal element-click embed code ends -->
+    <script src="../cal.js"></script>
   </body>
 </html>

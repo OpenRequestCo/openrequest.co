@@ -342,7 +342,7 @@ footer [data-cal-link] {
   align-items: center;
   gap: 0.4rem;
   margin: 0.2rem 0 0;
-  color: #71717a;
+  color: #52525b;
   font-size: 0.6875rem;
 }
 
@@ -358,7 +358,7 @@ footer [data-cal-link] {
 
 .float-thread-title .mono {
   margin-right: 0.4rem;
-  color: #a1a1aa;
+  color: #52525b;
   font-weight: 500;
 }
 
@@ -520,7 +520,7 @@ footer [data-cal-link] {
 
 .price-card-lead {
   margin: 0.5rem 0 0;
-  color: #a1a1aa;
+  color: #52525b;
   font-size: 0.9375rem;
   font-weight: 400;
   letter-spacing: -0.015em;
@@ -966,7 +966,7 @@ footer [data-cal-link] {
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: #1258f0;
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -1127,7 +1127,7 @@ footer [data-cal-link] {
   margin: 0.45rem 0 0;
   font-size: 0.625rem;
   line-height: 1.45;
-  color: #a1a1aa;
+  color: #52525b;
 }
 
 .sla-track {
