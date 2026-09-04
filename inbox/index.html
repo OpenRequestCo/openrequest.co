@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inbox — OpenRequest</title>
+    <meta name="description" content="One inbox per team. Thread, owner, and status on the request.">
+    <link rel="canonical" href="https://openrequest.co/inbox">
+    <meta name="theme-color" content="#F6F5F2">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OpenRequest">
+    <meta property="og:title" content="Inbox — OpenRequest">
+    <meta property="og:description" content="One inbox per team. Thread, owner, and status on the request.">
+    <meta property="og:url" content="https://openrequest.co/inbox">
+    <meta property="og:image" content="https://openrequest.co/images/og.png">
+    <meta property="og:image:alt" content="OpenRequest — Service desk for teams who want the right inbox">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inbox — OpenRequest">
+    <meta name="twitter:description" content="One inbox per team. Thread, owner, and status on the request.">
+    <meta name="twitter:image" content="https://openrequest.co/images/og.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/icon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icon-96.png">
+    <link rel="preload" href="../fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/geist-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css" fetchpriority="high">
+  </head>
+  <body class="text-zinc-950 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-6 focus:rounded-full focus:bg-zinc-950 focus:px-4 focus:py-2 focus:text-sm focus:text-white">Skip to content</a>
+
+    <header class="site-header">
+      <div class="page-shell flex h-16 items-center justify-between gap-3">
+        <div class="flex min-w-0 items-center gap-3 md:gap-5">
+          <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="OpenRequest, home">
+            <svg class="h-8 w-auto" width="20" height="29" viewBox="0 0 80 117" fill="none" aria-hidden="true">
+              <path d="M47 0L0 26V117L32 100V45L47 37V0Z" fill="#0A1830"/>
+              <path d="M79.7431 18.5L47 37L47 100L79.7431 111.169L79.7431 18.5Z" fill="#1460FF"/>
+            </svg>
+            <span class="text-base font-semibold tracking-tight">OpenRequest</span>
+          </a>
+          <nav aria-label="Primary" class="hidden items-center gap-0.5 md:flex">
+            <div class="nav-drop" data-nav-drop>
+              <button type="button" class="nav-item nav-drop-btn text-[0.8125rem] font-medium" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
+                Product
+                <svg class="nav-item-chev" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+              </button>
+              <div class="nav-drop-panel" id="nav-product-menu" data-nav-drop-panel hidden>
+                <a href="/portal">Portal</a>
+                <a href="/inbox" aria-current="page">Inbox</a>
+                <a href="/knowledge">Knowledge</a>
+                <span class="nav-drop-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
+              </div>
+            </div>
+            <a href="/#pricing" class="nav-item text-[0.8125rem] font-medium">Pricing</a>
+          </nav>
+        </div>
+        <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
+          <a href="https://app.openrequest.co/signin" class="rounded-full bg-zinc-100 px-2.5 py-1.5 text-[0.8125rem] font-medium text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 sm:px-3.5">Sign in</a>
+          <a href="https://app.openrequest.co/signup" class="ml-0.5 hidden items-center rounded-full bg-zinc-950 px-3 py-1.5 text-[0.8125rem] font-medium text-white hover:bg-zinc-800 md:ml-1 md:inline-flex md:px-3.5">Start with one team</a>
+        </div>
+      </div>
+      <div class="header-rule" aria-hidden="true">
+        <div class="page-shell">
+          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-shell pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div class="product-hero product-hero-app">
+          <div>
+            <p class="product-eyebrow">Inbox</p>
+            <h1 class="mt-3 text-[2.35rem] leading-[1.1] font-semibold tracking-[-0.03em] text-[#07162D] sm:text-[3rem]">An inbox per team — not a shared queue.</h1>
+            <p class="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">IT sees IT’s requests. Thread, owner, and status live on the work — not in three Slack threads.</p>
+            <div class="hero-actions">
+              <a href="https://app.openrequest.co/signup" class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Sign up</a>
+              <a href="/knowledge" class="hero-secondary">Explore Knowledge</a>
+            </div>
+          </div>
+          <div class="product-stage" aria-hidden="true">
+            <div class="stage-window">
+              <div class="request-view">
+                <div class="request-top">
+                  <p class="request-crumb">
+                    <span>Facilities</span>
+                    <span class="request-crumb-sep">›</span>
+                    <span class="request-crumb-title"><span class="mono">REQ-18</span> Building B access card</span>
+                  </p>
+                  <div class="request-actions">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.5 9.5l3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><path d="M7.2 4.55l.5-.5a2.35 2.35 0 1 1 3.32 3.32l-.5.5M8.8 11.45l-.5.5a2.35 2.35 0 1 1-3.32-3.32l.5-.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="4" cy="8" r="1.15"></circle><circle cx="8" cy="8" r="1.15"></circle><circle cx="12" cy="8" r="1.15"></circle></svg>
+                  </div>
+                </div>
+                <aside class="request-context">
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.4"></circle></svg>
+                    <span class="ctx-label">Status</span>
+                    <span class="ctx-value">Open <svg class="ctx-chev" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"></path></svg></span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.2" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.6 13c.4-2.15 2-3.4 4.4-3.4s4 1.25 4.4 3.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <span class="ctx-label">Assignee</span>
+                    <span class="ctx-value"><img class="ctx-av" src="../images/female-1.jpg" alt="" width="18" height="18"> Amira Shah <svg class="ctx-chev" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"></path></svg></span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" viewBox="0 0 16 16" fill="none"><path d="M3 10.4 8 12.9l5-2.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M3 7.7 8 10.2 13 7.7" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="m3 5.1 5 2.5 5-2.5L8 2.6 3 5.1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+                    <span class="ctx-label">Team</span>
+                    <span class="ctx-value">Facilities <svg class="ctx-chev" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"></path></svg></span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" viewBox="0 0 16 16" fill="none"><path d="M2.8 8.55 8.55 2.8h4.65v4.65L7.45 13.2a1.15 1.15 0 0 1-1.63 0L2.8 10.18a1.15 1.15 0 0 1 0-1.63Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><circle cx="11.05" cy="4.95" r="0.7" fill="currentColor"></circle></svg>
+                    <span class="ctx-label">Type</span>
+                    <span class="ctx-value">Access card <svg class="ctx-chev" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"></path></svg></span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.2" stroke="currentColor" stroke-width="1.4"></circle><path d="M3.6 13c.4-2.15 2-3.4 4.4-3.4s4 1.25 4.4 3.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <span class="ctx-label">Requester</span>
+                    <span class="ctx-value"><img class="ctx-av" src="../images/male-1.jpg" alt="" width="18" height="18"> Jordan Hale</span>
+                  </div>
+                  <div class="ctx-row">
+                    <svg class="ctx-ico" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.25" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 5.4V8l1.75 1.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    <span class="ctx-label">Opened</span>
+                    <span class="ctx-value">3 Sept, 09:12</span>
+                  </div>
+                </aside>
+                <div class="request-thread">
+                  <div class="thread-log">
+                    <div class="msg msg-out">
+                      <div class="msg-col">
+                        <p class="msg-meta">
+                          <span class="msg-name">Jordan Hale</span>
+                          <time>3 Sept, 09:12</time>
+                        </p>
+                        <p class="msg-bubble msg-note">Hi — I start on Monday and still don’t have a Building B access card. Reception told me to raise it here. The badge office already has my photo.</p>
+                      </div>
+                      <img class="msg-av" src="../images/male-1.jpg" alt="" width="28" height="28">
+                    </div>
+                    <div class="msg">
+                      <img class="msg-av" src="../images/female-1.jpg" alt="" width="28" height="28">
+                      <div class="msg-col">
+                        <p class="msg-meta">
+                          <span class="msg-name">Amira Shah</span>
+                          <span class="msg-replied">replied</span>
+                          <time>3 Sept, 09:18</time>
+                        </p>
+                        <p class="msg-bubble msg-reply">Thanks Jordan — looking into this now. I’ll check with facilities and confirm when the card will be ready.</p>
+                      </div>
+                    </div>
+                    <div class="msg">
+                      <img class="msg-av" src="../images/female-1.jpg" alt="" width="28" height="28">
+                      <div class="msg-col">
+                        <p class="msg-meta">
+                          <span class="msg-name">Amira Shah</span>
+                          <span class="msg-internal">Internal</span>
+                          <time>3 Sept, 09:19</time>
+                        </p>
+                        <p class="msg-bubble msg-note"><span class="mention">@Marcus Quinn</span> can you issue a Building B card for Jordan before Monday? Badge office has the photo.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="rule" aria-hidden="true">
+        <div class="page-shell">
+          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+        </div>
+      </div>
+
+      <section class="page-shell py-16 sm:py-20">
+        <article class="who-card">
+          <div class="offer-visual" aria-hidden="true">
+            <div class="slack-mock">
+              <p class="slack-channel">#it-help</p>
+              <div class="slack-msg">
+                <span class="slack-av"></span>
+                <div>
+                  <p class="slack-name">Alex</p>
+                  <p>Can someone reset my VPN?</p>
+                </div>
+              </div>
+              <div class="slack-msg">
+                <span class="slack-av is-2"></span>
+                <div>
+                  <p class="slack-name">Sam</p>
+                  <p>try #engineering?</p>
+                </div>
+              </div>
+              <div class="slack-msg is-dim">
+                <span class="slack-av is-3"></span>
+                <div>
+                  <p class="slack-name">Riley</p>
+                  <p>already in #it-support somewhere</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="product-problem">Shared queues hide ownership. Everything feels urgent; nothing has a name on it. People chase in chat because the system won’t say who’s on it.</p>
+        </article>
+      </section>
+
+      <div class="rule" aria-hidden="true">
+        <div class="page-shell">
+          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+        </div>
+      </div>
+
+      <section class="page-shell py-16 sm:py-20">
+        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">What you get</h2>
+        <ol class="get-list">
+          <li>
+            <svg class="get-list-ico" width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+            One inbox per team
+          </li>
+          <li>
+            <svg class="get-list-ico" width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+            Thread on the request
+          </li>
+          <li>
+            <svg class="get-list-ico" width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+            Owner and status
+          </li>
+          <li>
+            <svg class="get-list-ico" width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+            SLA on the same screen
+          </li>
+          <li>
+            <svg class="get-list-ico" width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+            Hand-offs without losing the plot
+          </li>
+        </ol>
+      </section>
+
+      <div class="rule" aria-hidden="true">
+        <div class="page-shell">
+          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+        </div>
+      </div>
+
+      <section class="page-shell py-20 sm:py-24">
+        <p class="product-outcome">Work you can see. Fewer “who’s doing this?” pings.</p>
+      </section>
+    </main>
+
+    <div class="rule" aria-hidden="true">
+      <div class="page-shell">
+        <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+        <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="page-shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="/" class="footer-mark" aria-label="OpenRequest, home">
+              <svg width="20" height="29" viewBox="0 0 80 117" fill="none" aria-hidden="true">
+                <path d="M47 0L0 26V117L32 100V45L47 37V0Z" fill="#0A1830"></path>
+                <path d="M79.7431 18.5L47 37L47 100L79.7431 111.169L79.7431 18.5Z" fill="#1460FF"></path>
+              </svg>
+            </a>
+            <p class="footer-tag">Service desk for teams who want the right inbox.</p>
+            <div class="footer-social">
+              <a href="https://x.com/OpenRequestCo" aria-label="OpenRequest on X">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.828L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"></path></svg>
+              </a>
+              <a href="https://linkedin.com/company/openrequestco" aria-label="OpenRequest on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.222 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-navs">
+            <nav class="footer-col" aria-label="Product">
+              <p class="footer-label">Product</p>
+              <a href="/portal">Portal</a>
+              <a href="/inbox" aria-current="page">Inbox</a>
+              <a href="/knowledge">Knowledge</a>
+              <a href="/#pricing">Pricing</a>
+              <span class="footer-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
+            </nav>
+            <nav class="footer-col" aria-label="Company">
+              <p class="footer-label">Company</p>
+              <a href="/privacy">Privacy</a>
+              <a href="/terms">Terms</a>
+              <a href="https://app.openrequest.co/signup">Sign up</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© OpenRequest</p>
+          <a href="https://openrequest.openstatus.dev" class="inline-flex">
+            <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-[34px] w-[202px] mix-blend-multiply">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../site.js"></script>
+    <script src="../kobbe.js"></script>
+  </body>
+</html>

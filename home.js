@@ -1,10 +1,4 @@
 (function () {
-  function syncHeader() {
-    document.documentElement.classList.toggle('is-scrolled', window.scrollY > 8);
-  }
-  syncHeader();
-  window.addEventListener('scroll', syncHeader, { passive: true });
-
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function urlWithoutHash() {
