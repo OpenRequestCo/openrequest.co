@@ -41,9 +41,9 @@
           </a>
           <nav aria-label="Primary" class="hidden items-center gap-0.5 md:flex">
             <div class="nav-drop" data-nav-drop>
-              <button type="button" class="nav-drop-btn inline-flex items-center rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium leading-5 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 md:px-3" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
+              <button type="button" class="nav-item nav-drop-btn" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
                 Product
-                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+                <svg class="nav-item-chev" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
               </button>
               <div class="nav-drop-panel" id="nav-product-menu" data-nav-drop-panel hidden>
                 <a href="/portal">Portal</a>
@@ -52,7 +52,7 @@
                 <span class="nav-drop-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
               </div>
             </div>
-            <a href="/#pricing" class="inline-flex items-center rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium leading-5 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 md:px-3">Pricing</a>
+            <a href="/#pricing" class="nav-item">Pricing</a>
           </nav>
         </div>
         <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
@@ -77,11 +77,6 @@
             <p class="hero-sub mt-6 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
               No shared catch-all queue. No form maze. Search, pick a request type, raise it. Your team works it from there — with an owner, a thread, and an SLA.
             </p>
-            <ul class="hero-chips">
-              <li>Right team</li>
-              <li>Clear type</li>
-              <li>Real owner</li>
-            </ul>
             <div class="hero-actions">
               <a href="https://app.openrequest.co/signup" class="inline-flex items-center rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800">Get started</a>
               <a href="#how-it-works" class="hero-secondary">See how it works</a>
@@ -222,21 +217,33 @@
       </div>
 
       <section id="familiar" class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Sound familiar?</h2>
+        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">When requests have nowhere to go</h2>
         <div class="problem-grid">
           <article class="offer-cell">
             <div class="offer-visual" aria-hidden="true">
-              <div class="mini-row is-on">
-                <span class="mini-dot"></span>
-                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-900">Can someone reset my VPN?</span>
-              </div>
-              <div class="mini-row">
-                <span class="mini-dot"></span>
-                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">#it-help</span>
-              </div>
-              <div class="mini-row">
-                <span class="mini-dot"></span>
-                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">#engineering</span>
+              <div class="slack-mock">
+                <p class="slack-channel">#it-help</p>
+                <div class="slack-msg">
+                  <span class="slack-av"></span>
+                  <div>
+                    <p class="slack-name">Alex</p>
+                    <p>Can someone reset my VPN?</p>
+                  </div>
+                </div>
+                <div class="slack-msg">
+                  <span class="slack-av is-2"></span>
+                  <div>
+                    <p class="slack-name">Sam</p>
+                    <p>try #engineering?</p>
+                  </div>
+                </div>
+                <div class="slack-msg is-dim">
+                  <span class="slack-av is-3"></span>
+                  <div>
+                    <p class="slack-name">Riley</p>
+                    <p>already in #it-support somewhere</p>
+                  </div>
+                </div>
               </div>
             </div>
             <h3 class="text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The Slack black hole</h3>
@@ -244,14 +251,19 @@
           </article>
           <article class="offer-cell">
             <div class="offer-visual" aria-hidden="true">
-              <div class="mini-search">
-                <span class="truncate text-[0.75rem] text-zinc-400">&nbsp;</span>
-              </div>
-              <div class="mini-search mt-2">
-                <span class="truncate text-[0.75rem] text-zinc-400">&nbsp;</span>
-              </div>
-              <div class="mini-search mt-2">
-                <span class="truncate text-[0.75rem] text-zinc-400">&nbsp;</span>
+              <div class="fake-form">
+                <label>
+                  Category (L1 / L2 / Other)
+                  <span class="fake-input">Incident — P3 — Restore svc</span>
+                </label>
+                <label>
+                  Affected CI *
+                  <span class="fake-input">CI-0001847 / unknown / (legacy)</span>
+                </label>
+                <label>
+                  Urgency × impact
+                  <span class="fake-input">3 × 2 (see matrix tab)</span>
+                </label>
               </div>
             </div>
             <h3 class="text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The form nobody finishes</h3>
@@ -259,9 +271,23 @@
           </article>
           <article class="offer-cell">
             <div class="offer-visual" aria-hidden="true">
-              <span class="sla-chip mono self-start">Next business day</span>
-              <div class="sla-track"><span></span></div>
-              <p class="mono mt-2 text-[0.6875rem] text-zinc-600">In a spreadsheet nobody opens</p>
+              <div class="sheet">
+                <div class="sheet-row is-head">
+                  <span>Request</span>
+                  <span>Due</span>
+                  <span>Status</span>
+                </div>
+                <div class="sheet-row">
+                  <span>VPN reset</span>
+                  <span>Mon</span>
+                  <span class="is-late">Late</span>
+                </div>
+                <div class="sheet-row">
+                  <span>New laptop</span>
+                  <span>Fri</span>
+                  <span>Open</span>
+                </div>
+              </div>
             </div>
             <h3 class="text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The SLA in a report</h3>
             <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">You promised next business day. The deadline lives in a spreadsheet nobody opens. They only know it’s late when they chase.</p>
@@ -270,7 +296,6 @@
         <p class="section-bridge text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
           OpenRequest puts the request in the middle — so intake, work, and the deadline stay on the same thing.
         </p>
-        <a href="#how-it-works" class="hero-secondary">See how it works</a>
       </section>
 
       <div class="rule" aria-hidden="true">
@@ -281,6 +306,7 @@
       </div>
 
       <section id="how-it-works" class="page-shell scroll-mt-24 py-20 sm:py-24">
+        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Everything stays on the request</h2>
         <div class="offer-grid">
           <article class="offer-cell">
             <div class="offer-visual" aria-hidden="true">
