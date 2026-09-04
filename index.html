@@ -41,7 +41,7 @@
           </a>
           <nav aria-label="Primary" class="hidden items-center gap-0.5 md:flex">
             <div class="nav-drop" data-nav-drop>
-              <button type="button" class="nav-item nav-drop-btn" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
+              <button type="button" class="nav-item nav-drop-btn text-[0.8125rem] font-medium" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
                 Product
                 <svg class="nav-item-chev" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
               </button>
@@ -52,7 +52,7 @@
                 <span class="nav-drop-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
               </div>
             </div>
-            <a href="/#pricing" class="nav-item">Pricing</a>
+            <a href="/#pricing" class="nav-item text-[0.8125rem] font-medium">Pricing</a>
           </nav>
         </div>
         <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
@@ -136,7 +136,7 @@
 
               <article class="float-card card-sla" aria-hidden="true">
                 <div class="float-card-body">
-                  <span class="sla-chip mono">Resolve · 7d left</span>
+                  <span class="sla-chip sla-chip-resolve mono">Resolve · 7d left</span>
                   <div class="sla-track"><span></span></div>
                 </div>
               </article>
@@ -280,11 +280,21 @@
                 <div class="sheet-row">
                   <span>VPN reset</span>
                   <span>Mon</span>
-                  <span class="is-late">Late</span>
+                  <span class="is-breached">Breached</span>
                 </div>
                 <div class="sheet-row">
                   <span>New laptop</span>
                   <span>Fri</span>
+                  <span>Open</span>
+                </div>
+                <div class="sheet-row">
+                  <span>Starter kit</span>
+                  <span>Wed</span>
+                  <span class="is-breached">Breached</span>
+                </div>
+                <div class="sheet-row">
+                  <span>Broken laptop</span>
+                  <span>Thu</span>
                   <span>Open</span>
                 </div>
               </div>
@@ -376,6 +386,7 @@
           <article class="offer-cell">
             <div class="offer-visual" aria-hidden="true">
               <span class="sla-chip mono self-start">First response · 2h left</span>
+              <span class="sla-chip sla-chip-resolve mono self-start mt-2">Resolved</span>
               <div class="sla-track"><span></span></div>
               <p class="mono mt-2 text-[0.6875rem] text-zinc-600">Respond by 16:00</p>
             </div>
