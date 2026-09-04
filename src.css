@@ -231,14 +231,8 @@ button,
   z-index: 1;
 }
 
-.hero-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 2.75rem;
-}
-
 .hero-copy {
-  max-width: 32rem;
+  max-width: 40rem;
   text-align: left;
 }
 
@@ -287,40 +281,13 @@ button,
   color: var(--ink);
 }
 
-.hero-visual {
-  position: relative;
-  min-width: 0;
+.hero-stage-wrap {
+  margin-top: 3rem;
 }
 
-.hero-visual .stage-width {
-  width: 100%;
-}
-
-@media (min-width: 960px) {
-  .hero-layout {
-    display: grid;
-    grid-template-columns: minmax(17.5rem, 24.75rem) minmax(0, 1fr);
-    gap: 2rem 2.5rem;
-    align-items: center;
-  }
-
-  .hero-copy {
-    max-width: none;
-  }
-
-  .float-card.card-inbox {
-    top: -1.6rem;
-    left: -1.15rem;
-  }
-
-  .float-card.card-thread {
-    top: -1.6rem;
-    right: -1.15rem;
-  }
-
-  .float-card.card-sla {
-    left: -1.35rem;
-    bottom: -0.85rem;
+@media (min-width: 640px) {
+  .hero-stage-wrap {
+    margin-top: 3.5rem;
   }
 }
 
@@ -330,18 +297,21 @@ button,
 
 .nav-drop-btn {
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
   margin: 0;
   border: 0;
   background: none;
   font: inherit;
+  line-height: 1.25rem;
   color: inherit;
+  cursor: pointer;
 }
 
 .nav-drop-btn svg {
-  width: 0.7rem;
-  height: 0.7rem;
-  color: #a1a1aa;
+  width: 0.625rem;
+  height: 0.625rem;
+  color: currentColor;
+  opacity: 0.55;
   transition: transform 160ms ease;
 }
 
@@ -399,170 +369,17 @@ button,
   letter-spacing: 0;
 }
 
-.mess-board {
+.problem-grid {
   display: grid;
   gap: 1.15rem;
   margin-top: 2rem;
-  align-items: start;
 }
 
 @media (min-width: 800px) {
-  .mess-board {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.35rem;
+  .problem-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
   }
-}
-
-.mess-card {
-  position: relative;
-  padding: 1.2rem 1.15rem 1.35rem;
-  border-radius: 0.2rem;
-  box-shadow:
-    0 1px 0 rgb(24 24 27 / 0.04),
-    0 12px 28px rgb(24 24 27 / 0.08);
-}
-
-.mess-card::before {
-  content: "";
-  position: absolute;
-  top: -0.38rem;
-  left: 1.15rem;
-  width: 2.55rem;
-  height: 0.72rem;
-  background: rgb(255 255 255 / 0.5);
-  box-shadow: 0 1px 1px rgb(24 24 27 / 0.08);
-  transform: rotate(-3deg);
-}
-
-.mess-slack {
-  background: #f6e59b;
-  transform: rotate(-1.35deg);
-}
-
-.mess-form {
-  background: #f4f1e8;
-  transform: rotate(1.15deg);
-}
-
-@media (min-width: 800px) {
-  .mess-form {
-    margin-top: 1.35rem;
-  }
-}
-
-.mess-report {
-  background: #d9ead3;
-  transform: rotate(-0.55deg);
-}
-
-.mess-visual {
-  margin: 0 0 0.95rem;
-  pointer-events: none;
-}
-
-.mess-card h3 {
-  margin: 0;
-  color: #18181b;
-  font-size: 1.05rem;
-  font-weight: 650;
-  letter-spacing: -0.03em;
-}
-
-.mess-card p {
-  margin: 0.55rem 0 0;
-  color: #3f3f46;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-}
-
-.slack-line + .slack-line {
-  margin-top: 0.45rem;
-}
-
-.slack-chan {
-  display: block;
-  color: #71717a;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.slack-bubble {
-  display: inline-block;
-  margin-top: 0.2rem;
-  padding: 0.35rem 0.6rem;
-  border-radius: 0.15rem 0.7rem 0.7rem 0.7rem;
-  background: #fff;
-  color: #18181b;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  box-shadow: 0 1px 1px rgb(24 24 27 / 0.06);
-}
-
-.slack-line.is-dim .slack-bubble {
-  background: rgb(255 255 255 / 0.55);
-  color: #71717a;
-}
-
-.form-field {
-  height: 0.7rem;
-  margin-top: 0.4rem;
-  border-radius: 0.2rem;
-  background: rgb(24 24 27 / 0.08);
-}
-
-.form-field.is-long {
-  width: 92%;
-}
-
-.form-field.is-mid {
-  width: 64%;
-}
-
-.form-field.is-short {
-  width: 40%;
-}
-
-.form-label {
-  margin: 0.55rem 0 0;
-  color: #a1a1aa;
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.form-label:first-child {
-  margin-top: 0;
-}
-
-.report-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr 0.8fr;
-  gap: 1px;
-  overflow: hidden;
-  border-radius: 0.25rem;
-  background: rgb(24 24 27 / 0.12);
-}
-
-.report-grid span {
-  padding: 0.28rem 0.4rem;
-  background: rgb(255 255 255 / 0.72);
-  color: #3f3f46;
-  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.5625rem;
-  letter-spacing: -0.02em;
-}
-
-.report-grid .is-head {
-  background: rgb(255 255 255 / 0.9);
-  color: #71717a;
-  font-weight: 650;
-}
-
-.report-grid .is-late {
-  background: #fecaca;
-  color: #991b1b;
 }
 
 .section-bridge {
@@ -576,32 +393,40 @@ button,
   margin-top: 1.15rem;
 }
 
-.split-block {
+.who-card {
   display: grid;
-  gap: 1.75rem;
-  align-items: center;
-}
-
-@media (min-width: 800px) {
-  .split-block {
-    grid-template-columns: minmax(0, 1.15fr) minmax(12rem, 0.85fr);
-    gap: 2.5rem;
-  }
-}
-
-.sla-preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 9rem;
-  padding: 1.15rem 1.2rem;
+  gap: 1.35rem;
+  padding: 1.25rem 1.2rem 1.45rem;
   border: 1px solid var(--hairline);
-  border-radius: 1.1rem;
+  border-radius: 1.25rem;
   background: #fff;
 }
 
-.quiet-block h2 {
-  font-size: 1.25rem;
+@media (min-width: 800px) {
+  .who-card {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+.who-card .offer-visual {
+  margin-bottom: 0;
+}
+
+.who-card h2 {
+  margin: 0;
+}
+
+.who-card p + p {
+  margin-top: 0.85rem;
+}
+
+.product-hero {
+  display: grid;
+  gap: 2.25rem;
+  align-items: center;
 }
 
 .product-hero .offer-visual {
@@ -704,7 +529,7 @@ button,
 .float-card {
   position: absolute;
   z-index: 3;
-  width: min(16.5rem, 42%);
+  width: min(16.5rem, 36%);
   padding: 0.85rem 0.9rem;
   isolation: isolate;
   overflow: visible;
@@ -768,7 +593,7 @@ button,
   top: -2.5rem;
   right: -4.75rem;
   bottom: auto;
-  width: min(18.5rem, 44%);
+  width: min(18.5rem, 40%);
 }
 
 .float-card-body {
@@ -1470,19 +1295,6 @@ button,
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
     gap: 1.25rem;
-  }
-}
-
-@media (min-width: 720px) and (max-width: 959px) {
-  .offer-grid.is-three {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
-}
-
-@media (min-width: 960px) {
-  .offer-grid.is-three {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

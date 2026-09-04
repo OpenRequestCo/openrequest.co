@@ -31,30 +31,34 @@
 
     <header class="site-header">
       <div class="page-shell flex h-16 items-center justify-between gap-3">
-        <a href="/" class="flex min-w-0 shrink-0 items-center gap-2.5" aria-label="OpenRequest, home">
-          <svg class="h-7 w-auto" width="20" height="29" viewBox="0 0 80 117" fill="none" aria-hidden="true">
-            <path d="M47 0L0 26V117L32 100V45L47 37V0Z" fill="#0A1830"/>
-            <path d="M79.7431 18.5L47 37L47 100L79.7431 111.169L79.7431 18.5Z" fill="#1460FF"/>
-          </svg>
-          <span class="text-[0.9375rem] font-semibold tracking-tight">OpenRequest</span>
-        </a>
-        <nav aria-label="Primary" class="flex shrink-0 items-center gap-0.5 sm:gap-1">
-          <div class="nav-drop" data-nav-drop>
-            <button type="button" class="nav-drop-btn hidden rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 sm:inline-flex md:px-3" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
-              Product
-              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
-            </button>
-            <div class="nav-drop-panel" id="nav-product-menu" data-nav-drop-panel hidden>
-              <a href="/portal">Portal</a>
-              <a href="/inbox">Inbox</a>
-              <a href="/knowledge">Knowledge</a>
-              <span class="nav-drop-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
+        <div class="flex min-w-0 items-center gap-3 md:gap-5">
+          <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="OpenRequest, home">
+            <svg class="h-8 w-auto" width="20" height="29" viewBox="0 0 80 117" fill="none" aria-hidden="true">
+              <path d="M47 0L0 26V117L32 100V45L47 37V0Z" fill="#0A1830"/>
+              <path d="M79.7431 18.5L47 37L47 100L79.7431 111.169L79.7431 18.5Z" fill="#1460FF"/>
+            </svg>
+            <span class="text-base font-semibold tracking-tight">OpenRequest</span>
+          </a>
+          <nav aria-label="Primary" class="hidden items-center gap-0.5 md:flex">
+            <div class="nav-drop" data-nav-drop>
+              <button type="button" class="nav-drop-btn inline-flex items-center rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium leading-5 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 md:px-3" data-nav-drop-btn aria-expanded="false" aria-controls="nav-product-menu" id="nav-product-btn">
+                Product
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path></svg>
+              </button>
+              <div class="nav-drop-panel" id="nav-product-menu" data-nav-drop-panel hidden>
+                <a href="/portal">Portal</a>
+                <a href="/inbox">Inbox</a>
+                <a href="/knowledge">Knowledge</a>
+                <span class="nav-drop-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
+              </div>
             </div>
-          </div>
-          <a href="/#pricing" class="hidden rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 md:inline md:px-3">Pricing</a>
+            <a href="/#pricing" class="inline-flex items-center rounded-full px-2.5 py-1.5 text-[0.8125rem] font-medium leading-5 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 md:px-3">Pricing</a>
+          </nav>
+        </div>
+        <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
           <a href="https://app.openrequest.co/signin" class="rounded-full bg-zinc-100 px-2.5 py-1.5 text-[0.8125rem] font-medium text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 sm:px-3.5">Sign in</a>
           <a href="https://app.openrequest.co/signup" class="ml-0.5 hidden items-center rounded-full bg-zinc-950 px-3 py-1.5 text-[0.8125rem] font-medium text-white hover:bg-zinc-800 md:ml-1 md:inline-flex md:px-3.5">Start with one team</a>
-        </nav>
+        </div>
       </div>
       <div class="header-rule" aria-hidden="true">
         <div class="page-shell">
@@ -66,9 +70,8 @@
 
     <main id="main">
       <section id="top" class="page-shell pt-20 pb-20 sm:pt-28 lg:pt-32">
-        <div class="hero-layout">
           <div class="hero-copy">
-            <h1 class="text-[2.6rem] leading-[1.1] font-semibold tracking-[-0.03em] text-[#07162D] sm:text-[3.35rem] lg:text-[3.65rem]">
+            <h1 class="text-[2.6rem] leading-[1.1] font-semibold tracking-[-0.03em] text-[#07162D] sm:text-[3.35rem] lg:text-[4rem]">
               Requests that land in the right inbox.
             </h1>
             <p class="hero-sub mt-6 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
@@ -85,7 +88,6 @@
             </div>
           </div>
 
-          <div class="hero-visual">
             <div class="hero-stage-wrap relative">
               <article class="float-card card-inbox" aria-hidden="true">
                 <div class="float-card-body">
@@ -210,8 +212,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
       </section>
 
       <div class="rule" aria-hidden="true">
@@ -223,47 +223,48 @@
 
       <section id="familiar" class="page-shell scroll-mt-24 py-20 sm:py-24">
         <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">Sound familiar?</h2>
-        <div class="mess-board">
-          <article class="mess-card mess-slack">
-            <div class="mess-visual" aria-hidden="true">
-              <div class="slack-line">
-                <span class="slack-chan">#it-help</span>
-                <span class="slack-bubble">Can someone reset my VPN?</span>
+        <div class="problem-grid">
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <div class="mini-row is-on">
+                <span class="mini-dot"></span>
+                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-900">Can someone reset my VPN?</span>
               </div>
-              <div class="slack-line is-dim">
-                <span class="slack-chan">#engineering</span>
-                <span class="slack-bubble">Three half-answers</span>
+              <div class="mini-row">
+                <span class="mini-dot"></span>
+                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">#it-help</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-dot"></span>
+                <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">#engineering</span>
               </div>
             </div>
-            <h3>The Slack black hole</h3>
-            <p>“Can someone reset my VPN?” Three channels. Three half-answers. Nobody owns it. Two days later it’s still open — somewhere.</p>
+            <h3 class="text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The Slack black hole</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">“Can someone reset my VPN?” Three channels. Three half-answers. Nobody owns it. Two days later it’s still open — somewhere.</p>
           </article>
-          <article class="mess-card mess-form">
-            <div class="mess-visual" aria-hidden="true">
-              <div class="form-field is-long"></div>
-              <div class="form-field is-mid"></div>
-              <div class="form-field is-long"></div>
-              <div class="form-field is-short"></div>
-            </div>
-            <h3>The form nobody finishes</h3>
-            <p>Twelve fields for a laptop. Half optional, half confusing. They abandon it and email you. Back to gut-feel triage.</p>
-          </article>
-          <article class="mess-card mess-report">
-            <div class="mess-visual" aria-hidden="true">
-              <div class="report-grid">
-                <span class="is-head">Request</span>
-                <span class="is-head">Due</span>
-                <span class="is-head">Status</span>
-                <span>VPN reset</span>
-                <span>Mon</span>
-                <span class="is-late">Late</span>
-                <span>New laptop</span>
-                <span>Fri</span>
-                <span>Open</span>
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <div class="mini-search">
+                <span class="truncate text-[0.75rem] text-zinc-400">&nbsp;</span>
+              </div>
+              <div class="mini-search mt-2">
+                <span class="truncate text-[0.75rem] text-zinc-400">&nbsp;</span>
+              </div>
+              <div class="mini-search mt-2">
+                <span class="truncate text-[0.75rem] text-zinc-400">&nbsp;</span>
               </div>
             </div>
-            <h3>The SLA in a report</h3>
-            <p>You promised next business day. The deadline lives in a spreadsheet nobody opens. They only know it’s late when they chase.</p>
+            <h3 class="text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The form nobody finishes</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">Twelve fields for a laptop. Half optional, half confusing. They abandon it and email you. Back to gut-feel triage.</p>
+          </article>
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <span class="sla-chip mono self-start">Next business day</span>
+              <div class="sla-track"><span></span></div>
+              <p class="mono mt-2 text-[0.6875rem] text-zinc-600">In a spreadsheet nobody opens</p>
+            </div>
+            <h3 class="text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The SLA in a report</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">You promised next business day. The deadline lives in a spreadsheet nobody opens. They only know it’s late when they chase.</p>
           </article>
         </div>
         <p class="section-bridge text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
@@ -280,7 +281,7 @@
       </div>
 
       <section id="how-it-works" class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <div class="offer-grid is-three">
+        <div class="offer-grid">
           <article class="offer-cell">
             <div class="offer-visual" aria-hidden="true">
               <div class="mini-search">
@@ -345,30 +346,22 @@
             <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">Policies and how-tos next to the type people pick. Fewer blank starts. Fewer “what do you need from me?” loops.</p>
             <a href="/knowledge" class="offer-link">Explore Knowledge</a>
           </article>
-        </div>
-      </section>
 
-      <div class="rule" aria-hidden="true">
-        <div class="page-shell">
-          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
-          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
+          <article class="offer-cell">
+            <div class="offer-visual" aria-hidden="true">
+              <span class="sla-chip mono self-start">First response · 2h left</span>
+              <div class="sla-track"><span></span></div>
+              <p class="mono mt-2 text-[0.6875rem] text-zinc-600">Respond by 16:00</p>
+            </div>
+            <p class="offer-name">SLAs</p>
+            <h3 class="mt-2 text-[1.15rem] font-semibold tracking-tight text-[#07162D] sm:text-[1.25rem]">The deadline lives on the request.</h3>
+            <p class="mt-2 text-[0.9375rem] leading-relaxed text-zinc-500">Who owns it, how fast it should move, when it’s late. On the work — not in a weekly PDF.</p>
+          </article>
         </div>
-      </div>
 
-      <section id="slas" class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <div class="split-block">
-          <div>
-            <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">The deadline lives on the request.</h2>
-            <p class="mt-4 max-w-152 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-              Who owns it, how fast it should move, when it’s late. On the work — not in a weekly PDF.
-            </p>
-          </div>
-          <div class="sla-preview" aria-hidden="true">
-            <span class="sla-chip mono self-start">First response · 2h left</span>
-            <div class="sla-track"><span></span></div>
-            <p class="mono mt-2 text-[0.6875rem] text-zinc-600">Respond by 16:00</p>
-          </div>
-        </div>
+        <p class="mt-10 max-w-160 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
+          AI where it helps. Not where it cosplays a helpdesk. Match the request, draft the reply, watch the SLA. Still a service desk.
+        </p>
       </section>
 
       <div class="rule" aria-hidden="true">
@@ -379,29 +372,31 @@
       </div>
 
       <section id="who" class="page-shell scroll-mt-24 py-20 sm:py-24">
-        <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">For IT teams who still do the work themselves.</h2>
-        <p class="mt-4 max-w-160 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-          You’re past “just email IT”. You’re not buying ServiceNow. You need clear intake, a real team inbox, knowledge, and SLAs — without a six-month implementation or a bill that grows with every agent.
-        </p>
-        <p class="mt-4 max-w-160 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
-          IT first. Same shape later for HR, Facilities, or anyone who runs on requests.
-        </p>
-      </section>
-
-      <div class="rule" aria-hidden="true">
-        <div class="page-shell">
-          <svg class="plus plus-l" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
-          <svg class="plus plus-r" width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1V17M1 9H17" stroke="currentColor" stroke-width="1" stroke-linecap="square"></path></svg>
-        </div>
-      </div>
-
-      <section id="ai" class="page-shell scroll-mt-24 py-16 sm:py-20">
-        <div class="quiet-block max-w-152">
-          <h2 class="text-[1.25rem] font-semibold tracking-[-0.03em] text-[#07162D] sm:text-[1.4rem]">AI where it helps. Not where it cosplays a helpdesk.</h2>
-          <p class="mt-3 text-[1.0625rem] leading-relaxed text-zinc-500">
-            Match the request, draft the reply, watch the SLA. Still a service desk.
-          </p>
-        </div>
+        <article class="who-card">
+          <div class="offer-visual" aria-hidden="true">
+            <div class="mini-row is-on">
+              <span class="mini-dot"></span>
+              <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-900">IT</span>
+            </div>
+            <div class="mini-row">
+              <span class="mini-dot"></span>
+              <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">HR</span>
+            </div>
+            <div class="mini-row">
+              <span class="mini-dot"></span>
+              <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-800">Facilities</span>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-[1.65rem] font-semibold tracking-[-0.035em] text-[#07162D] sm:text-[2rem]">For IT teams who still do the work themselves.</h2>
+            <p class="mt-4 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
+              You’re past “just email IT”. You’re not buying ServiceNow. You need clear intake, a real team inbox, knowledge, and SLAs — without a six-month implementation or a bill that grows with every agent.
+            </p>
+            <p class="mt-4 text-[1.0625rem] leading-relaxed text-zinc-500 sm:text-lg">
+              IT first. Same shape later for HR, Facilities, or anyone who runs on requests.
+            </p>
+          </div>
+        </article>
       </section>
 
       <div class="rule" aria-hidden="true">
