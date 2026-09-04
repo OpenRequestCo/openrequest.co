@@ -80,21 +80,48 @@
               <a href="/inbox" class="hero-secondary">Explore Inbox</a>
             </div>
           </div>
-          <div class="offer-visual" aria-hidden="true">
-            <div class="mini-search">
-              <svg class="shrink-0 text-zinc-600" width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
-                <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-              </svg>
-              <span class="text-[0.75rem] text-zinc-950">new laptop<span class="mini-caret"></span></span>
-            </div>
-            <div class="mini-type">
-              <span class="mini-mark">O</span>
-              <span class="truncate text-[0.75rem] font-medium text-zinc-800">Order a new MacBook</span>
-            </div>
-            <div class="mini-type">
-              <span class="mini-mark">V</span>
-              <span class="truncate text-[0.75rem] font-medium text-zinc-800">VPN access</span>
+          <div class="product-stage" aria-hidden="true">
+            <div class="stage-window">
+              <div class="stage-help">
+                <p class="text-[0.6875rem] font-medium tracking-wide text-accent">OpenRequest</p>
+                <h2 class="mt-2 text-[1.35rem] font-semibold tracking-tight text-[#07162D]">How can we help?</h2>
+                <div class="mt-5 rounded-xl border border-zinc-200 bg-white">
+                  <div class="flex items-center gap-3 px-4 py-3">
+                    <svg class="shrink-0 text-zinc-600" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+                      <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg>
+                    <p class="text-[0.875rem] text-zinc-950">new laptop<span class="mini-caret"></span></p>
+                  </div>
+                  <ul class="space-y-0.5 border-t border-zinc-100 px-1.5 py-1.5">
+                    <li class="flex w-full items-start gap-3 rounded-lg bg-zinc-100 px-3 py-2.5">
+                      <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-white text-[0.75rem] font-semibold text-zinc-700">O</span>
+                      <span class="min-w-0">
+                        <span class="block text-[0.875rem] font-semibold text-zinc-950">Order a new MacBook laptop</span>
+                        <span class="mt-0.5 block text-[0.8125rem] text-zinc-600">Order a MacBook Pro</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="stage-requests">
+                <p class="mb-3 text-[0.8125rem] text-zinc-600">Your requests</p>
+                <ul class="overflow-hidden rounded-xl border border-zinc-200 bg-white">
+                  <li class="request-row">
+                    <div class="min-w-0">
+                      <p class="truncate text-[0.875rem]">
+                        <span class="mono text-[0.75rem] text-zinc-600">REQ-7</span>
+                        <span class="ml-1.5 font-medium text-zinc-950">Order a new MacBook laptop</span>
+                      </p>
+                      <p class="mt-0.5 flex items-center gap-1.5 text-[0.75rem] text-zinc-600">
+                        <span class="size-1.5 rounded-full status-open" aria-hidden="true"></span>
+                        Open · IT Help Desk
+                      </p>
+                    </div>
+                    <time class="mono shrink-0 text-[0.6875rem] text-zinc-600">just now</time>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +135,25 @@
       </div>
 
       <section class="page-shell py-16 sm:py-20">
-        <p class="product-problem">Vague intake is expensive. “Laptop?” “Access?” “It’s broken.” Every vague message becomes detective work.</p>
+        <article class="who-card">
+          <div class="offer-visual" aria-hidden="true">
+            <div class="fake-form">
+              <label>
+                Category (L1 / L2 / Other)
+                <span class="fake-input">Incident — P3 — Restore svc</span>
+              </label>
+              <label>
+                Affected CI *
+                <span class="fake-input">CI-0001847 / unknown / (legacy)</span>
+              </label>
+              <label>
+                Urgency × impact
+                <span class="fake-input">3 × 2 (see matrix tab)</span>
+              </label>
+            </div>
+          </div>
+          <p class="product-problem">Vague intake is expensive. “Laptop?” “Access?” “It’s broken.” Every vague message becomes detective work.</p>
+        </article>
       </section>
 
       <div class="rule" aria-hidden="true">
@@ -163,21 +208,38 @@
       </div>
     </div>
 
-    <footer class="page-shell py-8">
-      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
-        <nav aria-label="Footer" class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-zinc-600">
-          <a href="/portal" class="text-zinc-950" aria-current="page">Portal</a>
-          <a href="/inbox" class="hover:text-zinc-950">Inbox</a>
-          <a href="/knowledge" class="hover:text-zinc-950">Knowledge</a>
-          <a href="/#pricing" class="hover:text-zinc-950">Pricing</a>
-          <a href="/privacy" class="hover:text-zinc-950">Privacy</a>
-          <a href="/terms" class="hover:text-zinc-950">Terms</a>
-          <a href="https://app.openrequest.co/signup" class="hover:text-zinc-950">Sign up</a>
+    <footer class="site-footer">
+      <div class="page-shell">
+        <div class="footer-grid">
+          <nav class="footer-col" aria-label="Product">
+            <p class="footer-label">Product</p>
+            <a href="/portal" aria-current="page">Portal</a>
+            <a href="/inbox">Inbox</a>
+            <a href="/knowledge">Knowledge</a>
+            <a href="/#pricing">Pricing</a>
+            <span class="footer-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
+          </nav>
+          <nav class="footer-col" aria-label="Company">
+            <p class="footer-label">Company</p>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="https://app.openrequest.co/signup">Sign up</a>
+            <div class="footer-social">
+              <a href="https://x.com/OpenRequestCo" aria-label="OpenRequest on X">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.828L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+              </a>
+              <a href="https://linkedin.com/company/openrequestco" aria-label="OpenRequest on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© OpenRequest</p>
           <a href="https://openrequest.openstatus.dev" class="inline-flex">
             <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-[34px] w-[202px] mix-blend-multiply">
           </a>
-        </nav>
-        <p class="text-[0.8125rem] text-zinc-600">© Nic Coates trading as OpenRequest</p>
+        </div>
       </div>
     </footer>
 

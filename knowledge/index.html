@@ -81,14 +81,30 @@
               <a href="/#pricing" class="hero-secondary">See pricing</a>
             </div>
           </div>
-          <div class="offer-visual" aria-hidden="true">
-            <div class="know-doc">
-              <p class="know-doc-title">Order a MacBook</p>
-              <p class="know-doc-h">Policy</p>
-              <p class="know-doc-line">- Approved 14" models only</p>
-              <p class="know-doc-line">- Ship to desk</p>
-              <p class="know-doc-line">- Asset tag on arrival</p>
-              <p class="know-doc-muted">IT confirms in the thread.</p>
+          <div class="product-stage" aria-hidden="true">
+            <div class="product-split">
+              <div class="product-block">
+                <div class="mini-type">
+                  <span class="mini-mark">O</span>
+                  <span class="truncate text-[0.75rem] font-medium text-zinc-800">Order a new MacBook</span>
+                </div>
+                <div class="mini-type">
+                  <span class="mini-mark">V</span>
+                  <span class="truncate text-[0.75rem] font-medium text-zinc-800">VPN access</span>
+                </div>
+                <div class="mini-row is-on mt-2">
+                  <span class="mini-dot"></span>
+                  <span class="min-w-0 flex-1 truncate text-[0.75rem] font-medium text-zinc-900">On this type</span>
+                </div>
+              </div>
+              <div class="know-doc">
+                <p class="know-doc-title">Order a MacBook</p>
+                <p class="know-doc-h">Policy</p>
+                <p class="know-doc-line">- Approved 14" models only</p>
+                <p class="know-doc-line">- Ship to desk</p>
+                <p class="know-doc-line">- Asset tag on arrival</p>
+                <p class="know-doc-muted">IT confirms in the thread.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -102,7 +118,20 @@
       </div>
 
       <section class="page-shell py-16 sm:py-20">
-        <p class="product-problem">Docs in another tab don’t deflect anything. People raise the request anyway; your team retypes the same questions.</p>
+        <article class="who-card">
+          <div class="offer-visual" aria-hidden="true">
+            <div class="mini-search">
+              <span class="truncate text-[0.75rem] text-zinc-400">wiki / laptop policy…</span>
+            </div>
+            <div class="mini-search mt-2">
+              <span class="truncate text-[0.75rem] text-zinc-400">sharepoint / how we order</span>
+            </div>
+            <div class="mini-search mt-2">
+              <span class="truncate text-[0.75rem] text-zinc-400">email: what’s the standard?</span>
+            </div>
+          </div>
+          <p class="product-problem">Docs in another tab don’t deflect anything. People raise the request anyway; your team retypes the same questions.</p>
+        </article>
       </section>
 
       <div class="rule" aria-hidden="true">
@@ -153,21 +182,38 @@
       </div>
     </div>
 
-    <footer class="page-shell py-8">
-      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
-        <nav aria-label="Footer" class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-zinc-600">
-          <a href="/portal" class="hover:text-zinc-950">Portal</a>
-          <a href="/inbox" class="hover:text-zinc-950">Inbox</a>
-          <a href="/knowledge" class="text-zinc-950" aria-current="page">Knowledge</a>
-          <a href="/#pricing" class="hover:text-zinc-950">Pricing</a>
-          <a href="/privacy" class="hover:text-zinc-950">Privacy</a>
-          <a href="/terms" class="hover:text-zinc-950">Terms</a>
-          <a href="https://app.openrequest.co/signup" class="hover:text-zinc-950">Sign up</a>
+    <footer class="site-footer">
+      <div class="page-shell">
+        <div class="footer-grid">
+          <nav class="footer-col" aria-label="Product">
+            <p class="footer-label">Product</p>
+            <a href="/portal">Portal</a>
+            <a href="/inbox">Inbox</a>
+            <a href="/knowledge" aria-current="page">Knowledge</a>
+            <a href="/#pricing">Pricing</a>
+            <span class="footer-soon">Assets <span class="nav-drop-tag">Coming soon</span></span>
+          </nav>
+          <nav class="footer-col" aria-label="Company">
+            <p class="footer-label">Company</p>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="https://app.openrequest.co/signup">Sign up</a>
+            <div class="footer-social">
+              <a href="https://x.com/OpenRequestCo" aria-label="OpenRequest on X">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.828L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+              </a>
+              <a href="https://linkedin.com/company/openrequestco" aria-label="OpenRequest on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="footer-meta">
+          <p class="footer-copy">© OpenRequest</p>
           <a href="https://openrequest.openstatus.dev" class="inline-flex">
             <img src="https://openrequest.openstatus.dev/badge/v2" alt="OpenRequest status" width="202" height="34" class="block h-[34px] w-[202px] mix-blend-multiply">
           </a>
-        </nav>
-        <p class="text-[0.8125rem] text-zinc-600">© Nic Coates trading as OpenRequest</p>
+        </div>
       </div>
     </footer>
 
